@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Test</title>
+</head>
+
+<body>
+    <script src="installWhatsappChatBox.js"></script>
+    <script>
+        // Create a new InstallWhatsappChatBox
+        const chatBox = new InstallWhatsappChatBox({
+            iframeUrl: 'index.php',
+            iconPosition: { left: "auto", top: "auto", right: "2rem", bottom: "2rem" },
+            chatBoxPosition: { left: "auto", top: "auto", right: "2rem", bottom: "2rem" },
+            whereToInstall: "body", // div , .section , #section
+            thankyouPage: 'thankyou.html'
+        });
+        chatBox.createWhatsappChatBox();
+    </script>
+</body>
+
+</html>

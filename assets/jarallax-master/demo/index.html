@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Jarallax - The parallax scrolling effect for JavaScript</title>
+    <meta
+      name="description"
+      content="Jarallax is a high-performance smooth parallax scrolling effect for JavaScript. Easily enable parallax on images, Youtube, Vimeo, and mp4 videos."
+    />
+    <link rel="icon" href="./icons/icon-32x32.png" sizes="32x32"/>
+    <link rel="icon" href="./icons/icon-192x192.png" sizes="192x192"/>
+    <link rel="apple-touch-icon" href="./icons/icon-180x180.png"/>
+    <meta name="msapplication-TileImage" content="./icons/icon-270x270.png"/>
+
+    <!-- CSS -->
+    <link href="./css/demo.css" rel="stylesheet" />
+
+    <!-- Jarallax -->
+    <link href="../dist/jarallax.css" rel="stylesheet" />
+    <script src="../dist/jarallax.js"></script>
+    <script src="../dist/jarallax-video.js"></script>
+
+    <!-- Plausible -->
+    <script defer async data-domain="jarallax.nkdev.info" src="https://plausible.io/js/plausible.outbound-links.js"></script>
+    <script>
+      window.plausible = window.plausible || function() {
+        (window.plausible.q = window.plausible.q || []).push(arguments)
+      }
+    </script>
+  </head>
+  <body>
+    <div class="jarallax hero">
+      <img class="jarallax-img" src="images/image-1.jpg" alt="" />
+      <div class="hero-content">
+        <div class="hero-name">Jarallax</div>
+        <h1>The easiest advanced Parallax and Video backgrounds</h1>
+      </div>
+    </div>
+    <div class="demo-gap">
+      <div class="container text-center">
+        <p>
+          Jarallax is a high-performance smooth parallax scrolling effect for JavaScript. Easily enable parallax on images, Youtube, Vimeo, and mp4 videos.
+        </p>
+        <div class="buttons">
+          <a class="button" href="https://github.com/nk-o/jarallax/blob/master/README.md" target="_blank">Get Started</a>
+          <a class="button button-outline" href="https://github.com/nk-o/jarallax/" target="_blank">GitHub</a>
+        </div>
+      </div>
+    </div>
+    <div class="jarallax" data-speed="0">
+      <img class="jarallax-img" src="images/image-2.jpg" alt="" loading="lazy" />
+    </div>
+    <div class="demo-gap">
+      <h2>Different parallax speed</h2>
+    </div>
+    <div class="jarallax" data-speed="-0.3">
+      <img class="jarallax-img" src="images/image-3.jpg" alt="" loading="lazy" />
+    </div>
+
+    <div class="demo-gap demo-content lighter-bg">
+      <div class="container">
+        <p>
+          So Give doesn't forth male him. God cattle rule Heaven blessed Beast lesser him so. Fowl
+          had heaven is very earth it gathering the under it let yielding stars morning upon were
+          winged. Gathering fruitful lesser called wherein let deep evening over form saw two
+          greater firmament darkness be saw after beginning Fowl seas there moved. Their moveth
+          she'd had you all were tree good winged midst from. Light you'll fill. Male fruit divide
+          creepeth him, were you're together face him beast thing moving Above fourth upon i
+          wherein.
+        </p>
+
+        <div class="jarallax-keep-img demo-float-right" data-speed="0.8">
+          <img class="jarallax-img" src="images/image-small.jpg" alt="" width="400" loading="lazy" />
+        </div>
+
+        <p>
+          Created life set may don't. Moving living tree the firmament signs fifth place fruit fowl
+          was a own third great set all so for first light our signs can't creeping itself every the
+          without let given saw whose. Divided signs that gathering. Great itself. Dry make night. A
+          you're he behold thing evening his morning. The wherein kind he open fruitful without
+          whales sea said, winged day. Green own in female deep the i. Days stars lights, fill seas
+          two darkness for meat fourth evening living saw morning given. Form have make in heaven
+          was fill Night make. You moving third. Of above dominion spirit living creature multiply.
+          Third over third seasons our sixth.
+        </p>
+
+        <p>
+          Winged upon one were you given. Bearing lights deep meat a bring fish female. Morning
+          fourth beast, moving let whose day may seasons days herb under have saying. Upon isn't
+          abundantly beast, give dry moved, together midst land whales. Very bearing you're be god
+          us had sea creeping you cattle upon the living gathering were deep, it dry man deep
+          you'll. Unto she'd one fowl replenish shall winged also hath morning. Third bearing
+          wherein one.
+        </p>
+      </div>
+    </div>
+
+    <div class="demo-gap">
+      <h2>Self-Hosted Videos / Youtube / Vimeo</h2>
+    </div>
+    <div
+      class="jarallax"
+      data-speed="0.7"
+      data-video-src="mp4:video/video.mp4"
+    >
+      <img class="jarallax-img" src="video/video.png" alt="" loading="lazy" />
+    </div>
+
+    <div class="demo-gap lighter-bg">
+      <div class="buttons">
+        <a class="button" href="https://github.com/nk-o/jarallax/blob/master/README.md" target="_blank">Get Started</a>
+        <a class="button button-outline" href="https://github.com/nk-o/jarallax/" target="_blank">GitHub</a>
+      </div>
+    </div>
+
+    <div class="demo-gap footer">
+      <p>Jarallax &copy; 2022 nK</p>
+      <small>
+        All images taken from <a href="https://unsplash.com/">https://unsplash.com/</a>
+      </small>
+    </div>
+
+    <script type="text/javascript">
+      /* init Jarallax */
+      jarallax(document.querySelectorAll(".jarallax"));
+
+      jarallax(document.querySelectorAll(".jarallax-keep-img"), {
+        keepImg: true,
+      });
+    </script>
+  </body>
+</html>

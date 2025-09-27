@@ -1,0 +1,575 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ocean Freight</title>
+
+    <!-- CSS Files  -->
+    <link href="assets/aos/aos.css" rel="stylesheet">
+    <link href="assets/fontawesome-free/css/all.min.css" rel="stylesheet">
+    <link href="assets/animate.css/animate.min.css" rel="stylesheet">
+    <link href="assets/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link href="assets/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+    <link href="assets/glightbox/css/glightbox.min.css" rel="stylesheet">
+    <link href="assets/swiper/swiper-bundle.min.css" rel="stylesheet">
+
+    <link rel="stylesheet" href="https://cdn.plyr.io/3.7.8/plyr.css" />
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+    <!-- ======= Go To Top ======= -->
+    <i id="gotop" onclick="document.documentElement.scrollTop = 0" class="fa-solid fa-angles-up"></i>
+    <!-- ======= Popup Form Section ======= -->
+    <section id="popupform"
+        class=" popup-box animate__animated container-fluid d-flex justify-content-center align-items-center">
+        <span class="popup-close" onclick='popupclose("#popupform")'></span>
+        <form style="max-width: 450px;" action="#" name="contactForm" class="contactForm clr-secondary-bg p-4 form-box">
+            <div class="row">
+                <div class="col-12 col-md-6 mt-3">
+                    <div class="form-group">
+                        <label class="label" for="name">Full Name</label>
+                        <input type="text" pattern="[A-Za-z]+" required class="form-control" name="name" id="name"
+                            placeholder="Name">
+
+                    </div>
+                </div>
+                <div class="col-12 col-md-6 mt-3">
+                    <div class="form-group">
+                        <label class="label" for="subject">Phone</label>
+                        <input pattern="\+?[0-9]{10,}" required type="text" class="form-control" name="phone" id="phone"
+                            placeholder="phone">
+
+                    </div>
+                </div>
+                <div class="col-12 mt-3">
+                    <div class="form-group">
+                        <label class="label" for="email">Email Address</label>
+                        <input pattern="[a-z0-9]+@[a-z0-9]+\.[a-z]{2,4}" required type="email" class="form-control"
+                            name="email" id="email" placeholder="Email">
+
+                    </div>
+                </div>
+                <div class="col-12 mt-3">
+                    <div class="form-group">
+                        <label class="label" for="#">Message</label>
+                        <textarea name="message" class="form-control" id="message" cols="30" rows="4"
+                            placeholder="Message"></textarea>
+
+                    </div>
+                </div>
+                <div class="col-12 mt-5">
+                    <div class="form-group w-100">
+                        <input type="submit" value="Send Message" class="btn btn-custom w-100">
+                        <div class="submitting"></div>
+                    </div>
+                </div>
+            </div>
+        </form>
+    </section>
+    <!-- ======= Header ANd Navbar Container ======= -->
+    <header id="header" class="scroll-header">
+        <div style="height: 30px;" class="container pt-2">
+            <div class="row">
+                <div class="col-2 d-none d-lg-flex gap-3">
+                    <svg class="clr-primary" xmlns="http://www.w3.org/2000/svg" width="20" height="20"
+                        viewBox="0 0 24 24">
+                        <path fill="currentColor"
+                            d="M19.95 21q-3.225 0-6.287-1.438t-5.425-3.8q-2.363-2.362-3.8-5.425T3 4.05q0-.45.3-.75t.75-.3H8.1q.35 0 .625.225t.325.575l.65 3.5q.05.35-.013.638T9.4 8.45L6.975 10.9q1.05 1.8 2.638 3.375T13.1 17l2.35-2.35q.225-.225.588-.338t.712-.062l3.45.7q.35.075.575.338T21 15.9v4.05q0 .45-.3.75t-.75.3ZM6.025 9l1.65-1.65L7.25 5H5.025q.125 1.025.35 2.025T6.025 9Zm8.95 8.95q.975.425 1.988.675T19 18.95v-2.2l-2.35-.475l-1.675 1.675ZM6.025 9Zm8.95 8.95Z" />
+                    </svg>
+                    <a style="font-size: 12px;" class="text-clr-light" href="tel:+001234567890">+00 12345 67890</a>
+                </div>
+                <div class="col-2 d-none d-lg-flex gap-3">
+                    <svg class="clr-primary" xmlns="http://www.w3.org/2000/svg" width="20" height="20"
+                        viewBox="0 0 256 256">
+                        <path fill="currentColor"
+                            d="M224 48H32a8 8 0 0 0-8 8v136a16 16 0 0 0 16 16h176a16 16 0 0 0 16-16V56a8 8 0 0 0-8-8Zm-96 85.15L52.57 64h150.86ZM98.71 128L40 181.81V74.19Zm11.84 10.85l12 11.05a8 8 0 0 0 10.82 0l12-11.05l58 53.15H52.57ZM157.29 128L216 74.18v107.64Z" />
+                    </svg>
+                    <a style="font-size: 12px;" class="text-clr-light"
+                        href="mailto:sampleo@gamil.com">sampleo@gamil.com</a>
+                </div>
+                <div class="col-12 col-lg-2 offset-lg-6 d-flex justify-content-center gap-3">
+                    <a style="font-size: 12px;" class="text-clr-light" href="#">Help</a>
+                    <a style="font-size: 12px;" class="text-clr-light" href="#">Support</a>
+                    <a style="font-size: 12px;" class="text-clr-light" href="#">Contact</a>
+                </div>
+            </div>
+        </div>
+        <nav class="navbar navbar-expand-lg p-0 m-0">
+            <div class="container d-flex justify-content-between p-0">
+                <a class="navbar-brand me-auto me-md-3 ms-2" href="index.html">
+                    <img class="logo-top" src="img/logo-dark.png" alt="biz15">
+                    <img class="logo-sticky" src="img/logo-light.png" alt="biz15">
+                </a>
+                <div class="d-md-none me-1 d-flex">
+                    <button onclick='popup("#popupform")' class="btn ms-auto me-1 theme-btn rounded-5 px-4"><i
+                            class="fa-regular fa-paper-plane"></i></button>
+                </div>
+                <button class="mx-2 navbar-toggler" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+                    aria-expanded="false" aria-label="Toggle navigation">
+                    <i class="open fa-solid fa-bars-staggered"></i>
+                    <i class="close fa-solid fa-xmark"></i>
+                </button>
+                <div data-navbar-alignment="right"
+                    class="collapse navbar-collapse mobile-navbar border-0 shadow-none p-5 p-md-0"
+                    id="navbarSupportedContent">
+                    <ul class="navbar-nav gap-3 me-auto mb-2 mb-lg-0">
+                        <div
+                            class="clr-secondary d-block d-lg-none mb-3 mt-5 gap-2 d-flex justify-content-center align-items-center">
+                            <label for="search-mob" class="text-black"><svg xmlns="http://www.w3.org/2000/svg"
+                                    width="28" height="28" viewBox="0 0 24 24">
+                                    <g fill="none" fill-rule="evenodd">
+                                        <path
+                                            d="M24 0v24H0V0h24ZM12.593 23.258l-.011.002l-.071.035l-.02.004l-.014-.004l-.071-.035c-.01-.004-.019-.001-.024.005l-.004.01l-.017.428l.005.02l.01.013l.104.074l.015.004l.012-.004l.104-.074l.012-.016l.004-.017l-.017-.427c-.002-.01-.009-.017-.017-.018Zm.265-.113l-.013.002l-.185.093l-.01.01l-.003.011l.018.43l.005.012l.008.007l.201.093c.012.004.023 0 .029-.008l.004-.014l-.034-.614c-.003-.012-.01-.02-.02-.022Zm-.715.002a.023.023 0 0 0-.027.006l-.006.014l-.034.614c0 .012.007.02.017.024l.015-.002l.201-.093l.01-.008l.004-.011l.017-.43l-.003-.012l-.01-.01l-.184-.092Z" />
+                                        <path fill="currentColor"
+                                            d="M10.5 4a6.5 6.5 0 1 0 0 13a6.5 6.5 0 0 0 0-13ZM2 10.5a8.5 8.5 0 1 1 15.176 5.262l3.652 3.652a1 1 0 0 1-1.414 1.414l-3.652-3.652A8.5 8.5 0 0 1 2 10.5ZM9.5 7a1 1 0 0 1 1-1a4.5 4.5 0 0 1 4.5 4.5a1 1 0 1 1-2 0A2.5 2.5 0 0 0 10.5 8a1 1 0 0 1-1-1Z" />
+                                    </g>
+                                </svg></label>
+                            <input style="width: 90% !important;" list="pages" id="search-mob" class="search-input"
+                                class="clr-secondary" type="text" name="name" id="name" placeholder="Search">
+                            <datalist id="pages">
+                                <option value="Air Freight">Air Freight</option>
+                                <option value="Ocean Freight">Ocean Freight</option>
+                                <option value="Road Freight">Road Freight</option>
+                                <option value="Rail Freight">Rail Freight</option>
+                                <option value="Courier Services">Courier Services</option>
+                                <option value="Warehousing">Warehousing and Distribution
+                                    Services
+                                </option>
+                            </datalist>
+                        </div>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link px-3" href="index.html">Home</a>
+                        </li>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link px-3" href="about.html">
+                                About
+                            </a>
+                        </li>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle-btns" href="#">
+                                Pages
+                            </a>
+                            <ul class="dropdown-menu border-0 dropdown-shadow px-3 py-2"
+                                aria-labelledby="navbarDropdown">
+                                <li><a class="dropdown-item px-3 py-2" href="air-freight.html">Air Freight</a></li>
+                                <li><a class="dropdown-item px-3 py-2" href="ocean-freight.html">Ocean Freight</a></li>
+                                <li><a class="dropdown-item px-3 py-2" href="road-freight.html">Road Freight</a></li>
+                                <li><a class="dropdown-item px-3 py-2" href="rail-freight.html">Rail Freight</a></li>
+                                <li><a class="dropdown-item px-3 py-2" href="courier-services.html">Courier Services</a>
+                                </li>
+                                <li><a class="dropdown-item px-3 py-2" href="warehousing.html">Warehousing
+                                        Services</a></li>
+                            </ul>
+                        </li>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link px-3" href="services.html">
+                                Services
+                            </a>
+                        </li>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link px-3" href="contact.html">
+                                Contact
+                            </a>
+                        </li>
+                        <div
+                            class="clr-secondary d-block d-lg-none mt-5 gap-3 d-flex justify-content-center align-items-center">
+                            <a href="#" class="text-black"><svg xmlns="http://www.w3.org/2000/svg" width="28"
+                                    height="28" viewBox="0 0 24 24">
+                                    <path fill="none" stroke="currentColor" stroke-linecap="round"
+                                        stroke-linejoin="round" stroke-width="1"
+                                        d="M17 2h-3a5 5 0 0 0-5 5v3H6v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3V2Z" />
+                                </svg></a>
+                            <a href="#" class="text-black"><svg xmlns="http://www.w3.org/2000/svg" width="28"
+                                    height="28" viewBox="0 0 256 256">
+                                    <path fill="currentColor"
+                                        d="M128 82a46 46 0 1 0 46 46a46.06 46.06 0 0 0-46-46Zm0 80a34 34 0 1 1 34-34a34 34 0 0 1-34 34Zm48-136H80a54.06 54.06 0 0 0-54 54v96a54.06 54.06 0 0 0 54 54h96a54.06 54.06 0 0 0 54-54V80a54.06 54.06 0 0 0-54-54Zm42 150a42 42 0 0 1-42 42H80a42 42 0 0 1-42-42V80a42 42 0 0 1 42-42h96a42 42 0 0 1 42 42ZM190 76a10 10 0 1 1-10-10a10 10 0 0 1 10 10Z" />
+                                </svg></a>
+                            <a href="#" class="text-black"><svg xmlns="http://www.w3.org/2000/svg" width="28"
+                                    height="28" viewBox="0 0 24 24">
+                                    <path fill="currentColor" fill-rule="evenodd"
+                                        d="M15.021 3.343c.509-.087 1.078-.116 1.614-.025a4.85 4.85 0 0 1 2.54 1.273c.456.01.905-.08 1.302-.208a5.36 5.36 0 0 0 1.098-.501l.009-.006a.75.75 0 0 1 1.042 1.037c-.207.315-.496.877-.819 1.507l-.155.301c-.185.36-.375.724-.552 1.036c-.111.196-.23.395-.35.567v.274A12.34 12.34 0 0 1 8.287 21.03a12.32 12.32 0 0 1-6.694-1.97a.75.75 0 0 1 .5-1.374a7.471 7.471 0 0 0 4.033-.642a4.858 4.858 0 0 1-2.61-2.922a.75.75 0 0 1 .147-.722l.01-.01A4.848 4.848 0 0 1 2.05 9.793v-.052a.75.75 0 0 1 .553-.724A4.84 4.84 0 0 1 2.09 6.84a4.9 4.9 0 0 1 .65-2.442a.75.75 0 0 1 1.232-.1a10.89 10.89 0 0 0 7.006 3.93a4.85 4.85 0 0 1 2.562-4.406c.402-.214.934-.385 1.482-.479ZM3.743 10.891a3.35 3.35 0 0 0 2.503 2.164a.75.75 0 0 1 .072 1.453c-.272.083-.551.14-.834.173a3.358 3.358 0 0 0 2.59 1.3a.75.75 0 0 1 .45 1.339a8.97 8.97 0 0 1-3.548 1.695a10.82 10.82 0 0 0 3.313.515h.009A10.838 10.838 0 0 0 19.25 8.607v-.535a.75.75 0 0 1 .186-.495c.07-.079.19-.261.36-.56c.16-.282.338-.622.523-.981l.033-.066a4.992 4.992 0 0 1-1.593.097a.75.75 0 0 1-.47-.237a3.35 3.35 0 0 0-1.904-1.032a3.42 3.42 0 0 0-1.11.025a3.605 3.605 0 0 0-1.028.323a3.35 3.35 0 0 0-1.678 3.74a.75.75 0 0 1-.767.925a12.39 12.39 0 0 1-8.149-3.627a3.41 3.41 0 0 0-.063.657v.002a3.34 3.34 0 0 0 1.486 2.785A.75.75 0 0 1 4.64 11a4.798 4.798 0 0 1-.897-.11Z"
+                                        clip-rule="evenodd" />
+                                </svg></a>
+                            <a href="#" class="text-black"><svg xmlns="http://www.w3.org/2000/svg" width="28"
+                                    height="28" viewBox="0 0 24 24">
+                                    <g fill="none" stroke="currentColor" stroke-width="1.5">
+                                        <path fill="currentColor" stroke-linecap="round" stroke-linejoin="round"
+                                            d="m14 12l-3.5 2v-4l3.5 2Z" />
+                                        <path
+                                            d="M2 12.707v-1.415c0-2.895 0-4.343.905-5.274c.906-.932 2.332-.972 5.183-1.053C9.438 4.927 10.818 4.9 12 4.9c1.181 0 2.561.027 3.912.065c2.851.081 4.277.121 5.182 1.053c.906.931.906 2.38.906 5.274v1.415c0 2.896 0 4.343-.905 5.275c-.906.931-2.331.972-5.183 1.052c-1.35.039-2.73.066-3.912.066a141.1 141.1 0 0 1-3.912-.066c-2.851-.08-4.277-.12-5.183-1.052C2 17.05 2 15.602 2 12.708Z" />
+                                    </g>
+                                </svg></a>
+                        </div>
+                    </ul>
+                    <div class="d-lg-flex d-none ms-3 ">
+                        <div
+                            class="clr-secondary d-xl-flex d-none me-5 gap-2 d-flex justify-content-center align-items-center">
+                            <label for="search" class="text-clr-light"><svg xmlns="http://www.w3.org/2000/svg"
+                                    width="28" height="28" viewBox="0 0 24 24">
+                                    <g fill="none" fill-rule="evenodd">
+                                        <path
+                                            d="M24 0v24H0V0h24ZM12.593 23.258l-.011.002l-.071.035l-.02.004l-.014-.004l-.071-.035c-.01-.004-.019-.001-.024.005l-.004.01l-.017.428l.005.02l.01.013l.104.074l.015.004l.012-.004l.104-.074l.012-.016l.004-.017l-.017-.427c-.002-.01-.009-.017-.017-.018Zm.265-.113l-.013.002l-.185.093l-.01.01l-.003.011l.018.43l.005.012l.008.007l.201.093c.012.004.023 0 .029-.008l.004-.014l-.034-.614c-.003-.012-.01-.02-.02-.022Zm-.715.002a.023.023 0 0 0-.027.006l-.006.014l-.034.614c0 .012.007.02.017.024l.015-.002l.201-.093l.01-.008l.004-.011l.017-.43l-.003-.012l-.01-.01l-.184-.092Z" />
+                                        <path fill="currentColor"
+                                            d="M10.5 4a6.5 6.5 0 1 0 0 13a6.5 6.5 0 0 0 0-13ZM2 10.5a8.5 8.5 0 1 1 15.176 5.262l3.652 3.652a1 1 0 0 1-1.414 1.414l-3.652-3.652A8.5 8.5 0 0 1 2 10.5ZM9.5 7a1 1 0 0 1 1-1a4.5 4.5 0 0 1 4.5 4.5a1 1 0 1 1-2 0A2.5 2.5 0 0 0 10.5 8a1 1 0 0 1-1-1Z" />
+                                    </g>
+                                </svg></label>
+                            <input list="pages" id="search" class="search-input" class="clr-secondary" type="text"
+                                name="name" id="name" placeholder="Search">
+                            <a href="#" class="text-clr-light"><svg xmlns="http://www.w3.org/2000/svg" width="28"
+                                    height="28" viewBox="0 0 24 24">
+                                    <path fill="none" stroke="currentColor" stroke-linecap="round"
+                                        stroke-linejoin="round" stroke-width="1"
+                                        d="M17 2h-3a5 5 0 0 0-5 5v3H6v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3V2Z" />
+                                </svg></a>
+                            <a href="#" class="text-clr-light"><svg xmlns="http://www.w3.org/2000/svg" width="28"
+                                    height="28" viewBox="0 0 256 256">
+                                    <path fill="currentColor"
+                                        d="M128 82a46 46 0 1 0 46 46a46.06 46.06 0 0 0-46-46Zm0 80a34 34 0 1 1 34-34a34 34 0 0 1-34 34Zm48-136H80a54.06 54.06 0 0 0-54 54v96a54.06 54.06 0 0 0 54 54h96a54.06 54.06 0 0 0 54-54V80a54.06 54.06 0 0 0-54-54Zm42 150a42 42 0 0 1-42 42H80a42 42 0 0 1-42-42V80a42 42 0 0 1 42-42h96a42 42 0 0 1 42 42ZM190 76a10 10 0 1 1-10-10a10 10 0 0 1 10 10Z" />
+                                </svg></a>
+                            <a href="#" class="text-clr-light"><svg xmlns="http://www.w3.org/2000/svg" width="28"
+                                    height="28" viewBox="0 0 24 24">
+                                    <path fill="currentColor" fill-rule="evenodd"
+                                        d="M15.021 3.343c.509-.087 1.078-.116 1.614-.025a4.85 4.85 0 0 1 2.54 1.273c.456.01.905-.08 1.302-.208a5.36 5.36 0 0 0 1.098-.501l.009-.006a.75.75 0 0 1 1.042 1.037c-.207.315-.496.877-.819 1.507l-.155.301c-.185.36-.375.724-.552 1.036c-.111.196-.23.395-.35.567v.274A12.34 12.34 0 0 1 8.287 21.03a12.32 12.32 0 0 1-6.694-1.97a.75.75 0 0 1 .5-1.374a7.471 7.471 0 0 0 4.033-.642a4.858 4.858 0 0 1-2.61-2.922a.75.75 0 0 1 .147-.722l.01-.01A4.848 4.848 0 0 1 2.05 9.793v-.052a.75.75 0 0 1 .553-.724A4.84 4.84 0 0 1 2.09 6.84a4.9 4.9 0 0 1 .65-2.442a.75.75 0 0 1 1.232-.1a10.89 10.89 0 0 0 7.006 3.93a4.85 4.85 0 0 1 2.562-4.406c.402-.214.934-.385 1.482-.479ZM3.743 10.891a3.35 3.35 0 0 0 2.503 2.164a.75.75 0 0 1 .072 1.453c-.272.083-.551.14-.834.173a3.358 3.358 0 0 0 2.59 1.3a.75.75 0 0 1 .45 1.339a8.97 8.97 0 0 1-3.548 1.695a10.82 10.82 0 0 0 3.313.515h.009A10.838 10.838 0 0 0 19.25 8.607v-.535a.75.75 0 0 1 .186-.495c.07-.079.19-.261.36-.56c.16-.282.338-.622.523-.981l.033-.066a4.992 4.992 0 0 1-1.593.097a.75.75 0 0 1-.47-.237a3.35 3.35 0 0 0-1.904-1.032a3.42 3.42 0 0 0-1.11.025a3.605 3.605 0 0 0-1.028.323a3.35 3.35 0 0 0-1.678 3.74a.75.75 0 0 1-.767.925a12.39 12.39 0 0 1-8.149-3.627a3.41 3.41 0 0 0-.063.657v.002a3.34 3.34 0 0 0 1.486 2.785A.75.75 0 0 1 4.64 11a4.798 4.798 0 0 1-.897-.11Z"
+                                        clip-rule="evenodd" />
+                                </svg></a>
+                            <a href="#" class="text-clr-light"><svg xmlns="http://www.w3.org/2000/svg" width="28"
+                                    height="28" viewBox="0 0 24 24">
+                                    <g fill="none" stroke="currentColor" stroke-width="1.5">
+                                        <path fill="currentColor" stroke-linecap="round" stroke-linejoin="round"
+                                            d="m14 12l-3.5 2v-4l3.5 2Z" />
+                                        <path
+                                            d="M2 12.707v-1.415c0-2.895 0-4.343.905-5.274c.906-.932 2.332-.972 5.183-1.053C9.438 4.927 10.818 4.9 12 4.9c1.181 0 2.561.027 3.912.065c2.851.081 4.277.121 5.182 1.053c.906.931.906 2.38.906 5.274v1.415c0 2.896 0 4.343-.905 5.275c-.906.931-2.331.972-5.183 1.052c-1.35.039-2.73.066-3.912.066a141.1 141.1 0 0 1-3.912-.066c-2.851-.08-4.277-.12-5.183-1.052C2 17.05 2 15.602 2 12.708Z" />
+                                    </g>
+                                </svg></a>
+                        </div>
+                        <button onclick='popup("#popupform")' style="width: 50px; height: 50px;"
+                            class="clr-accent-btn me-5 m-md-3 p-0 rounded-circle"><svg
+                                xmlns="http://www.w3.org/2000/svg" width="25" height="25" viewBox="0 0 24 24">
+                                <path fill="currentColor"
+                                    d="m12.25 10.825l.925.925L18.6 6.325l-.925-.925l-5.425 5.425ZM5 19h.925l5.825-5.825l-.925-.925L5 18.075V19Zm8.875-5.125l-3.75-3.75L14.3 5.95l-.725-.725L8.1 10.7L6.7 9.3l6.875-6.875L15.7 4.55l1.975-1.975l3.75 3.75l-7.55 7.55ZM6.75 21H3v-3.75l7.125-7.125l3.75 3.75L6.75 21Z" />
+                            </svg></button>
+                    </div>
+                </div>
+            </div>
+        </nav>
+    </header>
+    <!-- ======= Swiper Slider ======= -->
+    <div id="banner" style="--bg-color:rgba(0, 0, 0, 0.1); --main-bg:url(../img/pages/ocean-freight.jpg);"
+        class="container-fluid move">
+        <div class="row h-100">
+            <div
+                class="col-13 col-md-7 h-100 d-flex flex-column justify-content-center pb-5 pb-md-0 align-items-md-start align-items-center">
+                <h1 data-aos="fade-right" data-aos-delay="0"
+                    class="clr-secondary display-3 ms-0 ps-0 ms-md-5 ps-md-5 fw-bold">Ocean Freight</h1>
+                <ul class="clr-secondary ms-0 ps-0 ms-md-5 ps-md-5 d-flex gap-3 align-items-center">
+                    <li data-aos="fade-up" data-aos-delay="100"><a href="index.html">HOME</a></li>
+                    <li data-aos="fade-up" data-aos-delay="100"><svg xmlns="http://www.w3.org/2000/svg" width="32"
+                            height="32" viewBox="0 0 24 24">
+                            <path fill="currentColor" d="M16.01 11H4v2h12.01v3L20 12l-3.99-4z" />
+                        </svg></li>
+                    <li data-aos="fade-up" data-aos-delay="100">Ocean Freight</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <main class="w-100 position-relative overflow-hidden">
+
+        <!-- ======= Service Start ======= -->
+        <!-- ======= Strategic Advisory sec Start ======= -->
+        <section id="trategic-advisory" class="container-xxl mt-5">
+            <!-- ======= Strategic Advisory sec Title Start ======= -->
+            <div class="row p-3 p-md-5">
+                <div class="col-12 col-md-6 d-flex flex-column justify-content-center align-items-start">
+                    <p data-aos="fade-right" data-aos-delay="0" class="fs-4 clr-primary">Welcome To</p>
+                    <h2 data-aos="fade-right" data-aos-delay="100" style="border-left: 5px solid var(--clr-primary);"
+                        class="ps-3 fs-1">Ocean Freight Services</h2>
+                    <p data-aos="fade-right" data-aos-delay="200" class="fs-6">Get Started with Ocean Freight Services
+                    </p>
+                </div>
+                <div class="col-12 col-md-6 d-flex flex-column justify-content-center align-items-start">
+                    <p data-aos="fade-left" data-aos-delay="0" class="fs-6">We specialize in
+                        providing efficient and cost-effective ocean freight solutions tailored to meet
+                        your global shipping needs. Whether you're transporting goods across continents or managing
+                        complex supply chains, our
+                        comprehensive ocean freight services ensure reliable and timely deliveries.</p>
+                </div>
+            </div><!-- ======= Strategic Advisory sec Title End ======= -->
+            <!-- ======= Strategic Advisory sec Content Start ======= -->
+            <div class="container">
+                <div class="row">
+                    <!-- ======= Strategic Advisory sec Image Start ======= -->
+                    <div class="col-12 col-lg-6 mb-5 mb-md-0">
+                        <img src="img/services/ocean.jpg" alt="">
+                    </div><!-- ======= Strategic Advisory sec Image End ======= -->
+                    <div class="col-12 col-lg-6 p-3 p-lg-5 d-flex flex-column justify-content-center">
+                        <!-- ======= Strategic Advisory sec Content title  ======= -->
+                        <h3 data-aos="fade-up" data-aos-delay="0" style="border-left: 5px solid var(--clr-primary);"
+                            class="ps-3 fs-3">Our Ocean Freight Services Include:</h3>
+                        <!-- ======= Strategic Advisory sec Content Points Start ======= -->
+                        <ul class="mt-3">
+                            <li data-aos="fade-up" data-aos-delay="100"><svg class="clr-primary ms"
+                                    xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 15 15">
+                                    <path fill="none" stroke="currentColor" d="M4 7.5L7 10l4-5" />
+                                </svg> Full Container Load (FCL) Shipping</li>
+                            <li data-aos="fade-up" data-aos-delay="200"><svg class="clr-primary ms"
+                                    xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 15 15">
+                                    <path fill="none" stroke="currentColor" d="M4 7.5L7 10l4-5" />
+                                </svg> Less than Container Load (LCL) Consolidation</li>
+                            <li data-aos="fade-up" data-aos-delay="300"><svg class="clr-primary ms"
+                                    xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 15 15">
+                                    <path fill="none" stroke="currentColor" d="M4 7.5L7 10l4-5" />
+                                </svg> Temperature-Controlled Shipping (Reefers)</li>
+                            <li data-aos="fade-up" data-aos-delay="400"><svg class="clr-primary ms"
+                                    xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 15 15">
+                                    <path fill="none" stroke="currentColor" d="M4 7.5L7 10l4-5" />
+                                </svg> Oversized and Project Cargo Handling</li>
+                            <li data-aos="fade-up" data-aos-delay="500"><svg class="clr-primary ms"
+                                    xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 15 15">
+                                    <path fill="none" stroke="currentColor" d="M4 7.5L7 10l4-5" />
+                                </svg> Hazardous Materials Transportation</li>
+                            <li data-aos="fade-up" data-aos-delay="600"><svg class="clr-primary ms"
+                                    xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 15 15">
+                                    <path fill="none" stroke="currentColor" d="M4 7.5L7 10l4-5" />
+                                </svg> Customs Clearance and Documentation Support</li>
+                            <li data-aos="fade-up" data-aos-delay="600"><svg class="clr-primary ms"
+                                    xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 15 15">
+                                    <path fill="none" stroke="currentColor" d="M4 7.5L7 10l4-5" />
+                                </svg> Door-to-Door Delivery Services</li>
+                        </ul><!-- ======= Strategic Advisory sec Content Points End ======= -->
+                        <!-- ======= Strategic Advisory sec Content Para ======= -->
+                        <p data-aos="fade-up" data-aos-delay="700" class="fs-6">Ready to optimize your global logistics
+                            with reliable and affordable ocean freight solutions? Contact us today to
+                            discuss your shipping requirements and receive a customized quote. Our team of experts is
+                            committed to delivering
+                            seamless supply chain solutions that drive your business forward.</p>
+                    </div>
+                </div>
+            </div><!-- ======= Service sec Content End ======= -->
+        </section><!-- ======= Strategic Advisory sec End ======= -->
+
+        <!-- ======= Call To Action ======= -->
+        <section id="call-to-action" class="container-fluid my-5">
+
+            <div class="container rounded-3 shadow pb-5 pb-lg-auto py-auto py-lg-0 clr-secondary g-5">
+                <div class="row py-3 align-items-center">
+                    <div class="col-6 col-md-3 mt-3">
+                        <input type="text" pattern="[A-Za-z]+" required class="form-control" name="city-from"
+                            id="city-from" placeholder="Name">
+                    </div>
+                    <div class="col-6 col-md-3 mt-3">
+                        <input pattern="[A-Za-z]+" required type="text" class="form-control" name="city-to" id="city-to"
+                            placeholder="phone">
+                    </div>
+                    <div class="col-6 col-md-3 mt-3">
+                        <select class="form-control" name="services" id="select-service">
+                            <option value="">Select Your Service</option>
+                            <option value="Air Freight">Air Freight</option>
+                            <option value="Ocean Freight">Ocean Freight</option>
+                            <option value="Road Freight">Road Freight</option>
+                            <option value="Rail Freight">Rail Freight</option>
+                            <option value="Courier Services">Courier Services</option>
+                            <option value="Warehousing">Warehousing
+                            </option>
+                        </select>
+                    </div>
+                    <div class="col-6 col-md-3 mt-3">
+                        <button class="btn btn-custom py-2 w-100">Check out</button>
+                    </div>
+                    <div class="col-12 mt-3">
+                        <div class="form-group">
+                            <textarea name="message" class="form-control" id="message" cols="20" rows="4"
+                                placeholder="Message (Optional)"></textarea>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- ======= Call To Action End ======= -->
+    </main>
+
+    <!-- ======= Footer ======= -->
+    <footer class="container-fluid clr-secondary-bg p-0 overflow-hidden">
+        <div class="container pt-3 clr-secondary-bg">
+            <div class="row">
+                <div
+                    class="col-12 logo-img col-md-3 mb-3 mb-md-0 d-flex justify-content-center justify-content-md-start align-items-center">
+                    <img src="img/logo-light.png" width="100%" alt="">
+                    <img src="img/logo-dark.png" width="100%" alt="">
+                </div>
+                <div class="col-12 col-md-9 d-flex justify-content-center justify-content-md-end align-items-center">
+                    <div class="share-icon d-flex justify-content-center align-items-center gap-3 text-center">
+                        <a href="#" class="text-clr-dark"><svg xmlns="http://www.w3.org/2000/svg" width="28" height="28"
+                                viewBox="0 0 24 24">
+                                <path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
+                                    stroke-width="1"
+                                    d="M17 2h-3a5 5 0 0 0-5 5v3H6v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3V2Z" />
+                            </svg></a>
+                        <a href="#" class="text-clr-dark"><svg xmlns="http://www.w3.org/2000/svg" width="28" height="28"
+                                viewBox="0 0 256 256">
+                                <path fill="currentColor"
+                                    d="M128 82a46 46 0 1 0 46 46a46.06 46.06 0 0 0-46-46Zm0 80a34 34 0 1 1 34-34a34 34 0 0 1-34 34Zm48-136H80a54.06 54.06 0 0 0-54 54v96a54.06 54.06 0 0 0 54 54h96a54.06 54.06 0 0 0 54-54V80a54.06 54.06 0 0 0-54-54Zm42 150a42 42 0 0 1-42 42H80a42 42 0 0 1-42-42V80a42 42 0 0 1 42-42h96a42 42 0 0 1 42 42ZM190 76a10 10 0 1 1-10-10a10 10 0 0 1 10 10Z" />
+                            </svg></a>
+                        <a href="#" class="text-clr-dark"><svg xmlns="http://www.w3.org/2000/svg" width="28" height="28"
+                                viewBox="0 0 24 24">
+                                <path fill="currentColor" fill-rule="evenodd"
+                                    d="M15.021 3.343c.509-.087 1.078-.116 1.614-.025a4.85 4.85 0 0 1 2.54 1.273c.456.01.905-.08 1.302-.208a5.36 5.36 0 0 0 1.098-.501l.009-.006a.75.75 0 0 1 1.042 1.037c-.207.315-.496.877-.819 1.507l-.155.301c-.185.36-.375.724-.552 1.036c-.111.196-.23.395-.35.567v.274A12.34 12.34 0 0 1 8.287 21.03a12.32 12.32 0 0 1-6.694-1.97a.75.75 0 0 1 .5-1.374a7.471 7.471 0 0 0 4.033-.642a4.858 4.858 0 0 1-2.61-2.922a.75.75 0 0 1 .147-.722l.01-.01A4.848 4.848 0 0 1 2.05 9.793v-.052a.75.75 0 0 1 .553-.724A4.84 4.84 0 0 1 2.09 6.84a4.9 4.9 0 0 1 .65-2.442a.75.75 0 0 1 1.232-.1a10.89 10.89 0 0 0 7.006 3.93a4.85 4.85 0 0 1 2.562-4.406c.402-.214.934-.385 1.482-.479ZM3.743 10.891a3.35 3.35 0 0 0 2.503 2.164a.75.75 0 0 1 .072 1.453c-.272.083-.551.14-.834.173a3.358 3.358 0 0 0 2.59 1.3a.75.75 0 0 1 .45 1.339a8.97 8.97 0 0 1-3.548 1.695a10.82 10.82 0 0 0 3.313.515h.009A10.838 10.838 0 0 0 19.25 8.607v-.535a.75.75 0 0 1 .186-.495c.07-.079.19-.261.36-.56c.16-.282.338-.622.523-.981l.033-.066a4.992 4.992 0 0 1-1.593.097a.75.75 0 0 1-.47-.237a3.35 3.35 0 0 0-1.904-1.032a3.42 3.42 0 0 0-1.11.025a3.605 3.605 0 0 0-1.028.323a3.35 3.35 0 0 0-1.678 3.74a.75.75 0 0 1-.767.925a12.39 12.39 0 0 1-8.149-3.627a3.41 3.41 0 0 0-.063.657v.002a3.34 3.34 0 0 0 1.486 2.785A.75.75 0 0 1 4.64 11a4.798 4.798 0 0 1-.897-.11Z"
+                                    clip-rule="evenodd" />
+                            </svg></a>
+                        <a href="#" class="text-clr-dark"><svg xmlns="http://www.w3.org/2000/svg" width="28" height="28"
+                                viewBox="0 0 24 24">
+                                <g fill="none" stroke="currentColor" stroke-width="1.5">
+                                    <path fill="currentColor" stroke-linecap="round" stroke-linejoin="round"
+                                        d="m14 12l-3.5 2v-4l3.5 2Z" />
+                                    <path
+                                        d="M2 12.707v-1.415c0-2.895 0-4.343.905-5.274c.906-.932 2.332-.972 5.183-1.053C9.438 4.927 10.818 4.9 12 4.9c1.181 0 2.561.027 3.912.065c2.851.081 4.277.121 5.182 1.053c.906.931.906 2.38.906 5.274v1.415c0 2.896 0 4.343-.905 5.275c-.906.931-2.331.972-5.183 1.052c-1.35.039-2.73.066-3.912.066a141.1 141.1 0 0 1-3.912-.066c-2.851-.08-4.277-.12-5.183-1.052C2 17.05 2 15.602 2 12.708Z" />
+                                </g>
+                            </svg></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <hr class="mb-5">
+        <div class="container">
+            <div class="row d-flex justify-content-center align-items-start g-5">
+                <div class="col-12 col-lg-4 p-lg-0 p-auto">
+                    <address class="d-flex flex-column justify-content-center align-items-start gap-3">
+                        <h5 class="fw-bold mb-3">Contact Info :</h5>
+                        <div class="d-flex justify-content-center align-items-center gap-3">
+                            <svg class="clr-primary" xmlns="http://www.w3.org/2000/svg" width="32" height="32"
+                                viewBox="0 0 24 24">
+                                <path fill="currentColor"
+                                    d="M12 12q.825 0 1.413-.588T14 10q0-.825-.588-1.413T12 8q-.825 0-1.413.588T10 10q0 .825.588 1.413T12 12Zm0 7.35q3.05-2.8 4.525-5.088T18 10.2q0-2.725-1.738-4.462T12 4Q9.475 4 7.737 5.738T6 10.2q0 1.775 1.475 4.063T12 19.35ZM12 22q-4.025-3.425-6.012-6.362T4 10.2q0-3.75 2.413-5.975T12 2q3.175 0 5.588 2.225T20 10.2q0 2.5-1.988 5.438T12 22Zm0-12Z" />
+                            </svg>
+                            <a href="#">2nd Floor, Sample Building, (Sample)</a>
+                        </div>
+                        <div class="d-flex justify-content-center align-items-center gap-3">
+                            <svg class="clr-primary" xmlns="http://www.w3.org/2000/svg" width="32" height="32"
+                                viewBox="0 0 24 24">
+                                <path fill="currentColor"
+                                    d="M19.95 21q-3.225 0-6.287-1.438t-5.425-3.8q-2.363-2.362-3.8-5.425T3 4.05q0-.45.3-.75t.75-.3H8.1q.35 0 .625.225t.325.575l.65 3.5q.05.35-.013.638T9.4 8.45L6.975 10.9q1.05 1.8 2.638 3.375T13.1 17l2.35-2.35q.225-.225.588-.338t.712-.062l3.45.7q.35.075.575.338T21 15.9v4.05q0 .45-.3.75t-.75.3ZM6.025 9l1.65-1.65L7.25 5H5.025q.125 1.025.35 2.025T6.025 9Zm8.95 8.95q.975.425 1.988.675T19 18.95v-2.2l-2.35-.475l-1.675 1.675ZM6.025 9Zm8.95 8.95Z" />
+                            </svg>
+                            <a href="tel:+001234567890">+00 12345 67890</a>
+                        </div>
+                        <div class="d-flex justify-content-center align-items-center gap-3">
+                            <svg class="clr-primary" xmlns="http://www.w3.org/2000/svg" width="32" height="32"
+                                viewBox="0 0 256 256">
+                                <path fill="currentColor"
+                                    d="M224 48H32a8 8 0 0 0-8 8v136a16 16 0 0 0 16 16h176a16 16 0 0 0 16-16V56a8 8 0 0 0-8-8Zm-96 85.15L52.57 64h150.86ZM98.71 128L40 181.81V74.19Zm11.84 10.85l12 11.05a8 8 0 0 0 10.82 0l12-11.05l58 53.15H52.57ZM157.29 128L216 74.18v107.64Z" />
+                            </svg>
+                            <a href="mailto:info@sample.com">info@sample.com</a>
+                        </div>
+                        <a onclick='popup("#popupform")' href="#get-contacted"
+                            class="px-5 py-2 clr-primary custom-link-2  clr-primary-bg mt-3 position-relative overflow-hidden d-flex align-items-center justify-content-center rounded-5"
+                            href="#">
+                            <span class="clr-secondary fw-bold"></span>
+                        </a>
+                </div>
+                </address>
+                <div class="col-12 col-lg-2 flex-column d-flex gap-3">
+                    <h5 class="fw-bold mb-3">Explore</h5>
+                    <a href="index.html">HOME</a>
+
+                    <a href="about.html">ABOUT</a>
+                    <a href="services.html">SERVICES</a>
+                    <a href="contact.html">CONTACT</a>
+                </div>
+                <div class="col-12 col-lg-2 flex-column d-flex gap-3">
+                    <h5 class="fw-bold mb-3">Pages</h5>
+                    <a href="portfolio.html">PORTFOLIO</a>
+                    <a href="our-services.html">SERVICE DETAILS</a>
+                    <a href="team.html">TEAM</a>
+                    <a href="blog.html">BLOG</a>
+                    <a href="pricing.html">PRICING PAGE</a>
+                </div>
+                <div class="col-12 col-lg-4">
+                    <h5 class="fw-bold mb-3">Newsletter</h5>
+                    <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Veniam rerum deserunt modi.</p>
+                    <div class="input-group mb-3 shadow rounded-3 p-2 d-flex">
+                        <input type="text" class="border-0 w-75 ps-3" placeholder="Enter your mail"
+                            aria-label="Enter your mail" aria-describedby="basic-addon2">
+                        <div class="input-group-append w-25">
+                            <button class="btn clr-primary-btn px-0 py-2 w-100 btn-outline-light rounded-0"
+                                type="button">GO</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div style="clip-path: ellipse(100% 100% at 50% 100%);"
+            class="container-fluid text-black mt-5 fw-bold text-center bg-dark py-5">
+            <div class="row d-flex justify-content-center align-items-center">
+                <div class="col-12 col-lg-10">
+                    <div class="d-flex justify-content-between align-items-center flex-md-row flex-column">
+                        <div class="contact-info mb-4 mb-md-auto order-1 order-md-1">
+                            <h6 class="clr-primary mb-2">Have Any Question?</h6>
+                            <p class="m-0 fs-5 text-white">+12 345678900</p>
+                        </div>
+                        <div
+                            class="d-flex justify-content-center align-items-center order-3 order-md-2 mt-4 mt-md-auto">
+                            <p class="text-white">Copyright © 2024 <span class="clr-primary"> Cargo</span>. All rights
+                                reserved.
+                                Designed By : <a href="https://www.biz15.com/"><img
+                                        src="https://biz15.com/images/logo-white.png" width="80px" alt=""></a></p>
+                        </div>
+                        <div class="contact-info order-2 order-md-3 ">
+                            <h6 class="clr-primary mb-2">Send Email</h6>
+                            <p class="m-0 fs-5 text-white">Info@sample.com</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <!-- ======= Footer ======= -->
+    <!-- dark mode button -->
+    <div class="position-relative  w-100 h-100 justify-content-end align-items-center ">
+        <div class="checkbox-wrapper-54" style="right: 10px; bottom: 10px; position: fixed; z-index: 5;">
+            <label class="switch">
+                <input id="darkModeToggle" type="checkbox">
+                <span class="slider shadow"></span>
+            </label>
+        </div>
+    </div>
+
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/2.0.2/anime.min.js"></script>
+    <script>
+        // Wrap every letter in a span
+        var textWrapper = document.querySelector('.ml10 .letters');
+        textWrapper.innerHTML = textWrapper.textContent.replace(/\S/g, "<span class='letter'>$&</span>");
+
+        anime.timeline()
+            .add({
+                targets: '.ml10 .letter',
+                rotateY: [-90, 0],
+                duration: 5000,
+                delay: (el, i) => 45 * i
+            })
+    </script>
+    <!-- JS Files -->
+    <script src="assets/aos/aos.js"></script>
+    <script src="assets/purecounter/purecounter_vanilla.js"></script>
+    <script src="assets/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <script src="assets/isotope-layout/isotope.pkgd.min.js"></script>
+    <script src="assets/glightbox/js/glightbox.min.js"></script>
+    <script src="assets/swiper/swiper-bundle.min.js"></script>
+    <!-- Core -->
+    <script src="assets/jarallax-master/dist/jarallax.js"></script>
+    <!-- Video Support -->
+    <script src="assets/jarallax-master/dist/jarallax-video.js"></script>
+    <!-- Custom Element Support -->
+    <script src="assets/jarallax-master/dist/jarallax-element.js"></script>
+
+    <script src="js/script.js"></script>
+    <script src="https://cdn.plyr.io/3.7.8/plyr.js"></script>
+    <script>
+        const player = new Plyr('#player');
+    </script>
+</body>
+
+</html>

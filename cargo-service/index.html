@@ -1,0 +1,1362 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Cargo Service</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Alef:wght@400;700&family=Barlow+Condensed:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+    rel="stylesheet">
+  <!-- CSS Files  -->
+  <link href="assets/aos/aos.css" rel="stylesheet">
+  <link href="assets/fontawesome-free/css/all.min.css" rel="stylesheet">
+  <link href="assets/animate.css/animate.min.css" rel="stylesheet">
+  <link href="assets/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <link href="assets/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+  <link href="assets/glightbox/css/glightbox.min.css" rel="stylesheet">
+  <link href="assets/swiper/swiper-bundle.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="assets/plyr/plyr.css" />
+  <link rel="stylesheet" href="css/style.css">
+
+  <link rel="stylesheet" href="https://biz15.com/plugin/cw-desk-bottom-menu-v6/logostyle.css">
+  <link rel="stylesheet" href="biz-msg-box/style.css">
+</head>
+
+<body>
+  <!-- ======= Go To Top ======= -->
+  <i id="gotop" onclick="document.documentElement.scrollTop = 0" class="fa-solid fa-angles-up"></i>
+  <!-- ======= Popup Form Section ======= -->
+  <section id="popupform"
+    class=" popup-box animate__animated container-fluid d-flex justify-content-center align-items-center">
+    <span class="popup-close" onclick='popupclose("#popupform")'></span>
+    <form style="max-width: 450px;" action="#" name="contactForm" class="contactForm clr-secondary-bg p-4 form-box-pop">
+      <div class="row">
+        <div class="col-12 col-md-6 mt-3">
+          <div class="form-group">
+            <label class="label" for="name">Full Name</label>
+            <input type="text" pattern="[A-Za-z]+" required class="form-control" name="name" id="name"
+              placeholder="Name">
+          </div>
+        </div>
+        <div class="col-12 col-md-6 mt-3">
+          <div class="form-group">
+            <label class="label" for="subject">Phone</label>
+            <input pattern="\+?[0-9]{10,}" required type="text" class="form-control" name="phone" id="phone"
+              placeholder="phone">
+          </div>
+        </div>
+        <div class="col-12 mt-3">
+          <div class="form-group">
+            <label class="label" for="email">Email Address</label>
+            <input pattern="[a-z0-9]+@[a-z0-9]+\.[a-z]{2,4}" required type="email" class="form-control" name="email"
+              id="email" placeholder="Email">
+          </div>
+        </div>
+        <div class="col-12 mt-3">
+          <div class="form-group">
+            <label class="label" for="#">Message</label>
+            <textarea name="message" class="form-control" id="message" cols="30" rows="4"
+              placeholder="Message"></textarea>
+          </div>
+        </div>
+        <div class="col-12 mt-5">
+          <div class="form-group w-100">
+            <input type="submit" value="Send Message" class="btn btn-custom w-100">
+            <div class="submitting"></div>
+          </div>
+        </div>
+      </div>
+    </form>
+  </section>
+  <!-- ======= Header ANd Navbar Container ======= -->
+  <header id="header" class="scroll-header">
+    <div style="height: 30px;" class="container pt-2">
+      <div class="row">
+        <div class="col-2 d-none d-lg-flex gap-3">
+          <svg class="clr-primary" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24">
+            <path fill="currentColor"
+              d="M19.95 21q-3.225 0-6.287-1.438t-5.425-3.8q-2.363-2.362-3.8-5.425T3 4.05q0-.45.3-.75t.75-.3H8.1q.35 0 .625.225t.325.575l.65 3.5q.05.35-.013.638T9.4 8.45L6.975 10.9q1.05 1.8 2.638 3.375T13.1 17l2.35-2.35q.225-.225.588-.338t.712-.062l3.45.7q.35.075.575.338T21 15.9v4.05q0 .45-.3.75t-.75.3ZM6.025 9l1.65-1.65L7.25 5H5.025q.125 1.025.35 2.025T6.025 9Zm8.95 8.95q.975.425 1.988.675T19 18.95v-2.2l-2.35-.475l-1.675 1.675ZM6.025 9Zm8.95 8.95Z" />
+          </svg>
+          <a style="font-size: 12px;" class="text-clr-light" href="tel:+001234567890">+00 12345 67890</a>
+        </div>
+        <div class="col-2 d-none d-lg-flex gap-3">
+          <svg class="clr-primary" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 256 256">
+            <path fill="currentColor"
+              d="M224 48H32a8 8 0 0 0-8 8v136a16 16 0 0 0 16 16h176a16 16 0 0 0 16-16V56a8 8 0 0 0-8-8Zm-96 85.15L52.57 64h150.86ZM98.71 128L40 181.81V74.19Zm11.84 10.85l12 11.05a8 8 0 0 0 10.82 0l12-11.05l58 53.15H52.57ZM157.29 128L216 74.18v107.64Z" />
+          </svg>
+          <a style="font-size: 12px;" class="text-clr-light" href="mailto:sampleo@gamil.com">sampleo@gamil.com</a>
+        </div>
+        <div class="col-12 col-lg-2 offset-lg-6 d-flex justify-content-center gap-3">
+          <a style="font-size: 12px;" class="text-clr-light" href="#">Help</a>
+          <a style="font-size: 12px;" class="text-clr-light" href="#">Support</a>
+          <a style="font-size: 12px;" class="text-clr-light" href="#">Contact</a>
+        </div>
+      </div>
+    </div>
+    <nav class="navbar navbar-expand-lg p-0 m-0">
+      <div class="container d-flex justify-content-between p-0">
+        <a class="navbar-brand me-auto me-md-3 ms-2" href="index.html">
+          <img class="logo-top" src="img/logo-dark.png" alt="biz15">
+          <img class="logo-sticky" src="img/logo-light.png" alt="biz15">
+        </a>
+        <div class="d-md-none me-1 d-flex">
+          <button onclick='popup("#popupform")' class="btn ms-auto me-1 theme-btn rounded-5 px-4"><i
+              class="fa-regular fa-paper-plane"></i></button>
+        </div>
+        <button class="mx-2 navbar-toggler" type="button" data-bs-toggle="collapse"
+          data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+          aria-label="Toggle navigation">
+          <i class="open fa-solid fa-bars-staggered"></i>
+          <i class="close fa-solid fa-xmark"></i>
+        </button>
+        <div data-navbar-alignment="right"
+          class="collapse navbar-collapse mobile-navbar border-0 shadow-none p-5 p-md-0" id="navbarSupportedContent">
+          <ul class="navbar-nav gap-3 me-auto mb-2 mb-lg-0">
+            <div
+              class="clr-secondary d-block d-lg-none mb-3 mt-5 gap-2 d-flex justify-content-center align-items-center">
+              <label for="search-mob" class="text-black"><svg xmlns="http://www.w3.org/2000/svg" width="28" height="28"
+                  viewBox="0 0 24 24">
+                  <g fill="none" fill-rule="evenodd">
+                    <path
+                      d="M24 0v24H0V0h24ZM12.593 23.258l-.011.002l-.071.035l-.02.004l-.014-.004l-.071-.035c-.01-.004-.019-.001-.024.005l-.004.01l-.017.428l.005.02l.01.013l.104.074l.015.004l.012-.004l.104-.074l.012-.016l.004-.017l-.017-.427c-.002-.01-.009-.017-.017-.018Zm.265-.113l-.013.002l-.185.093l-.01.01l-.003.011l.018.43l.005.012l.008.007l.201.093c.012.004.023 0 .029-.008l.004-.014l-.034-.614c-.003-.012-.01-.02-.02-.022Zm-.715.002a.023.023 0 0 0-.027.006l-.006.014l-.034.614c0 .012.007.02.017.024l.015-.002l.201-.093l.01-.008l.004-.011l.017-.43l-.003-.012l-.01-.01l-.184-.092Z" />
+                    <path fill="currentColor"
+                      d="M10.5 4a6.5 6.5 0 1 0 0 13a6.5 6.5 0 0 0 0-13ZM2 10.5a8.5 8.5 0 1 1 15.176 5.262l3.652 3.652a1 1 0 0 1-1.414 1.414l-3.652-3.652A8.5 8.5 0 0 1 2 10.5ZM9.5 7a1 1 0 0 1 1-1a4.5 4.5 0 0 1 4.5 4.5a1 1 0 1 1-2 0A2.5 2.5 0 0 0 10.5 8a1 1 0 0 1-1-1Z" />
+                  </g>
+                </svg></label>
+              <input style="width: 90% !important;" list="pages" id="search-mob" class="search-input"
+                class="clr-secondary" type="text" name="name" id="name" placeholder="Search">
+              <datalist id="pages">
+                <option value="Air Freight">Air Freight</option>
+                <option value="Ocean Freight">Ocean Freight</option>
+                <option value="Road Freight">Road Freight</option>
+                <option value="Rail Freight">Rail Freight</option>
+                <option value="Courier Services">Courier Services</option>
+                <option value="Warehousing">Warehousing</option>
+              </datalist>
+            </div>
+            <li class="nav-item dropdown">
+              <a class="nav-link px-3" href="index.html">Home</a>
+            </li>
+            <li class="nav-item dropdown">
+              <a class="nav-link px-3" href="about.html">
+                About
+              </a>
+            </li>
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle-btns" href="#">
+                Pages
+              </a>
+              <ul class="dropdown-menu border-0 dropdown-shadow px-3 py-2" aria-labelledby="navbarDropdown">
+                <li><a class="dropdown-item px-3 py-2" href="air-freight.html">Air Freight</a></li>
+                <li><a class="dropdown-item px-3 py-2" href="ocean-freight.html">Ocean Freight</a></li>
+                <li><a class="dropdown-item px-3 py-2" href="road-freight.html">Road Freight</a></li>
+                <li><a class="dropdown-item px-3 py-2" href="rail-freight.html">Rail Freight</a></li>
+                <li><a class="dropdown-item px-3 py-2" href="courier-services.html">Courier Services</a></li>
+                <li><a class="dropdown-item px-3 py-2" href="warehousing.html">Warehousing</a></li>
+              </ul>
+            </li>
+            <li class="nav-item dropdown">
+              <a class="nav-link px-3" href="services.html">
+                Services
+              </a>
+            </li>
+            <li class="nav-item dropdown">
+              <a class="nav-link px-3" href="contact.html">
+                Contact
+              </a>
+            </li>
+            <div class="clr-secondary d-block d-lg-none mt-5 gap-3 d-flex justify-content-center align-items-center">
+              <a href="#" class="text-black"><svg xmlns="http://www.w3.org/2000/svg" width="28" height="28"
+                  viewBox="0 0 24 24">
+                  <path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
+                    stroke-width="1" d="M17 2h-3a5 5 0 0 0-5 5v3H6v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3V2Z" />
+                </svg></a>
+              <a href="#" class="text-black"><svg xmlns="http://www.w3.org/2000/svg" width="28" height="28"
+                  viewBox="0 0 256 256">
+                  <path fill="currentColor"
+                    d="M128 82a46 46 0 1 0 46 46a46.06 46.06 0 0 0-46-46Zm0 80a34 34 0 1 1 34-34a34 34 0 0 1-34 34Zm48-136H80a54.06 54.06 0 0 0-54 54v96a54.06 54.06 0 0 0 54 54h96a54.06 54.06 0 0 0 54-54V80a54.06 54.06 0 0 0-54-54Zm42 150a42 42 0 0 1-42 42H80a42 42 0 0 1-42-42V80a42 42 0 0 1 42-42h96a42 42 0 0 1 42 42ZM190 76a10 10 0 1 1-10-10a10 10 0 0 1 10 10Z" />
+                </svg></a>
+              <a href="#" class="text-black"><svg xmlns="http://www.w3.org/2000/svg" width="28" height="28"
+                  viewBox="0 0 24 24">
+                  <path fill="currentColor" fill-rule="evenodd"
+                    d="M15.021 3.343c.509-.087 1.078-.116 1.614-.025a4.85 4.85 0 0 1 2.54 1.273c.456.01.905-.08 1.302-.208a5.36 5.36 0 0 0 1.098-.501l.009-.006a.75.75 0 0 1 1.042 1.037c-.207.315-.496.877-.819 1.507l-.155.301c-.185.36-.375.724-.552 1.036c-.111.196-.23.395-.35.567v.274A12.34 12.34 0 0 1 8.287 21.03a12.32 12.32 0 0 1-6.694-1.97a.75.75 0 0 1 .5-1.374a7.471 7.471 0 0 0 4.033-.642a4.858 4.858 0 0 1-2.61-2.922a.75.75 0 0 1 .147-.722l.01-.01A4.848 4.848 0 0 1 2.05 9.793v-.052a.75.75 0 0 1 .553-.724A4.84 4.84 0 0 1 2.09 6.84a4.9 4.9 0 0 1 .65-2.442a.75.75 0 0 1 1.232-.1a10.89 10.89 0 0 0 7.006 3.93a4.85 4.85 0 0 1 2.562-4.406c.402-.214.934-.385 1.482-.479ZM3.743 10.891a3.35 3.35 0 0 0 2.503 2.164a.75.75 0 0 1 .072 1.453c-.272.083-.551.14-.834.173a3.358 3.358 0 0 0 2.59 1.3a.75.75 0 0 1 .45 1.339a8.97 8.97 0 0 1-3.548 1.695a10.82 10.82 0 0 0 3.313.515h.009A10.838 10.838 0 0 0 19.25 8.607v-.535a.75.75 0 0 1 .186-.495c.07-.079.19-.261.36-.56c.16-.282.338-.622.523-.981l.033-.066a4.992 4.992 0 0 1-1.593.097a.75.75 0 0 1-.47-.237a3.35 3.35 0 0 0-1.904-1.032a3.42 3.42 0 0 0-1.11.025a3.605 3.605 0 0 0-1.028.323a3.35 3.35 0 0 0-1.678 3.74a.75.75 0 0 1-.767.925a12.39 12.39 0 0 1-8.149-3.627a3.41 3.41 0 0 0-.063.657v.002a3.34 3.34 0 0 0 1.486 2.785A.75.75 0 0 1 4.64 11a4.798 4.798 0 0 1-.897-.11Z"
+                    clip-rule="evenodd" />
+                </svg></a>
+              <a href="#" class="text-black"><svg xmlns="http://www.w3.org/2000/svg" width="28" height="28"
+                  viewBox="0 0 24 24">
+                  <g fill="none" stroke="currentColor" stroke-width="1.5">
+                    <path fill="currentColor" stroke-linecap="round" stroke-linejoin="round"
+                      d="m14 12l-3.5 2v-4l3.5 2Z" />
+                    <path
+                      d="M2 12.707v-1.415c0-2.895 0-4.343.905-5.274c.906-.932 2.332-.972 5.183-1.053C9.438 4.927 10.818 4.9 12 4.9c1.181 0 2.561.027 3.912.065c2.851.081 4.277.121 5.182 1.053c.906.931.906 2.38.906 5.274v1.415c0 2.896 0 4.343-.905 5.275c-.906.931-2.331.972-5.183 1.052c-1.35.039-2.73.066-3.912.066a141.1 141.1 0 0 1-3.912-.066c-2.851-.08-4.277-.12-5.183-1.052C2 17.05 2 15.602 2 12.708Z" />
+                  </g>
+                </svg></a>
+            </div>
+          </ul>
+          <div class="d-lg-flex d-none ms-3 ">
+            <div class="clr-secondary d-xl-flex d-none me-5 gap-2 d-flex justify-content-center align-items-center">
+              <label for="search" class="text-clr-light"><svg xmlns="http://www.w3.org/2000/svg" width="28" height="28"
+                  viewBox="0 0 24 24">
+                  <g fill="none" fill-rule="evenodd">
+                    <path
+                      d="M24 0v24H0V0h24ZM12.593 23.258l-.011.002l-.071.035l-.02.004l-.014-.004l-.071-.035c-.01-.004-.019-.001-.024.005l-.004.01l-.017.428l.005.02l.01.013l.104.074l.015.004l.012-.004l.104-.074l.012-.016l.004-.017l-.017-.427c-.002-.01-.009-.017-.017-.018Zm.265-.113l-.013.002l-.185.093l-.01.01l-.003.011l.018.43l.005.012l.008.007l.201.093c.012.004.023 0 .029-.008l.004-.014l-.034-.614c-.003-.012-.01-.02-.02-.022Zm-.715.002a.023.023 0 0 0-.027.006l-.006.014l-.034.614c0 .012.007.02.017.024l.015-.002l.201-.093l.01-.008l.004-.011l.017-.43l-.003-.012l-.01-.01l-.184-.092Z" />
+                    <path fill="currentColor"
+                      d="M10.5 4a6.5 6.5 0 1 0 0 13a6.5 6.5 0 0 0 0-13ZM2 10.5a8.5 8.5 0 1 1 15.176 5.262l3.652 3.652a1 1 0 0 1-1.414 1.414l-3.652-3.652A8.5 8.5 0 0 1 2 10.5ZM9.5 7a1 1 0 0 1 1-1a4.5 4.5 0 0 1 4.5 4.5a1 1 0 1 1-2 0A2.5 2.5 0 0 0 10.5 8a1 1 0 0 1-1-1Z" />
+                  </g>
+                </svg></label>
+              <input list="pages" id="search" class="search-input" class="clr-secondary" type="text" name="name"
+                id="name" placeholder="Search">
+              <a href="#" class="text-clr-light"><svg xmlns="http://www.w3.org/2000/svg" width="28" height="28"
+                  viewBox="0 0 24 24">
+                  <path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
+                    stroke-width="1" d="M17 2h-3a5 5 0 0 0-5 5v3H6v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3V2Z" />
+                </svg></a>
+              <a href="#" class="text-clr-light"><svg xmlns="http://www.w3.org/2000/svg" width="28" height="28"
+                  viewBox="0 0 256 256">
+                  <path fill="currentColor"
+                    d="M128 82a46 46 0 1 0 46 46a46.06 46.06 0 0 0-46-46Zm0 80a34 34 0 1 1 34-34a34 34 0 0 1-34 34Zm48-136H80a54.06 54.06 0 0 0-54 54v96a54.06 54.06 0 0 0 54 54h96a54.06 54.06 0 0 0 54-54V80a54.06 54.06 0 0 0-54-54Zm42 150a42 42 0 0 1-42 42H80a42 42 0 0 1-42-42V80a42 42 0 0 1 42-42h96a42 42 0 0 1 42 42ZM190 76a10 10 0 1 1-10-10a10 10 0 0 1 10 10Z" />
+                </svg></a>
+              <a href="#" class="text-clr-light"><svg xmlns="http://www.w3.org/2000/svg" width="28" height="28"
+                  viewBox="0 0 24 24">
+                  <path fill="currentColor" fill-rule="evenodd"
+                    d="M15.021 3.343c.509-.087 1.078-.116 1.614-.025a4.85 4.85 0 0 1 2.54 1.273c.456.01.905-.08 1.302-.208a5.36 5.36 0 0 0 1.098-.501l.009-.006a.75.75 0 0 1 1.042 1.037c-.207.315-.496.877-.819 1.507l-.155.301c-.185.36-.375.724-.552 1.036c-.111.196-.23.395-.35.567v.274A12.34 12.34 0 0 1 8.287 21.03a12.32 12.32 0 0 1-6.694-1.97a.75.75 0 0 1 .5-1.374a7.471 7.471 0 0 0 4.033-.642a4.858 4.858 0 0 1-2.61-2.922a.75.75 0 0 1 .147-.722l.01-.01A4.848 4.848 0 0 1 2.05 9.793v-.052a.75.75 0 0 1 .553-.724A4.84 4.84 0 0 1 2.09 6.84a4.9 4.9 0 0 1 .65-2.442a.75.75 0 0 1 1.232-.1a10.89 10.89 0 0 0 7.006 3.93a4.85 4.85 0 0 1 2.562-4.406c.402-.214.934-.385 1.482-.479ZM3.743 10.891a3.35 3.35 0 0 0 2.503 2.164a.75.75 0 0 1 .072 1.453c-.272.083-.551.14-.834.173a3.358 3.358 0 0 0 2.59 1.3a.75.75 0 0 1 .45 1.339a8.97 8.97 0 0 1-3.548 1.695a10.82 10.82 0 0 0 3.313.515h.009A10.838 10.838 0 0 0 19.25 8.607v-.535a.75.75 0 0 1 .186-.495c.07-.079.19-.261.36-.56c.16-.282.338-.622.523-.981l.033-.066a4.992 4.992 0 0 1-1.593.097a.75.75 0 0 1-.47-.237a3.35 3.35 0 0 0-1.904-1.032a3.42 3.42 0 0 0-1.11.025a3.605 3.605 0 0 0-1.028.323a3.35 3.35 0 0 0-1.678 3.74a.75.75 0 0 1-.767.925a12.39 12.39 0 0 1-8.149-3.627a3.41 3.41 0 0 0-.063.657v.002a3.34 3.34 0 0 0 1.486 2.785A.75.75 0 0 1 4.64 11a4.798 4.798 0 0 1-.897-.11Z"
+                    clip-rule="evenodd" />
+                </svg></a>
+              <a href="#" class="text-clr-light"><svg xmlns="http://www.w3.org/2000/svg" width="28" height="28"
+                  viewBox="0 0 24 24">
+                  <g fill="none" stroke="currentColor" stroke-width="1.5">
+                    <path fill="currentColor" stroke-linecap="round" stroke-linejoin="round"
+                      d="m14 12l-3.5 2v-4l3.5 2Z" />
+                    <path
+                      d="M2 12.707v-1.415c0-2.895 0-4.343.905-5.274c.906-.932 2.332-.972 5.183-1.053C9.438 4.927 10.818 4.9 12 4.9c1.181 0 2.561.027 3.912.065c2.851.081 4.277.121 5.182 1.053c.906.931.906 2.38.906 5.274v1.415c0 2.896 0 4.343-.905 5.275c-.906.931-2.331.972-5.183 1.052c-1.35.039-2.73.066-3.912.066a141.1 141.1 0 0 1-3.912-.066c-2.851-.08-4.277-.12-5.183-1.052C2 17.05 2 15.602 2 12.708Z" />
+                  </g>
+                </svg></a>
+            </div>
+            <button onclick='popup("#popupform")' style="width: 50px; height: 50px;"
+              class="clr-accent-btn me-5 m-md-3 p-0 rounded-circle"><svg xmlns="http://www.w3.org/2000/svg" width="25"
+                height="25" viewBox="0 0 24 24">
+                <path fill="currentColor"
+                  d="m12.25 10.825l.925.925L18.6 6.325l-.925-.925l-5.425 5.425ZM5 19h.925l5.825-5.825l-.925-.925L5 18.075V19Zm8.875-5.125l-3.75-3.75L14.3 5.95l-.725-.725L8.1 10.7L6.7 9.3l6.875-6.875L15.7 4.55l1.975-1.975l3.75 3.75l-7.55 7.55ZM6.75 21H3v-3.75l7.125-7.125l3.75 3.75L6.75 21Z" />
+              </svg></button>
+          </div>
+        </div>
+      </div>
+    </nav>
+  </header>
+  <!-- ======= Swiper Slider ======= -->
+  <div id="slider2" class="swiper home-digital-agency move">
+    <div class="swiper-wrapper">
+      <div class="swiper-slide">
+        <figure class="slide-bgimg d-flex h-100 justify-content-center align-items-center"
+          style="background-image:url(img/slider/1.jpg)" data-swiper-parallax-x="50%">
+          <img data-slider-pos="1" style="width: 100%;height:100%; object-fit: cover; object-position: center;"
+            src="img/slider/1.jpg" class="entity-img" />
+        </figure>
+        <div class="z-index-1 row img-box m-0 d-flex justify-content-center align-items-lg-center ">
+          <div
+            class="col-12 col-lg-6 offset-lg-1 d-flex flex-column justify-content-center  align-items-center align-items-lg-start">
+            <span class="text-clr-light text-center text-md-start mb-3">Reach Your Destination with Ease</span>
+            <h1 class="text-clr-light display-4 fw-bold text-center text-md-start font-primary ">Fast and Reliable
+              <span class="clr-primary">Air
+                Freight</span>
+              Services
+            </h1>
+            <a href="#" class="clr-accent-btn rounded-5 mt-4">Know More</a>
+          </div>
+          <div class="col-12 col-lg-5">
+            <p style="font-size: 14px;" class="text-clr-light text-center text-lg-start">Our ocean freight services
+              offer
+              cost-effective and
+              reliable solutions for shipping your goods across the globe. Whether
+              it's full container loads or less-than-container loads, we've got you covered.</p>
+          </div>
+        </div>
+      </div>
+      <div class="swiper-slide">
+        <figure class="slide-bgimg d-flex h-100 justify-content-center align-items-center"
+          style="background-image:url(img/slider/2.jpg)" data-swiper-parallax-x="50%">
+          <img data-slider-pos="2" style="width: 100%;height:100%; object-fit: cover; object-position: center;"
+            src="img/slider/2.jpg" class="entity-img" />
+        </figure>
+        <div class="z-index-1 row img-box m-0 d-flex justify-content-center align-items-lg-center ">
+          <div
+            class="col-12 col-lg-6 offset-lg-1 d-flex flex-column justify-content-center  align-items-center align-items-lg-start">
+            <span class="text-clr-light text-center text-md-start mb-3">Navigate the Seas with Confidence</span>
+            <h1 class="text-clr-light display-4 fw-bold text-center text-md-start font-primary "><span
+                class="clr-primary">Ocean
+                Freight</span> Made Simple, Secure</h1>
+            <a href="#" class="clr-accent-btn rounded-5 mt-4">Know More</a>
+          </div>
+          <div class="col-12 col-lg-5">
+            <p style="font-size: 14px;" class="text-clr-light text-center text-lg-start">Our ocean freight services
+              offer
+              cost-effective and
+              reliable solutions for shipping your goods across the globe. Whether
+              it's full container loads or less-than-container loads, we've got you covered.</p>
+          </div>
+        </div>
+      </div>
+      <div class="swiper-slide">
+        <figure class="slide-bgimg d-flex h-100 justify-content-center align-items-center"
+          style="background-image:url(img/slider/3.jpg)" data-swiper-parallax-x="50%">
+          <img data-slider-pos="3" style="width: 100%;height:100%; object-fit: cover; object-position: center;"
+            src="img/slider/3.jpg" class="entity-img" />
+        </figure>
+        <div class="z-index-1 row img-box m-0 d-flex justify-content-center align-items-lg-center ">
+          <div
+            class="col-12 col-lg-6 offset-lg-1 d-flex flex-column justify-content-center  align-items-center align-items-lg-start">
+            <span class="text-clr-light text-center text-md-start mb-3">Streamline Your Supply Chain</span>
+            <h1 class="text-clr-light display-4 fw-bold text-center text-md-start font-primary ">Comprehensive Contract
+              <span class="clr-primary">Logistics Services</span>
+            </h1>
+            <a href="#" class="clr-accent-btn rounded-5 mt-4">Know More</a>
+          </div>
+          <div class="col-12 col-lg-5">
+            <p style="font-size: 14px;" class="text-clr-light text-center text-lg-start">Our contract logistics services
+              are designed to optimize your supply chain, from warehousing and inventory management to distribution and
+              fulfillment. Partner with us for efficient and reliable logistics solutions.</p>
+          </div>
+        </div>
+
+      </div>
+    </div>
+    <div class="swiper-pagination"></div>
+    <div class="swiper-button-next">
+      <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24">
+        <path fill="currentColor" d="M8.59 16.59L13.17 12L8.59 7.41L10 6l6 6l-6 6l-1.41-1.41z" />
+      </svg>
+    </div>
+    <div class="swiper-button-prev">
+      <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24">
+        <path fill="currentColor" d="M15.41 16.59L10.83 12l4.58-4.59L14 6l-6 6l6 6l1.41-1.41z" />
+      </svg>
+    </div>
+  </div>
+
+  <main class="w-100 position-relative overflow-hidden">
+    <!-- ======= Track It sec ======= -->
+    <section class="container my-5">
+      <div class="row">
+        <div class="col-12 col-md-8 mx-auto my-5">
+          <p data-aos="fade-up" data-aos-delay="0" class="clr-primary text-center fs-6">Secure and Transparent Cargo
+            Tracking</p>
+          <h1 data-aos="fade-up" data-aos-delay="100" class="display-4 lh-1 text-center font-primary fw-bold">Track and
+            Trace
+            Your Cargo
+            with Ease</h1>
+        </div>
+        <div class="col-10 col-md-6 mx-auto">
+          <div class="input-group mb-3 align-items-center">
+            <input style="border: 1px solid var(--clr-primary);" type="text" class="form-control"
+              placeholder="Product ID" aria-label="Product ID" aria-describedby="product-id">
+            <button class="input-group-text clr-primary-bg border-0 fw-bold" id="product-id">Track It</button>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- ======= Service sec ======= -->
+    <section id="services" class="container-xxl my-5 p-3 p-md-5 overflow-hidden position-relative">
+      <div class="row">
+        <!-- ======= Service list start======= -->
+        <div data-aos="flip-left" data-aos-delay="0" class="col-12 mb-3 col-md-6 col-xl-4">
+          <div
+            class="banner-content position-relative overflow-hidden d-flex flex-column justify-content-start p-5 p-sm-4 p-md-3 p-xl-5 clr-secondary"
+            style="--bg:url(../img/services/air.jpg)">
+            <p class="text-white opacity-50">001</p>
+            <h2 class="text-white fs-3 fw-bold">Air Freight</h2>
+            <span class="display-5 ms-5 mb-5 position-absolute bottom-0 start-0"><svg xmlns="http://www.w3.org/2000/svg"
+                width="1.5em" height="1.5em" viewBox="0 0 36 36">
+                <path fill="white"
+                  d="M35.77 8.16a2.43 2.43 0 0 0-1.9-2L28 4.87a4.5 4.5 0 0 0-3.65.79L7 18.3l-4.86-.2a1.86 1.86 0 0 0-1.23 3.31l5 3.93c.6.73 1 .59 10.93-4.82l.93 9.42a1.36 1.36 0 0 0 .85 1.18a1.43 1.43 0 0 0 .54.1a1.54 1.54 0 0 0 1-.41l2.39-2.18a1.52 1.52 0 0 0 .46-.83l2.19-11.9c3.57-2 6.95-3.88 9.36-5.25a2.43 2.43 0 0 0 1.21-2.49m-2.2.75c-2.5 1.42-6 3.41-9.76 5.47l-.41.23l-2.33 12.67l-1.47 1.34l-1.1-11.3l-1.33.68C10 22 7.61 23.16 6.79 23.52l-4.3-3.41l5.08.22l18-13.06a2.51 2.51 0 0 1 2-.45l5.85 1.26a.43.43 0 0 1 .35.37a.42.42 0 0 1-.2.46"
+                  class="clr-i-outline clr-i-outline-path-1" />
+                <path fill="white"
+                  d="m7 12.54l3.56 1l1.64-1.19l-4-1.16l1.8-1.1l5.47-.16l2.3-1.67L10 8.5a1.25 1.25 0 0 0-.7.17L6.67 10.2A1.28 1.28 0 0 0 7 12.54"
+                  class="clr-i-outline clr-i-outline-path-2" />
+                <path fill="none" d="M0 0h36v36H0z" />
+              </svg></span>
+            <p style="font-size: 14px;" class="text-white mt-auto hover">Our air freight services guarantee safe,
+              timely deliveries worldwide, leveraging our global network and experienced
+              team.</p>
+            <a href="air-freight.html" class="btn-link fs-6 hover text-clr-light">KNOW MORE</a>
+          </div>
+        </div><!-- ======= Service list end======= -->
+        <!-- ======= Service list start======= -->
+        <div data-aos="flip-left" data-aos-delay="100" class="col-12 mb-3 col-md-6 col-xl-4">
+          <div
+            class="banner-content position-relative overflow-hidden d-flex flex-column justify-content-start p-5 p-sm-4 p-md-3 p-xl-5 text-white"
+            style="--bg:url(../img/services/ocean.jpg)">
+            <p class="text-white opacity-50">002</p>
+            <h2 class="text-white fs-4 fw-bold">Ocean Freight</h2>
+            <span class="display-5 ms-5 mb-5 position-absolute bottom-0 start-0"><svg xmlns="http://www.w3.org/2000/svg"
+                width="1.5em" height="1.5em" viewBox="0 0 24 24">
+                <path fill="currentColor"
+                  d="M4 10.4V4a1 1 0 0 1 1-1h5V1h4v2h5a1 1 0 0 1 1 1v6.4l1.086.326a1 1 0 0 1 .683 1.2l-1.517 6.068a4.99 4.99 0 0 1-1.902-.273l1.25-5.351L12 10l-7.6 2.37l1.25 5.351a4.99 4.99 0 0 1-1.902.273l-1.516-6.068a1 1 0 0 1 .682-1.2zm2-.6L12 8l6 1.8V5H6zM4 20a5.978 5.978 0 0 0 4-1.528A5.978 5.978 0 0 0 12 20a5.978 5.978 0 0 0 4-1.528A5.978 5.978 0 0 0 20 20h2v2h-2a7.963 7.963 0 0 1-4-1.07A7.963 7.963 0 0 1 12 22a7.963 7.963 0 0 1-4-1.07A7.963 7.963 0 0 1 4 22H2v-2z" />
+              </svg></span>
+            <p style="font-size: 14px;" class="text-white mt-auto hover">Our ocean freight services offer
+              cost-effective and reliable solutions for global shipping needs.</p>
+            <a href="ocean-freight.html" class="btn-link fs-6 hover">KNOW MORE</a>
+          </div>
+        </div><!-- ======= Service list end ======= -->
+        <!-- ======= Service list start======= -->
+        <div data-aos="flip-left" data-aos-delay="100" class="col-12 mb-3 col-md-6 col-xl-4">
+          <div
+            class="banner-content position-relative overflow-hidden d-flex flex-column justify-content-start p-5 p-sm-4 p-md-3 p-xl-5 text-white"
+            style="--bg:url(../img/services/road.jpg)">
+            <p class="text-white opacity-50">003</p>
+            <h2 class="text-white fs-4 fw-bold">Road Freight</h2>
+            <span class="display-5 ms-5 mb-5 position-absolute bottom-0 start-0">
+              <svg width="100" height="70" viewBox="0 0 70 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path
+                  d="M14 35.9297C12.067 35.9297 10.5 37.4967 10.5 39.4297C10.5 41.3627 12.067 42.9297 14 42.9297C15.933 42.9297 17.5 41.3627 17.5 39.4297C17.5 37.4967 15.933 35.9297 14 35.9297ZM14 40.5964C13.3557 40.5964 12.8333 40.074 12.8333 39.4297C12.8333 38.7854 13.3557 38.263 14 38.263C14.6443 38.263 15.1667 38.7854 15.1667 39.4297C15.1667 40.074 14.6443 40.5964 14 40.5964Z"
+                  fill="white" />
+                <path
+                  d="M32.668 35.9297C30.735 35.9297 29.168 37.4967 29.168 39.4297C29.168 41.3627 30.735 42.9297 32.668 42.9297C34.601 42.9297 36.168 41.3627 36.168 39.4297C36.168 37.4967 34.601 35.9297 32.668 35.9297ZM32.668 40.5964C32.0236 40.5964 31.5013 40.074 31.5013 39.4297C31.5013 38.7854 32.0236 38.263 32.668 38.263C33.3123 38.263 33.8346 38.7854 33.8346 39.4297C33.8346 40.074 33.3123 40.5964 32.668 40.5964Z"
+                  fill="white" />
+                <path
+                  d="M57.1641 35.9297C55.2311 35.9297 53.6641 37.4967 53.6641 39.4297C53.6641 41.3627 55.2311 42.9297 57.1641 42.9297C59.0971 42.9297 60.6641 41.3627 60.6641 39.4297C60.6641 37.4967 59.0971 35.9297 57.1641 35.9297ZM57.1641 40.5964C56.5197 40.5964 55.9974 40.074 55.9974 39.4297C55.9974 38.7854 56.5197 38.263 57.1641 38.263C57.8084 38.263 58.3307 38.7854 58.3307 39.4297C58.3307 40.074 57.8084 40.5964 57.1641 40.5964Z"
+                  fill="white" />
+                <path
+                  d="M67.6667 34.763V15.5247C67.6424 14.9426 67.4969 14.372 67.2397 13.8494L61.187 2.75319C60.5735 1.62886 59.3948 0.92945 58.114 0.929688H46.6667C44.7337 0.929688 43.1667 2.49669 43.1667 4.42969V18.4297H38.5V13.763C38.5 12.4744 37.4553 11.4297 36.1667 11.4297H31.5V6.76302C31.5 5.47436 30.4553 4.42969 29.1667 4.42969H17.5C16.2113 4.42969 15.1667 5.47436 15.1667 6.76302V11.4297H10.5C9.21134 11.4297 8.16667 12.4744 8.16667 13.763V18.4297H3.5C2.21134 18.4297 1.16667 19.4744 1.16667 20.763V25.4297C1.16867 26.0008 1.38185 26.551 1.76517 26.9744C1.3743 27.5515 1.16579 28.2327 1.16667 28.9297V35.0874C0.447124 35.5008 0.0025025 36.2665 0 37.0964V39.4297C0 40.7184 1.04467 41.763 2.33333 41.763H6.18333C7.22575 45.2081 10.4007 47.5645 14 47.5645C17.5993 47.5645 20.7742 45.2081 21.8167 41.763H24.85C25.886 45.2178 29.0657 47.5839 32.6725 47.5839C36.2793 47.5839 39.459 45.2178 40.495 41.763H49.35C50.386 45.2178 53.5657 47.5839 57.1725 47.5839C60.7793 47.5839 63.959 45.2178 64.995 41.763H67.6667C68.9553 41.763 70 40.7184 70 39.4297V37.0964C70 35.8077 68.9553 34.763 67.6667 34.763ZM61.3527 7.92969L64.5342 13.763H52.5V7.92969H61.3527ZM43.1667 20.763V25.4297H31.5V20.763H43.1667ZM36.1667 13.763V18.4297H24.5V13.763H36.1667ZM29.1667 20.763V25.4297H17.5V20.763H29.1667ZM17.5 6.76302H29.1667V11.4297H17.5V6.76302ZM10.5 13.763H22.1667V18.4297H10.5V13.763ZM3.5 20.763H15.1667V25.4297H3.5V20.763ZM5.83333 39.4297H2.33333V37.0964H6.18333C5.95362 37.8529 5.83571 38.639 5.83333 39.4297ZM14 45.263C10.7783 45.263 8.16667 42.6514 8.16667 39.4297C8.16667 36.208 10.7783 33.5964 14 33.5964C17.2217 33.5964 19.8333 36.208 19.8333 39.4297C19.8295 42.6498 17.2201 45.2592 14 45.263ZM24.5 39.4297H22.1667C22.1643 38.639 22.0464 37.8529 21.8167 37.0964H24.85C24.6203 37.8529 24.5024 38.639 24.5 39.4297ZM32.6667 45.263C29.445 45.263 26.8333 42.6514 26.8333 39.4297C26.8333 36.208 29.445 33.5964 32.6667 33.5964C35.8883 33.5964 38.5 36.208 38.5 39.4297C38.4961 42.6498 35.8867 45.2592 32.6667 45.263ZM39.3587 34.763C37.8359 32.5708 35.3359 31.2634 32.6667 31.2634C29.9974 31.2634 27.4974 32.5708 25.9747 34.763H20.692C19.1692 32.5708 16.6692 31.2634 14 31.2634C11.3308 31.2634 8.83077 32.5708 7.308 34.763H3.5V32.4297H5.83333C6.47767 32.4297 7 31.9074 7 31.263C7 30.6187 6.47767 30.0964 5.83333 30.0964H3.5V28.9297C3.5 28.2854 4.02233 27.763 4.66667 27.763H43.1667V34.763H39.3587ZM49 39.4297H40.8333C40.831 38.639 40.713 37.8529 40.4833 37.0964H49.35C49.1203 37.8529 49.0024 38.639 49 39.4297ZM57.1667 45.263C53.945 45.263 51.3333 42.6514 51.3333 39.4297C51.3333 36.208 53.945 33.5964 57.1667 33.5964C60.3883 33.5964 63 36.208 63 39.4297C62.9961 42.6498 60.3867 45.2592 57.1667 45.263ZM63.8587 34.763C62.3359 32.5708 59.8359 31.2634 57.1667 31.2634C54.4974 31.2634 51.9974 32.5708 50.4747 34.763H45.5V4.42969C45.5 3.78536 46.0223 3.26302 46.6667 3.26302H58.114C58.5409 3.26294 58.9338 3.49608 59.1383 3.87085L60.0833 5.59635H52.5C51.2113 5.59635 50.1667 6.64102 50.1667 7.92969V13.763C50.1667 15.0517 51.2113 16.0964 52.5 16.0964H65.3333V19.5964H60.6667C59.378 19.5964 58.3333 20.641 58.3333 21.9297V24.263C58.3333 25.5517 59.378 26.5964 60.6667 26.5964H65.3333V28.9297H63C62.3557 28.9297 61.8333 29.452 61.8333 30.0964C61.8333 30.7407 62.3557 31.263 63 31.263H65.3333V34.763H63.8587ZM65.3333 21.9297V24.263H60.6667V21.9297H65.3333ZM67.6667 39.4297H65.3333C65.331 38.639 65.213 37.8529 64.9833 37.0964H67.6667V39.4297Z"
+                  fill="white" />
+                <path fill-rule="evenodd" clip-rule="evenodd"
+                  d="M53.6641 19.5938H51.3307C50.6864 19.5938 50.1641 20.1161 50.1641 20.7604C50.1641 21.4047 50.6864 21.9271 51.3307 21.9271H53.6641C54.3084 21.9271 54.8307 21.4047 54.8307 20.7604C54.8307 20.1161 54.3084 19.5938 53.6641 19.5938Z"
+                  fill="white" />
+              </svg>
+            </span>
+            <p style="font-size: 14px;" class="text-white mt-auto hover">This involves transporting goods overland
+              via trucks or other road vehicles. It's commonly used for domestic or regional
+              transport and offers flexibility in terms of pickup and delivery locations.</p>
+            <a href="road-freight.html" class="btn-link fs-6 hover">KNOW MORE</a>
+          </div>
+        </div><!-- ======= Service list end ======= -->
+        <!-- ======= Service list start======= -->
+        <div data-aos="flip-left" data-aos-delay="300" class="col-12 mb-3 col-md-6 col-xl-4">
+          <div
+            class="banner-content position-relative overflow-hidden d-flex flex-column justify-content-start p-5 p-sm-4 p-md-3 p-xl-5 text-white"
+            style="--bg:url(../img/services/rail.jpg)">
+            <p class="text-white opacity-50">004</p>
+            <h2 class="text-white fs-4 fw-bold">Rail Freight</h2>
+            <span class="display-5 ms-5 mb-5 position-absolute bottom-0 start-0">
+              <svg width="70" height="70" viewBox="0 0 70 70" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <g clip-path="url(#clip0_283_21)">
+                  <path
+                    d="M69.8456 68.0021L58.4098 45.9888L60.4862 44.2515C60.797 43.9914 60.9765 43.6074 60.9765 43.2026V10.1855C60.9765 4.5694 56.4071 0 50.7909 0H19.2089C13.5928 0 9.02337 4.5694 9.02337 10.1855V14.9023C9.02337 15.657 9.63594 16.2695 10.3906 16.2695C11.1457 16.2695 11.7577 15.657 11.7577 14.9023V10.1855C11.7577 6.07704 15.1004 2.73437 19.2089 2.73437H50.7909C54.8994 2.73437 58.2421 6.07704 58.2421 10.1855V42.5638L47.5118 51.5424H43.6132V49.56C43.6132 48.8054 43.0012 48.1928 42.246 48.1928C41.4909 48.1928 40.8788 48.8054 40.8788 49.56V51.5424H36.726V49.56C36.726 48.8054 36.114 48.1928 35.3594 48.1928C34.6042 48.1928 33.9922 48.8054 33.9922 49.56V51.5424H29.8393V49.56C29.8393 48.8054 29.2273 48.1928 28.4721 48.1928C27.7175 48.1928 27.105 48.8054 27.105 49.56V51.5424H22.488L11.7577 42.5638V27.7539C11.7577 26.9987 11.1457 26.3867 10.3906 26.3867C9.63594 26.3867 9.02337 26.9987 9.02337 27.7539V43.2031C9.02337 43.6079 9.20282 43.9919 9.51364 44.2515L11.5901 45.9888L0.15428 68.0021C-0.193925 68.6718 0.0672289 69.4974 0.736937 69.8456C0.938811 69.9503 1.15404 69.9995 1.36606 69.9995C1.86006 69.9995 2.33751 69.7314 2.5805 69.2625L13.7375 47.7859L15.627 49.3667L8.43057 68.1431C8.16034 68.848 8.51281 69.6384 9.21777 69.9092C9.37906 69.9706 9.54408 70 9.70697 70C10.2565 70 10.7751 69.6657 10.9839 69.1215L12.4291 65.351H47.1679C47.9225 65.351 48.5351 64.739 48.5351 63.9838C48.5351 63.2287 47.9225 62.6166 47.1679 62.6166H13.4769L14.53 59.8694C14.5883 59.8769 14.6465 59.8823 14.7068 59.8823H55.2455C55.3214 59.8823 55.3951 59.8748 55.4671 59.863L59.016 69.1215C59.2248 69.6657 59.7428 70 60.2929 70C60.4558 70 60.6208 69.9706 60.7821 69.9092C61.487 69.6384 61.8395 68.848 61.5693 68.1431L54.3729 49.3667L56.2624 47.7859L67.4194 69.2625C67.6629 69.7314 68.1398 69.9995 68.6338 69.9995C68.8458 69.9995 69.0616 69.9503 69.2629 69.8456C69.9326 69.4974 70.1938 68.6723 69.8456 68.0021ZM54.4268 57.1479H15.5731L17.8444 51.222L21.1144 53.9585C21.3601 54.1641 21.6709 54.2768 21.9919 54.2768H48.0085C48.3295 54.2768 48.6398 54.1641 48.8854 53.9585L52.1555 51.222L54.4268 57.1479Z"
+                    fill="white" />
+                  <path
+                    d="M52.7734 62.6172C52.4135 62.6172 52.061 62.7635 51.8068 63.0177C51.5526 63.2725 51.4062 63.625 51.4062 63.9844C51.4062 64.3443 51.552 64.6968 51.8068 64.951C52.061 65.2052 52.4135 65.3516 52.7734 65.3516C53.1329 65.3516 53.4853 65.2052 53.7395 64.951C53.9943 64.6968 54.1406 64.3443 54.1406 63.9844C54.1406 63.625 53.9943 63.2725 53.7395 63.0177C53.4853 62.7635 53.1329 62.6172 52.7734 62.6172Z"
+                    fill="white" />
+                  <path
+                    d="M54.4141 13.9453C54.4141 11.6836 52.5742 9.84375 50.3125 9.84375H19.6875C17.4263 9.84375 15.5859 11.6836 15.5859 13.9453V25.9766C15.5859 28.2383 17.4263 30.0781 19.6875 30.0781H50.3125C52.5742 30.0781 54.4141 28.2383 54.4141 25.9766V13.9453ZM18.3203 25.9766V13.9453C18.3203 13.1912 18.9339 12.5781 19.6875 12.5781H33.6328V27.3437H19.6875C18.9339 27.3437 18.3203 26.7301 18.3203 25.9766ZM51.6797 25.9766C51.6797 26.7301 51.066 27.3437 50.3125 27.3437H36.3672V12.5781H50.3125C51.066 12.5781 51.6797 13.1912 51.6797 13.9453V25.9766Z"
+                    fill="white" />
+                  <path
+                    d="M20.1875 42.9297C22.7504 42.9297 24.8359 40.8442 24.8359 38.2812C24.8359 35.7178 22.7504 33.6328 20.1875 33.6328C17.6246 33.6328 15.5391 35.7178 15.5391 38.2812C15.5391 40.8442 17.6246 42.9297 20.1875 42.9297ZM20.1875 36.3672C21.2428 36.3672 22.1016 37.2254 22.1016 38.2812C22.1016 39.3365 21.2428 40.1953 20.1875 40.1953C19.1322 40.1953 18.2734 39.3365 18.2734 38.2812C18.2734 37.2254 19.1322 36.3672 20.1875 36.3672Z"
+                    fill="white" />
+                  <path
+                    d="M49.7656 33.6328C47.2021 33.6328 45.1172 35.7178 45.1172 38.2812C45.1172 40.8442 47.2021 42.9297 49.7656 42.9297C52.3286 42.9297 54.4141 40.8442 54.4141 38.2812C54.4141 35.7178 52.3286 33.6328 49.7656 33.6328ZM49.7656 40.1953C48.7098 40.1953 47.8516 39.3365 47.8516 38.2812C47.8516 37.2254 48.7098 36.3672 49.7656 36.3672C50.8209 36.3672 51.6797 37.2254 51.6797 38.2812C51.6797 39.3365 50.8209 40.1953 49.7656 40.1953Z"
+                    fill="white" />
+                  <path
+                    d="M42.2465 33.6484H28.4727C27.718 33.6484 27.1055 34.2605 27.1055 35.0156C27.1055 35.7708 27.718 36.3828 28.4727 36.3828H42.2465C43.0017 36.3828 43.6137 35.7708 43.6137 35.0156C43.6137 34.2605 43.0017 33.6484 42.2465 33.6484Z"
+                    fill="white" />
+                  <path
+                    d="M42.2465 40.1953H28.4727C27.718 40.1953 27.1055 40.8073 27.1055 41.5625C27.1055 42.3171 27.718 42.9297 28.4727 42.9297H42.2465C43.0017 42.9297 43.6137 42.3171 43.6137 41.5625C43.6137 40.8073 43.0017 40.1953 42.2465 40.1953Z"
+                    fill="white" />
+                  <path
+                    d="M10.3906 22.4687C10.7506 22.4687 11.1031 22.324 11.3573 22.0682C11.6115 21.814 11.7578 21.4626 11.7578 21.1016C11.7578 20.7421 11.6115 20.3897 11.3573 20.1355C11.1031 19.8807 10.7506 19.7344 10.3906 19.7344C10.0312 19.7344 9.67873 19.8807 9.42398 20.1355C9.16977 20.3897 9.02344 20.7421 9.02344 21.1016C9.02344 21.4626 9.16977 21.814 9.42398 22.0682C9.67873 22.324 10.0312 22.4687 10.3906 22.4687Z"
+                    fill="white" />
+                </g>
+                <defs>
+                  <clipPath id="clip0_283_21">
+                    <rect width="70" height="70" fill="white" />
+                  </clipPath>
+                </defs>
+              </svg>
+
+            </span>
+            <p style="font-size: 14px;" class="text-white mt-auto hover">This is the transportation of goods by
+              train. Rail freight is often used for long-distance haulage, especially for heavy
+              or bulky items.</p>
+            <a href="rail-freight.html" class="btn-link fs-6 hover">KNOW MORE</a>
+          </div>
+        </div><!-- ======= Service list end ======= -->
+        <!-- ======= Service list start======= -->
+        <div data-aos="flip-left" data-aos-delay="400" class="col-12 mb-3 col-md-6 col-xl-4">
+          <div
+            class="banner-content position-relative overflow-hidden d-flex flex-column justify-content-start p-5 p-sm-4 p-md-3 p-xl-5 text-white"
+            style="--bg:url(../img/services/courier.jpg)">
+            <p class="text-white opacity-50">005</p>
+            <h2 class="text-white fs-4 fw-bold">Courier Services</h2>
+            <span class="display-5 ms-5 mb-5 position-absolute bottom-0 start-0">
+              <svg width="70" height="70" viewBox="0 0 480 480" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path
+                  d="M310 200C361.576 200 402.159 151.987 399.907 95.542C399.405 82.971 396.856 71.15 392.612 60.261C392.612 60.26 392.611 60.259 392.611 60.257C378.341 23.652 345.914 0 310 0C259.242 0 220 45.905 220 100C220 155.14 260.374 200 310 200ZM310 20C332.976 20 354.223 32.917 367.192 53.889H252.808C265.777 32.917 287.024 20 310 20ZM376.167 73.889C377.795 79.264 378.899 84.813 379.486 90.483C334.077 116.288 286.53 114.911 240.605 89.594C241.214 84.234 242.287 78.983 243.83 73.888L376.167 73.889ZM379.028 113.332C373.457 151.119 344.624 180 310 180C275.034 180 245.975 150.549 240.814 112.213C285.516 133.739 333.139 135.61 379.028 113.332Z"
+                  fill="white" />
+                <path
+                  d="M330 219.997C297.306 220.087 284.007 219.756 278.843 220.424C256.411 222.091 234.647 228.771 215.174 239.997H10C4.477 239.997 0 244.475 0 249.997V469.997C0 475.519 4.477 479.997 10 479.997H230H470C475.522 479.997 480 475.519 480 469.997V369.997C480 286.987 412.394 219.997 330 219.997ZM326.127 239.997L310 288.375L293.873 239.997H326.127ZM90 259.997H150V321.489L127.809 293.75C123.81 288.751 116.193 288.748 112.192 293.75L90 321.489V259.997ZM20 439.997H120C125.523 439.997 130 435.519 130 429.997C130 424.475 125.523 419.997 120 419.997H20V399.997H170C175.523 399.997 180 395.519 180 389.997C180 384.475 175.523 379.997 170 379.997H20V259.997H70V349.997C70 354.244 72.683 358.027 76.69 359.434C80.698 360.837 85.156 359.56 87.809 356.245L120 316.005L152.191 356.244C154.126 358.663 157.021 359.998 160.002 359.998C165.498 359.998 170 355.536 170 349.997V259.997H220V459.997H20V439.997ZM460 459.997H410V369.997C410 364.475 405.522 359.997 400 359.997C394.478 359.997 390 364.475 390 369.997V459.997H240C240 447.989 240 262.662 240 249.99C250.594 245.578 261.743 242.584 273.16 241.098L300.514 323.159C301.875 327.243 305.697 329.997 310.001 329.997C314.305 329.997 318.127 327.243 319.488 323.159L346.845 241.087C410.599 249.372 460 304.022 460 369.997V459.997Z"
+                  fill="white" />
+                <path
+                  d="M310 370C293.458 370 280 383.458 280 400C280 416.542 293.458 430 310 430C326.542 430 340 416.542 340 400C340 383.458 326.542 370 310 370ZM310 410C304.486 410 300 405.514 300 400C300 394.486 304.486 390 310 390C315.514 390 320 394.486 320 400C320 405.514 315.514 410 310 410Z"
+                  fill="white" />
+                <path
+                  d="M440 80C456.542 80 470 66.542 470 50C470 33.458 456.542 20 440 20C423.458 20 410 33.458 410 50C410 66.542 423.458 80 440 80ZM440 40C445.514 40 450 44.486 450 50C450 55.514 445.514 60 440 60C434.486 60 430 55.514 430 50C430 44.486 434.486 40 440 40Z"
+                  fill="white" />
+                <path
+                  d="M420 210C420 226.542 433.458 240 450 240C466.542 240 480 226.542 480 210C480 193.458 466.542 180 450 180C433.458 180 420 193.458 420 210ZM460 210C460 215.514 455.514 220 450 220C444.486 220 440 215.514 440 210C440 204.486 444.486 200 450 200C455.514 200 460 204.486 460 210Z"
+                  fill="white" />
+                <path
+                  d="M40 190H160C165.523 190 170 185.523 170 180V60C170 54.477 165.523 50 160 50H40C34.477 50 30 54.477 30 60V180C30 185.523 34.477 190 40 190ZM90 70H110V100H90V70ZM50 70H70V110C70 115.523 74.477 120 80 120H120C125.523 120 130 115.523 130 110V70H150V170H50V70Z"
+                  fill="white" />
+              </svg>
+
+            </span>
+            <p style="font-size: 14px;" class="text-white mt-auto hover">These are express delivery services that
+              transport small packages or documents quickly and directly to their
+              destination. They are known for their speed and reliability.</p>
+            <a href="courier-services.html" class="btn-link fs-6 hover">KNOW MORE</a>
+          </div>
+        </div><!-- ======= Service list end ======= -->
+        <!-- ======= Service list start======= -->
+        <div data-aos="flip-left" data-aos-delay="500" class="col-12 mb-3 col-md-6 col-xl-4">
+          <div
+            class="banner-content position-relative overflow-hidden d-flex flex-column justify-content-start p-5 p-sm-4 p-md-3 p-xl-5 text-white"
+            style="--bg:url(../img/services/warehousing.jpg)">
+            <p class="text-white opacity-50">006</p>
+            <h2 class="text-white fs-4 fw-bold">Warehousing</h2>
+            <span class="display-5 ms-5 mb-5 position-absolute bottom-0 start-0">
+              <svg width="70" height="70" viewBox="0 0 70 70" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path
+                  d="M68.0656 6.19302L56.399 0.359693C55.9127 0.117977 55.377 -0.0078125 54.8339 -0.0078125C54.2908 -0.0078125 53.7551 0.117977 53.2688 0.359693L41.6022 6.19302C41.0193 6.48216 40.5291 6.92873 40.187 7.48216C39.8449 8.03558 39.6647 8.67374 39.6667 9.32435V19.8243H38.5C37.8375 19.824 37.1826 19.965 36.5791 20.2381C35.9755 20.5111 35.4371 20.9098 35 21.4075C34.5628 20.9098 34.0245 20.5111 33.4209 20.2381C32.8173 19.965 32.1624 19.824 31.5 19.8243H30.3333V9.32435C30.3354 8.67387 30.1553 8.03579 29.8135 7.48238C29.4716 6.92896 28.9816 6.48232 28.399 6.19302L16.7323 0.359693C16.246 0.117977 15.7103 -0.0078125 15.1673 -0.0078125C14.6242 -0.0078125 14.0885 0.117977 13.6022 0.359693L1.93551 6.19302C1.35268 6.48216 0.862457 6.92873 0.52038 7.48216C0.178303 8.03558 -0.00195804 8.67374 1.60417e-05 9.32435V27.991C1.60417e-05 28.6098 0.245849 29.2033 0.683433 29.6409C1.12102 30.0785 1.71451 30.3243 2.33335 30.3243H28C28.6188 30.3243 29.2123 30.0785 29.6499 29.6409C30.0875 29.2033 30.3333 28.6098 30.3333 27.991V22.1577H31.5C32.1188 22.1577 32.7123 22.4035 33.1499 22.8411C33.5875 23.2787 33.8333 23.8722 33.8333 24.491V34.991H16.3333C15.4051 34.991 14.5148 35.3598 13.8585 36.0161C13.2021 36.6725 12.8333 37.5627 12.8333 38.491V55.991C12.2145 55.991 11.621 56.2368 11.1834 56.6744C10.7458 57.112 10.5 57.7055 10.5 58.3243V61.8243C10.5 62.4432 10.7458 63.0367 11.1834 63.4742C11.621 63.9118 12.2145 64.1577 12.8333 64.1577H16.4383C16.7125 65.7881 17.5556 67.2686 18.8179 68.3363C20.0802 69.404 21.68 69.9899 23.3333 69.9899C24.9866 69.9899 26.5865 69.404 27.8487 68.3363C29.111 67.2686 29.9541 65.7881 30.2283 64.1577H40.9383C41.2125 65.7881 42.0556 67.2686 43.3179 68.3363C44.5802 69.404 46.18 69.9899 47.8333 69.9899C49.4866 69.9899 51.0864 69.404 52.3487 68.3363C53.611 67.2686 54.4541 65.7881 54.7283 64.1577H57.1667C57.7855 64.1577 58.379 63.9118 58.8166 63.4742C59.2542 63.0367 59.5 62.4432 59.5 61.8243V58.3243C59.5 57.7055 59.2542 57.112 58.8166 56.6744C58.379 56.2368 57.7855 55.991 57.1667 55.991V45.491C57.1648 43.6351 56.4267 41.8557 55.1144 40.5433C53.802 39.231 52.0226 38.4929 50.1667 38.491H40.8333C40.8333 37.5627 40.4646 36.6725 39.8082 36.0161C39.1518 35.3598 38.2616 34.991 37.3333 34.991H36.1667V24.491C36.1667 23.8722 36.4125 23.2787 36.8501 22.8411C37.2877 22.4035 37.8812 22.1577 38.5 22.1577H39.6667V27.991C39.6667 28.6098 39.9125 29.2033 40.3501 29.6409C40.7877 30.0785 41.3812 30.3243 42 30.3243H67.6666C68.2855 30.3243 68.879 30.0785 69.3166 29.6409C69.7541 29.2033 70 28.6098 70 27.991V9.32435C70.0021 8.67387 69.822 8.03579 69.4801 7.48238C69.1382 6.92896 68.6483 6.48232 68.0656 6.19302ZM23.3333 13.991H7.00001V11.6577H23.3333V13.991ZM7.00001 16.3244H23.3333V27.991H21V25.6577C21 25.0388 20.7542 24.4453 20.3166 24.0078C19.879 23.5702 19.2855 23.3243 18.6667 23.3243H16.3333V20.991C16.3333 20.3722 16.0875 19.7787 15.6499 19.3411C15.2123 18.9035 14.6188 18.6577 14 18.6577H11.6667C11.0478 18.6577 10.4543 18.9035 10.0168 19.3411C9.57918 19.7787 9.33334 20.3722 9.33334 20.991V27.991H7.00001V16.3244ZM14 23.3243H11.6667V20.991H14V23.3243ZM11.6667 25.6577H14V27.991H11.6667V25.6577ZM16.3333 27.991V25.6577H18.6667V27.991H16.3333ZM25.6667 27.991V11.6577C25.6667 11.0388 25.4208 10.4454 24.9833 10.0078C24.5457 9.57019 23.9522 9.32435 23.3333 9.32435H7.00001C6.38117 9.32435 5.78768 9.57019 5.3501 10.0078C4.91251 10.4454 4.66668 11.0388 4.66668 11.6577V27.991H2.33335V9.32435C2.33244 9.10738 2.39241 8.8945 2.50646 8.70992C2.62051 8.52534 2.78406 8.37645 2.97851 8.28019L14.6452 2.44686C14.8072 2.36613 14.9857 2.32419 15.1667 2.32436C15.3472 2.32212 15.5258 2.36207 15.6882 2.44103L27.3548 8.27436C27.5502 8.37105 27.7143 8.52085 27.8284 8.70656C27.9425 8.89228 28.002 9.10639 28 9.32435V27.991H25.6667ZM12.8333 58.3243H18.13C17.2459 59.3071 16.6592 60.5209 16.4383 61.8243H12.8333V58.3243ZM23.3333 67.6577C22.4104 67.6577 21.5081 67.384 20.7407 66.8712C19.9732 66.3584 19.3751 65.6296 19.0219 64.7768C18.6687 63.9241 18.5763 62.9858 18.7563 62.0806C18.9364 61.1753 19.3809 60.3438 20.0335 59.6912C20.6862 59.0385 21.5177 58.5941 22.4229 58.414C23.3282 58.2339 24.2665 58.3263 25.1192 58.6796C25.9719 59.0328 26.7007 59.6309 27.2135 60.3983C27.7263 61.1658 28 62.068 28 62.991C28 64.2287 27.5083 65.4157 26.6332 66.2908C25.758 67.166 24.571 67.6577 23.3333 67.6577ZM42.63 58.3243C41.7458 59.3071 41.1592 60.5209 40.9383 61.8243H30.2283C30.0075 60.5209 29.4208 59.3071 28.5367 58.3243H42.63ZM47.8333 67.6577C46.9103 67.6577 46.0081 67.384 45.2407 66.8712C44.4732 66.3584 43.8751 65.6296 43.5219 64.7768C43.1687 63.9241 43.0763 62.9858 43.2563 62.0806C43.4364 61.1753 43.8809 60.3438 44.5335 59.6912C45.1861 59.0385 46.0177 58.5941 46.9229 58.414C47.8281 58.2339 48.7665 58.3263 49.6192 58.6796C50.4719 59.0328 51.2007 59.6309 51.7135 60.3983C52.2263 61.1658 52.5 62.068 52.5 62.991C52.5 64.2287 52.0083 65.4157 51.1332 66.2908C50.258 67.166 49.071 67.6577 47.8333 67.6577ZM57.1667 61.8243H54.7283C54.5075 60.5209 53.9208 59.3071 53.0367 58.3243H57.1667V61.8243ZM51.7288 41.1125L50.5085 42.3328C50.3971 42.4405 50.3082 42.5692 50.247 42.7115C50.1859 42.8539 50.1537 43.007 50.1524 43.1619C50.151 43.3168 50.1805 43.4704 50.2392 43.6138C50.2979 43.7572 50.3845 43.8874 50.494 43.997C50.6036 44.1065 50.7338 44.1931 50.8772 44.2518C51.0206 44.3105 51.1742 44.34 51.3291 44.3386C51.484 44.3373 51.6371 44.3051 51.7795 44.244C51.9218 44.1828 52.0505 44.0939 52.1582 43.9825L53.6842 42.4577C54.4206 43.297 54.8287 44.3744 54.8333 45.491V46.6577H49C48.6906 46.6577 48.3938 46.5348 48.175 46.316C47.9562 46.0972 47.8333 45.8004 47.8333 45.491V40.8243H50.1667C50.7001 40.8297 51.2286 40.9272 51.7288 41.1125ZM45.5 40.8243V45.491C45.5 46.4193 45.8687 47.3095 46.5251 47.9659C47.1815 48.6222 48.0717 48.991 49 48.991H54.8333V55.991H40.8333V40.8243H45.5ZM38.5 38.491V55.991H15.1667V38.491C15.1667 38.1816 15.2896 37.8848 15.5084 37.666C15.7272 37.4473 16.0239 37.3243 16.3333 37.3243H37.3333C37.6427 37.3243 37.9395 37.4473 38.1583 37.666C38.3771 37.8848 38.5 38.1816 38.5 38.491ZM63 13.991H46.6667V11.6577H63V13.991ZM46.6667 16.3244H63V27.991H60.6667V25.6577C60.6667 25.0388 60.4208 24.4453 59.9832 24.0078C59.5457 23.5702 58.9522 23.3243 58.3333 23.3243H56V20.991C56 20.3722 55.7542 19.7787 55.3166 19.3411C54.879 18.9035 54.2855 18.6577 53.6667 18.6577H51.3333C50.7145 18.6577 50.121 18.9035 49.6834 19.3411C49.2458 19.7787 49 20.3722 49 20.991V27.991H46.6667V16.3244ZM53.6667 23.3243H51.3333V20.991H53.6667V23.3243ZM51.3333 25.6577H53.6667V27.991H51.3333V25.6577ZM56 27.991V25.6577H58.3333V27.991H56ZM65.3333 27.991V11.6577C65.3333 11.0388 65.0875 10.4454 64.6499 10.0078C64.2123 9.57019 63.6188 9.32435 63 9.32435H46.6667C46.0478 9.32435 45.4543 9.57019 45.0167 10.0078C44.5792 10.4454 44.3333 11.0388 44.3333 11.6577V27.991H42V9.32435C41.9991 9.10738 42.0591 8.8945 42.1731 8.70992C42.2872 8.52534 42.4507 8.37645 42.6452 8.28019L54.3118 2.44686C54.4738 2.36613 54.6523 2.32419 54.8333 2.32436C55.0139 2.32212 55.1924 2.36207 55.3548 2.44103L67.0215 8.27436C67.2168 8.37105 67.381 8.52085 67.4951 8.70656C67.6092 8.89228 67.6687 9.10639 67.6666 9.32435V27.991H65.3333Z"
+                  fill="white" />
+                <path
+                  d="M16.332 4.65625H13.9987C13.6893 4.65625 13.3925 4.77917 13.1737 4.99796C12.9549 5.21675 12.832 5.5135 12.832 5.82292C12.832 6.13234 12.9549 6.42908 13.1737 6.64787C13.3925 6.86667 13.6893 6.98958 13.9987 6.98958H16.332C16.6414 6.98958 16.9382 6.86667 17.157 6.64787C17.3758 6.42908 17.4987 6.13234 17.4987 5.82292C17.4987 5.5135 17.3758 5.21675 17.157 4.99796C16.9382 4.77917 16.6414 4.65625 16.332 4.65625Z"
+                  fill="white" />
+                <path
+                  d="M56 4.65625H53.6667C53.3572 4.65625 53.0605 4.77917 52.8417 4.99796C52.6229 5.21675 52.5 5.5135 52.5 5.82292C52.5 6.13234 52.6229 6.42908 52.8417 6.64787C53.0605 6.86667 53.3572 6.98958 53.6667 6.98958H56C56.3094 6.98958 56.6062 6.86667 56.825 6.64787C57.0437 6.42908 57.1667 6.13234 57.1667 5.82292C57.1667 5.5135 57.0437 5.21675 56.825 4.99796C56.6062 4.77917 56.3094 4.65625 56 4.65625Z"
+                  fill="white" />
+                <path
+                  d="M48.9987 53.6615H51.332C51.6414 53.6615 51.9382 53.5385 52.157 53.3197C52.3758 53.101 52.4987 52.8042 52.4987 52.4948C52.4987 52.1854 52.3758 51.8886 52.157 51.6698C51.9382 51.451 51.6414 51.3281 51.332 51.3281H48.9987C48.6893 51.3281 48.3925 51.451 48.1737 51.6698C47.9549 51.8886 47.832 52.1854 47.832 52.4948C47.832 52.8042 47.9549 53.101 48.1737 53.3197C48.3925 53.5385 48.6893 53.6615 48.9987 53.6615Z"
+                  fill="white" />
+                <path
+                  d="M33.832 51.3281H20.9987C20.6893 51.3281 20.3925 51.451 20.1737 51.6698C19.9549 51.8886 19.832 52.1854 19.832 52.4948C19.832 52.8042 19.9549 53.101 20.1737 53.3197C20.3925 53.5385 20.6893 53.6615 20.9987 53.6615H33.832C34.1414 53.6615 34.4382 53.5385 34.657 53.3197C34.8758 53.101 34.9987 52.8042 34.9987 52.4948C34.9987 52.1854 34.8758 51.8886 34.657 51.6698C34.4382 51.451 34.1414 51.3281 33.832 51.3281Z"
+                  fill="white" />
+                <path
+                  d="M33.832 45.4922H20.9987C20.6893 45.4922 20.3925 45.6151 20.1737 45.8339C19.9549 46.0527 19.832 46.3494 19.832 46.6589C19.832 46.9683 19.9549 47.265 20.1737 47.4838C20.3925 47.7026 20.6893 47.8255 20.9987 47.8255H33.832C34.1414 47.8255 34.4382 47.7026 34.657 47.4838C34.8758 47.265 34.9987 46.9683 34.9987 46.6589C34.9987 46.3494 34.8758 46.0527 34.657 45.8339C34.4382 45.6151 34.1414 45.4922 33.832 45.4922Z"
+                  fill="white" />
+                <path
+                  d="M33.832 39.6562H20.9987C20.6893 39.6562 20.3925 39.7792 20.1737 39.998C19.9549 40.2167 19.832 40.5135 19.832 40.8229C19.832 41.1323 19.9549 41.4291 20.1737 41.6479C20.3925 41.8667 20.6893 41.9896 20.9987 41.9896H33.832C34.1414 41.9896 34.4382 41.8667 34.657 41.6479C34.8758 41.4291 34.9987 41.1323 34.9987 40.8229C34.9987 40.5135 34.8758 40.2167 34.657 39.998C34.4382 39.7792 34.1414 39.6562 33.832 39.6562Z"
+                  fill="white" />
+                <path
+                  d="M24.5 61.8281H22.1667C21.8572 61.8281 21.5605 61.951 21.3417 62.1698C21.1229 62.3886 21 62.6854 21 62.9948C21 63.3042 21.1229 63.601 21.3417 63.8197C21.5605 64.0385 21.8572 64.1615 22.1667 64.1615H24.5C24.8094 64.1615 25.1062 64.0385 25.325 63.8197C25.5437 63.601 25.6667 63.3042 25.6667 62.9948C25.6667 62.6854 25.5437 62.3886 25.325 62.1698C25.1062 61.951 24.8094 61.8281 24.5 61.8281Z"
+                  fill="white" />
+                <path
+                  d="M49 61.8281H46.6667C46.3572 61.8281 46.0605 61.951 45.8417 62.1698C45.6229 62.3886 45.5 62.6854 45.5 62.9948C45.5 63.3042 45.6229 63.601 45.8417 63.8197C46.0605 64.0385 46.3572 64.1615 46.6667 64.1615H49C49.3094 64.1615 49.6062 64.0385 49.825 63.8197C50.0437 63.601 50.1667 63.3042 50.1667 62.9948C50.1667 62.6854 50.0437 62.3886 49.825 62.1698C49.6062 61.951 49.3094 61.8281 49 61.8281Z"
+                  fill="white" />
+              </svg>
+
+            </span>
+            <p style="font-size: 14px;" class="text-white mt-auto hover">This involves storing goods in warehouses
+              and managing their distribution to various locations. It can include inventory
+              management, order fulfillment, and logistics services.</p>
+            <a href="warehousing.html" class="btn-link fs-6 hover">KNOW MORE</a>
+          </div>
+        </div><!-- ======= Service list end ======= -->
+      </div>
+      <!-- ======= Other Service list start ======= -->
+      <div class="row mt-5">
+        <p data-aos="fade-up" data-aos-delay="0" class="fs-5 text-center">We would like to built specifically for your
+          business <a href="contact.html" class="ms-2 clr-primary-link">Find More Services</a></p>
+      </div><!-- ======= Other Service list end ======= -->
+    </section>
+    <!-- ======= Service sec end ======= -->
+    <!-- ======= About Sec Start======= -->
+    <section id="about-sec" class="jarallax container-fluid my-5 bg-dark position-relative">
+      <img class="jarallax-img" src="img/about/about-us.jpg" alt="">
+      <span class="w-100 h-100 position-absolute top-0 start-0"
+        style="background: linear-gradient(to right ,hsla(0, 0%, 0%, 0.5), hsl(0, 0%, 0%, 0.5));"></span>
+      <div class="row d-flex px-5 justify-content-start">
+        <div class="col-12 z-index-1 col-lg-6 d-flex flex-column">
+          <h2 data-aos="fade-up" data-aos-delay="0" class="fs-3 fw-bold text-center text-lg-start text-white">About
+            Us</h2>
+          <p data-aos="fade-up" data-aos-delay="100" class="fs-6 text-center text-lg-start text-white">Welcome to
+            [Company Name], your trusted partner in cargo transportation and logistics solutions. With [number of years]
+            years of experience in the industry, we have established ourselves as a reliable and efficient provider of
+            air, ocean,
+            road, and rail freight services. Our commitment to excellence, coupled with a dedicated team of logistics
+            experts,
+            ensures that your cargo is handled with precision and delivered on time, every time. </p>
+          <a data-aos="fade-up" data-aos-delay="200" data-text="Know More"
+            class="custom-link-1 ms-auto me-auto ms-lg-0 mt-3 position-relative overflow-hidden d-flex align-items-center rounded-5 justify-content-center"
+            href="about.html">
+            <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 0 24 24">
+              <path fill="currentColor" d="M4 11v2h12l-5.5 5.5l1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5L16 11H4Z" />
+            </svg>
+          </a>
+        </div>
+        <div class="counter-sec d-flex align-items-center justify-content-center position-absolute ">
+          <div
+            class="counter d-flex justify-content-center align-items-center p-5 rounded-circle clr-primary-bg text-white fw-bold">
+            <span style="text-shadow: 0px 0px 50px rgba(0, 0, 0, 0.3);" data-purecounter-start="0"
+              data-purecounter-end="47" class="purecounter">0</span>
+          </div>
+          <div class="counter-content d-flex flex-column">
+            <p class="text-white-dark opacity-50 fs-6 mb-1">CARGO</p>
+            <h3 class="fs-3 fw-bold text-white-dark my-0">YEAR OF <br> EXPERIENCE</h3>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- ======= About Sec End ======= -->
+    <!-- ======= Working Process Start ======= -->
+    <section id="working-process" class="container-fluid mt-5 py-5 clr-secondary-bg">
+      <!-- ======= Working Process Title Start ======= -->
+      <div class="row">
+        <div class="col-12 col-md-8 mx-auto my-5">
+          <p data-aos="fade-up" data-aos-delay="0" class="clr-primary text-center fs-3">Working Process</p>
+          <h1 data-aos="fade-up" data-aos-delay="100" class="display-3 text-center fw-bold">Check How We Work in
+            Easy Steps</h1>
+        </div>
+      </div>
+      <!-- ======= Working Process Title End ======= -->
+      <div class="row m-0 justify-content-center py-5">
+        <!-- ======= Working Process Item Start ======= -->
+        <div data-aos="fade-up" data-aos-delay="0" class="col-12 col-md-6 col-lg-4 text-center p-3 h-100">
+          <div class="content-box position-relative px-3 py-3 shadow">
+            <span data-jarallax-element="0 8"
+              class="fw-semibold clr-secondary px-3 py-2 me-5 clr-primary-bg fs-4 d-flex align-items-center justify-content-center position-absolute top-0 end-0">01</span>
+            <svg class="clr-primary my-4" xmlns="http://www.w3.org/2000/svg" width="60" height="60" viewBox="0 0 14 14">
+              <g fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M.5 1h5v5h-5zm12.75 12.5h-5m0-5h5m-5 2.5h5m.25-5H8L10.75.5L13.5 6z" />
+                <circle cx="3" cy="11" r="2.5" />
+              </g>
+            </svg>
+            <h2 class="fs-5 mb-1">Initial Consultation</h2>
+            <p style="font-size: 14px;">We start by understanding your cargo needs—type, volume, handling specifics,
+              delivery timelines, and destinations—to
+              tailor our services effectively.</p>
+          </div>
+        </div><!-- ======= Working Process Item End ======= -->
+        <!-- ======= Working Process Item Start ======= -->
+        <div data-aos="fade-up" data-aos-delay="100" class="col-12 col-md-6 col-lg-4 text-center p-3 h-100">
+          <div class="content-box position-relative px-3 py-3 shadow">
+            <span data-jarallax-element="0 8"
+              class="fw-semibold clr-secondary px-3 py-2 me-5 clr-primary-bg fs-4 d-flex align-items-center justify-content-center position-absolute top-0 end-0">02</span>
+            <svg class="clr-primary my-4" xmlns="http://www.w3.org/2000/svg" width="60" height="60" viewBox="0 0 24 24">
+              <path fill="currentColor"
+                d="M19 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm0 16H5V5h14v14zM7 10h2v7H7zm4-3h2v10h-2zm4 6h2v4h-2z" />
+            </svg>
+            <h2 class="fs-5 mb-1">Logistics Planning</h2>
+            <p style="font-size: 14px;">Our experts craft a customized plan, choosing the right transport mode,
+              optimizing routes, managing documentation, and
+              ensuring proper packaging.</p>
+          </div>
+        </div><!-- ======= Working Process Item End ======= -->
+        <!-- ======= Working Process Item Start ======= -->
+        <div data-aos="fade-up" data-aos-delay="200" class="col-12 col-md-6 col-lg-4 text-center p-3 h-100">
+          <div class="content-box position-relative px-3 py-3 shadow">
+            <span data-jarallax-element="0 8"
+              class="fw-semibold clr-secondary px-3 py-2 me-5 clr-primary-bg fs-4 d-flex align-items-center justify-content-center position-absolute top-0 end-0">03</span>
+            <svg class="clr-primary my-4" xmlns="http://www.w3.org/2000/svg" width="60" height="60" viewBox="0 0 14 14">
+              <path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
+                d="M13.5 7.5v5a1 1 0 0 1-1 1h-11a1 1 0 0 1-1-1v-11a1 1 0 0 1 1-1h4v7Zm-13-4h13m-3.5 4v-7" />
+            </svg>
+            <h2 class="fs-5 mb-1">Efficient Cargo Handling</h2>
+            <p style="font-size: 14px;">We handle cargo with care using industry-best practices and quality materials to
+              ensure safe transit and optimal
+              condition upon arrival.</p>
+          </div>
+        </div><!-- ======= Working Process Item End ======= -->
+        <!-- ======= Working Process Item Start ======= -->
+        <div data-aos="fade-up" data-aos-delay="300" class="col-12 col-md-6 col-lg-4 text-center p-3 h-100">
+          <div class="content-box position-relative px-3 py-3 shadow">
+            <span data-jarallax-element="0 8"
+              class="fw-semibold clr-secondary px-3 py-2 me-5 clr-primary-bg fs-4 d-flex align-items-center justify-content-center position-absolute top-0 end-0">04</span>
+            <svg class="clr-primary my-4" width="60" height="60" viewBox="0 0 66 67" fill="none"
+              xmlns="http://www.w3.org/2000/svg">
+              <path
+                d="M31.4375 58.3328C30.158 58.9209 28.8423 59.427 27.4983 59.8474C19.4895 57.4571 12.8599 51.8009 9.23847 44.2679C8.58387 42.8776 6.59841 38.6459 6.59841 35.8674V17.9937C16.8152 16.9363 23.5033 13.0666 27.4983 9.72154C31.4939 13.0666 38.182 16.9363 48.3983 17.9937V35.8674C48.3308 37.2521 48.0488 38.6182 47.5624 39.9163C47.3841 40.4873 47.6948 41.0961 48.2613 41.287C48.8283 41.4778 49.4436 41.1807 49.6471 40.6183C50.2115 39.0945 50.5328 37.4913 50.5987 35.8674V16.9911C50.6003 16.4176 50.1612 15.9388 49.5897 15.8914C38.7429 14.9861 31.9899 10.7986 28.231 7.44353C27.8136 7.07091 27.1831 7.07091 26.7657 7.44353C23.0093 10.7986 16.2543 14.9861 5.40704 15.8914C4.83552 15.9388 4.39643 16.4176 4.39844 16.9911V35.8674C4.39844 39.1378 6.46548 43.5433 7.27618 45.2725C11.2174 53.4459 18.4578 59.5509 27.1796 62.055C27.3876 62.1179 27.6096 62.1179 27.8176 62.055C29.3695 61.5852 30.8867 61.0086 32.3595 60.3303C32.716 60.1657 32.9582 59.8233 32.994 59.4315C33.0297 59.0403 32.854 58.6596 32.5332 58.433C32.212 58.2064 31.7945 58.1681 31.4375 58.3328Z"
+                fill="currentColor" />
+              <path
+                d="M61.7421 47.8443C61.3342 47.2319 60.6474 46.8644 59.9117 46.8639H57.2001V45.7641C57.2001 44.5491 56.2152 43.5642 55.0002 43.5642H53.2519C54.3013 41.126 54.8939 38.5162 55.0002 35.864V13.8533C55.0007 12.6675 54.0621 11.6946 52.8772 11.6528C35.8908 11.3044 29.1842 2.24367 28.513 1.26781C28.3206 0.898209 27.9389 0.665573 27.522 0.664062C27.5119 0.664062 27.4998 0.664062 27.4998 0.664062H27.456C27.3196 0.66658 27.1856 0.695282 27.0602 0.748657L27.0426 0.757721C26.7934 0.858429 26.5909 1.04826 26.4736 1.28996C25.7138 2.38214 18.9814 11.3079 2.12746 11.6528C0.940613 11.6921 -0.000503338 12.6659 2.01968e-07 13.8533V35.864C2.01968e-07 39.7373 1.88777 44.1593 3.30775 47.1489C7.97406 56.8637 16.7175 64.0008 27.17 66.6268C27.2934 66.651 27.4183 66.6636 27.5441 66.6641C27.6403 66.6636 27.736 66.651 27.8291 66.6268C31.4174 65.666 34.8495 64.1972 38.0213 62.2641H38.5002C38.5002 64.6942 40.47 66.6641 42.9001 66.6641C45.3302 66.6641 47.3 64.6942 47.3 62.2641H51.7C51.7 64.6942 53.6698 66.6641 56.0999 66.6641C58.53 66.6641 60.4998 64.6942 60.4998 62.2641H64.8998C65.5075 62.2641 66 61.7717 66 61.1639V54.8938C66.0005 54.4593 65.8721 54.0343 65.6304 53.6732L61.7421 47.8443ZM55.0002 53.4643H37.3999V45.7641H55.0002V53.4643ZM27.4998 64.4364C17.7729 61.9288 9.64732 55.2574 5.29422 46.2042C3.96538 43.4066 2.19997 39.2916 2.19997 35.864L2.16824 13.8533C17.6607 13.534 25.0854 6.48398 27.4998 3.5715C29.9133 6.48398 37.334 13.535 52.8002 13.8533V35.864C52.6577 38.5298 52.0056 41.1436 50.8792 43.5642H37.3999C36.1849 43.5642 35.2 44.5491 35.2 45.7641V61.1639C35.2065 61.2188 35.2176 61.2727 35.2332 61.3255C32.7815 62.6519 30.1872 63.6957 27.4998 64.4364ZM42.9001 64.4641C41.6851 64.4641 40.7001 63.4792 40.7001 62.2641C40.7001 61.0491 41.6851 60.0642 42.9001 60.0642C44.1151 60.0642 45.1001 61.0491 45.1001 62.2641C45.1001 63.4792 44.1151 64.4641 42.9001 64.4641ZM46.6882 60.0642C45.9123 58.7036 44.4661 57.8637 42.9001 57.8637C41.3336 57.8637 39.8879 58.7036 39.1115 60.0642H37.3999V55.6642H55.0002V58.0203C53.8677 58.3169 52.9004 59.0526 52.3118 60.0642H46.6882ZM56.0999 64.4641C54.8849 64.4641 53.8999 63.4792 53.8999 62.2641C53.8999 61.0491 54.8849 60.0642 56.0999 60.0642C57.3149 60.0642 58.2999 61.0491 58.2999 62.2641C58.2999 63.4792 57.3149 64.4641 56.0999 64.4641ZM63.8 60.0642H59.8885C59.2999 59.0526 58.3321 58.3169 57.2001 58.0203V49.0638H59.9117L63.8 54.8938V60.0642Z"
+                fill="currentColor" />
+              <path
+                d="M58.3008 54.5607C58.3008 55.1684 58.7932 55.6609 59.401 55.6609H60.5007C61.1085 55.6609 61.601 55.1684 61.601 54.5607C61.601 53.9534 61.1085 53.4609 60.5007 53.4609H59.401C58.7932 53.4609 58.3008 53.9534 58.3008 54.5607Z"
+                fill="currentColor" />
+              <path
+                d="M37.3999 32.5637C36.7927 32.5637 36.3002 33.0566 36.3002 33.6639C36.3002 38.5241 32.36 42.4638 27.4998 42.4638C22.6397 42.4638 18.7 38.5241 18.7 33.6639C18.7 28.8037 22.6397 24.864 27.4998 24.864C28.1076 24.864 28.6001 24.3716 28.6001 23.7638C28.6001 23.1565 28.1076 22.6641 27.4998 22.6641C21.4246 22.6641 16.5 27.5887 16.5 33.6639C16.5 39.7391 21.4246 44.6637 27.4998 44.6637C33.575 44.6637 38.5002 39.7391 38.5002 33.6639C38.5002 33.3723 38.3844 33.0924 38.1779 32.8859C37.9715 32.68 37.692 32.5637 37.3999 32.5637Z"
+                fill="currentColor" />
+              <path
+                d="M23.876 32.8869C23.4445 32.47 22.7581 32.476 22.3336 32.9C21.9097 33.3245 21.9036 34.0103 22.3206 34.4418L25.6203 37.742C25.8262 37.949 26.1062 38.0653 26.3982 38.0643H26.4476C26.7562 38.0502 27.0453 37.9072 27.2442 37.6705L38.244 24.4707C38.4958 24.1686 38.5673 23.7547 38.4318 23.3856C38.2959 23.016 37.9736 22.7476 37.5859 22.6802C37.1981 22.6132 36.8044 22.7582 36.5521 23.0603L26.3222 35.3361L23.876 32.8869Z"
+                fill="currentColor" />
+              <path
+                d="M11.0007 21.5607C11.0007 20.9534 10.5083 20.4609 9.90102 20.4609C9.29324 20.4609 8.80078 20.9534 8.80078 21.5607V22.6609C8.80078 23.2682 9.29324 23.7606 9.90102 23.7606C10.5083 23.7606 11.0007 23.2682 11.0007 22.6609V21.5607Z"
+                fill="currentColor" />
+              <path
+                d="M9.90102 25.9609C9.29324 25.9609 8.80078 26.4534 8.80078 27.0612V32.5608C8.80078 33.1686 9.29324 33.6611 9.90102 33.6611C10.5083 33.6611 11.0007 33.1686 11.0007 32.5608V27.0612C11.0007 26.4534 10.5083 25.9609 9.90102 25.9609Z"
+                fill="currentColor" />
+            </svg>
+
+            <h2 class="fs-5 mb-1">Reliable Transportation</h2>
+            <p style="font-size: 14px;">Partnering with trusted carriers, we provide real-time tracking for
+              transparency, allowing you to monitor your
+              shipment's progress.</p>
+          </div>
+        </div><!-- ======= Working Process Item End ======= -->
+        <!-- ======= Working Process Item Start ======= -->
+        <div data-aos="fade-up" data-aos-delay="400" class="col-12 col-md-6 col-lg-4 text-center p-3 h-100">
+          <div class="content-box position-relative px-3 py-3 shadow">
+            <span data-jarallax-element="0 8"
+              class="fw-semibold clr-secondary px-3 py-2 me-5 clr-primary-bg fs-4 d-flex align-items-center justify-content-center position-absolute top-0 end-0">05</span>
+            <svg class="clr-primary my-4" width="60" height="60" viewBox="0 0 58 58" fill="none"
+              xmlns="http://www.w3.org/2000/svg">
+              <path
+                d="M29.109 49.9014H3.98175C3.01811 49.9014 2.2272 49.1105 2.2272 48.1469V12.0014C2.2272 11.0378 3.01811 10.2469 3.98175 10.2469H35.7908C36.7545 10.2469 37.5454 11.0378 37.5454 12.0014V31.4923C37.5454 31.9741 37.9363 32.3741 38.4272 32.3741C38.9181 32.3741 39.309 31.9832 39.309 31.4923V12.0014C39.309 10.0651 37.7363 8.49233 35.7999 8.49233H28.909V6.17415C28.909 5.21051 28.1181 4.4196 27.1545 4.4196H23.1999V3.36506C23.1999 1.53778 21.709 0.046875 19.8817 0.046875C18.0545 0.046875 16.5636 1.53778 16.5636 3.36506V4.4196H12.6181C11.6545 4.4196 10.8636 5.21051 10.8636 6.17415V8.49233H3.98175C2.04538 8.49233 0.472656 10.0651 0.472656 12.0014V48.1469C0.472656 50.0832 2.04538 51.656 3.98175 51.656H29.109C29.5908 51.656 29.9908 51.2651 29.9908 50.7741C29.9908 50.2923 29.5999 49.9014 29.109 49.9014ZM18.3181 3.36506C18.3181 2.50142 19.0181 1.80142 19.8817 1.80142C20.7454 1.80142 21.4454 2.50142 21.4454 3.36506V4.4196H18.309V3.36506H18.3181ZM12.609 6.17415H17.4363H22.3272H27.1545V8.49233H12.609V6.17415Z"
+                fill="currentColor" />
+              <path
+                d="M16.8349 28.8105H33.9622C34.444 28.8105 34.844 28.4196 34.844 27.9287C34.844 27.4469 34.4531 27.0469 33.9622 27.0469H16.8349C16.3531 27.0469 15.9531 27.4378 15.9531 27.9287C15.9622 28.4196 16.3531 28.8105 16.8349 28.8105Z"
+                fill="currentColor" />
+              <path
+                d="M30.2986 31.1484H16.8349C16.3531 31.1484 15.9531 31.5393 15.9531 32.0303C15.9531 32.5121 16.344 32.9121 16.8349 32.9121H30.2986C30.7804 32.9121 31.1804 32.5212 31.1804 32.0303C31.1713 31.5393 30.7804 31.1484 30.2986 31.1484Z"
+                fill="currentColor" />
+              <path
+                d="M7.29261 34.4131H10.9017C12.3563 34.4131 13.5381 33.2312 13.5381 31.7767V28.1676C13.5381 26.7131 12.3563 25.5312 10.9017 25.5312H7.29261C5.83807 25.5312 4.65625 26.7131 4.65625 28.1676V31.7767C4.65625 33.2312 5.83807 34.4131 7.29261 34.4131ZM6.4108 28.1767C6.4108 27.6949 6.8017 27.2949 7.29261 27.2949H10.9017C11.3835 27.2949 11.7835 27.6858 11.7835 28.1767V31.7858C11.7835 32.2676 11.3926 32.6676 10.9017 32.6676H7.29261C6.8108 32.6676 6.4108 32.2767 6.4108 31.7858V28.1767Z"
+                fill="currentColor" />
+              <path
+                d="M16.8349 16.8027H30.5804C31.0622 16.8027 31.4622 16.4118 31.4622 15.9209C31.4622 15.43 31.0713 15.0391 30.5804 15.0391H16.8349C16.3531 15.0391 15.9531 15.43 15.9531 15.9209C15.9531 16.4118 16.3531 16.8027 16.8349 16.8027Z"
+                fill="currentColor" />
+              <path
+                d="M16.8349 20.8886H33.7168C34.1986 20.8886 34.5986 20.4977 34.5986 20.0068C34.5986 19.525 34.2077 19.125 33.7168 19.125H16.8349C16.3531 19.125 15.9531 19.5159 15.9531 20.0068C15.9622 20.4886 16.3531 20.8886 16.8349 20.8886Z"
+                fill="currentColor" />
+              <path
+                d="M10.8926 13.5312H7.29261C5.83807 13.5312 4.65625 14.7131 4.65625 16.1676V19.7767C4.65625 21.2313 5.83807 22.4131 7.29261 22.4131H10.9017C12.3563 22.4131 13.5381 21.2313 13.5381 19.7767V16.1676C13.529 14.7131 12.3472 13.5312 10.8926 13.5312ZM11.7744 19.7676C11.7744 20.2494 11.3835 20.6494 10.8926 20.6494H7.29261C6.8108 20.6494 6.4108 20.2585 6.4108 19.7676V16.1585C6.4108 15.6767 6.8017 15.2767 7.29261 15.2767H10.9017C11.3835 15.2767 11.7835 15.6676 11.7835 16.1585V19.7676H11.7744Z"
+                fill="currentColor" />
+              <path
+                d="M56.6547 34.125H31.9365C31.4547 34.125 31.0547 34.5159 31.0547 35.0068V40.2705C31.0547 40.7523 31.4456 41.1523 31.9365 41.1523H32.6183V57.0886C32.6183 57.5705 33.0092 57.9705 33.5001 57.9705H55.182C55.6638 57.9705 56.0638 57.5795 56.0638 57.0886V41.1432H56.6547C57.1365 41.1432 57.5365 40.7523 57.5365 40.2614V34.9977C57.5274 34.5159 57.1365 34.125 56.6547 34.125ZM55.7729 39.3886H55.182H48.2365V35.8795H55.7638V39.3886H55.7729ZM46.4911 40.2614V42.525L44.8001 41.3432C44.6456 41.2341 44.4729 41.1886 44.3001 41.1886C44.2092 41.1886 44.1274 41.1977 44.0365 41.225C43.9547 41.2523 43.8729 41.2886 43.7911 41.3432L42.1092 42.525V40.2614V35.8705H46.4911V40.2614ZM32.8183 35.8795H40.3547V39.3886H33.5001H32.8183V35.8795ZM54.3092 56.1977H34.382V41.1432H40.3547V44.2159C40.3547 44.5432 40.5365 44.8432 40.8274 44.9977C40.9001 45.0341 40.9729 45.0614 41.0456 45.0705C41.0638 45.0795 41.0911 45.0705 41.1092 45.0795C41.1547 45.0886 41.1911 45.0977 41.2365 45.0977H41.2638C41.3183 45.0977 41.3729 45.0886 41.4183 45.0705C41.4456 45.0614 41.4729 45.0614 41.5092 45.0523C41.5911 45.025 41.6638 44.9886 41.7365 44.9432L44.2911 43.1432L46.8547 44.9432C47.1274 45.1341 47.4729 45.1523 47.7638 45.0068C48.0547 44.8523 48.2365 44.5523 48.2365 44.225V41.1523H54.3001V56.1977H54.3092Z"
+                fill="currentColor" />
+              <path
+                d="M27.7199 38.749C27.7199 38.2672 27.329 37.8672 26.8381 37.8672H5.53807C5.05625 37.8672 4.65625 38.2581 4.65625 38.749C4.65625 39.2399 5.04716 39.6308 5.53807 39.6308H26.8472C27.329 39.6217 27.7199 39.2308 27.7199 38.749Z"
+                fill="currentColor" />
+              <path
+                d="M5.53807 42.9375C5.05625 42.9375 4.65625 43.3284 4.65625 43.8193C4.65625 44.3102 5.04716 44.7011 5.53807 44.7011H25.0017C25.4835 44.7011 25.8835 44.3102 25.8835 43.8193C25.8835 43.3284 25.4926 42.9375 25.0017 42.9375H5.53807Z"
+                fill="currentColor" />
+            </svg>
+
+            <h2 class="fs-5 mb-1">Swift Customs Clearance</h2>
+            <p style="font-size: 14px;">Our team manages customs swiftly, handling paperwork, duties, taxes, and
+              inspections, ensuring prompt delivery
+              post-clearance.</p>
+          </div>
+        </div><!-- ======= Working Process Item End ======= -->
+        <!-- ======= Working Process Item Start ======= -->
+        <div data-aos="fade-up" data-aos-delay="500" class="col-12 col-md-6 col-lg-4 text-center p-3 h-100">
+          <div class="content-box position-relative px-3 py-3 shadow">
+            <span data-jarallax-element="0 8"
+              class="fw-semibold clr-secondary px-3 py-2 me-5 clr-primary-bg fs-4 d-flex align-items-center justify-content-center position-absolute top-0 end-0">06</span>
+            <svg class="clr-primary my-4" xmlns="http://www.w3.org/2000/svg" width="60" height="60" viewBox="0 0 48 48">
+              <g fill="none" stroke="currentColor" stroke-linejoin="round" stroke-width="4">
+                <path d="M14 18a7 7 0 1 0 0-14a7 7 0 0 0 0 14Zm20 0a7 7 0 1 0 0-14a7 7 0 0 0 0 14Z" />
+                <path stroke-linecap="round"
+                  d="M4 44v-9c0-5.523 3.77-10 8.421-10h5.053C21.559 25 24 29.027 24 29.027" />
+                <path stroke-linecap="round"
+                  d="M44 44v-9c0-5.523-3.815-10-8.521-10h-5.113c-3.961 0-6.374 4.027-6.366 4.027M11 40h27" />
+                <path stroke-linecap="round"
+                  d="m34.295 36.258l1.24 1.247L38.015 40l-2.48 2.561l-1.24 1.281m-19.965-7.61l-1.26 1.254l-2.518 2.507l2.518 2.548l1.26 1.275" />
+              </g>
+            </svg>
+            <h2 class="fs-5 mb-1">Post-Delivery Support</h2>
+            <p style="font-size: 14px;">Beyond delivery, we offer ongoing support, addressing any queries promptly to
+              ensure your satisfaction with our
+              services.</p>
+          </div>
+        </div><!-- ======= Working Process Item End ======= -->
+        <!-- ======= Working Process Item Start ======= -->
+      </div>
+    </section>
+    <!-- ======= Working Process End ======= -->
+    <!-- ======= Why choose us ? Start ======= -->
+    <section id="why-choose-us2" class="jarallax container-fluid py-5 my-5">
+      <img class="jarallax-img" src="img/why-choose-us.jpg" alt="">
+      <span class="w-100 h-100 position-absolute top-0 start-0"
+        style="background: linear-gradient(to right ,hsla(0, 0%, 0%, 0.5), hsl(0, 0%, 0%, 0.5));"></span>
+      <div class="container my-5 z-index-1 position-relative mx-auto">
+        <div class="row py-5 mb-5">
+          <div class="col-12">
+            <h6 data-aos="fade-right" data-aos-delay="0" class="text-white fs-5 text-center text-md-start">WHY CHOOSE
+              US ?</h6>
+            <h1 data-aos="fade-right" data-aos-delay="100"
+              class="text-white font-primary display-3 text-center text-md-start">
+              Your Trusted Choice for Cargo Services</h1>
+          </div>
+        </div>
+        <div class="row g-5">
+          <div class="col-12 col-md-6 col-xl-3">
+            <div class="wcu-item p-3 d-flex flex-column justify-content-center align-items-center align-items-md-start">
+              <svg width="100" height="100" class="text-white mb-5" fill="white" id="Layer_1"
+                enable-background="new 0 0 512 512" viewBox="0 0 512 512" xmlns="http://www.w3.org/2000/svg">
+                <path
+                  d="m398.891 322.327-19.345-7.446c-2.824-10.327-6.931-20.233-12.248-29.545l8.42-18.956c1.343-3.024.686-6.563-1.655-8.904l-9.85-9.85c-4.858-43.731-34.917-78.938-74.835-91.857 15.335-10.723 25.393-28.498 25.393-48.589 0-32.678-26.585-59.264-59.263-59.264s-59.264 26.586-59.264 59.264c0 20.09 10.058 37.865 25.393 48.588-40.056 12.963-70.189 48.366-74.891 92.304-.022.209-.028.417-.034.625l-8.778 8.778c-2.34 2.341-2.997 5.88-1.654 8.904l8.422 18.961c-5.316 9.312-9.422 19.214-12.246 29.537l-19.349 7.448c-3.088 1.188-5.126 4.156-5.126 7.466v37.898c0 3.31 2.038 6.277 5.126 7.466l19.345 7.446c2.826 10.328 6.933 20.234 12.248 29.545l-8.42 18.954c-1.343 3.025-.686 6.564 1.654 8.905l26.799 26.799c2.341 2.339 5.879 2.996 8.904 1.654l18.965-8.423c9.311 5.315 19.214 9.421 29.533 12.245l7.449 19.351c1.188 3.088 4.156 5.126 7.466 5.126h37.898c3.31 0 6.277-2.038 7.466-5.126l7.446-19.345c10.327-2.825 20.232-6.932 29.544-12.248l18.956 8.42c3.023 1.343 6.564.688 8.904-1.655l26.798-26.799c2.34-2.34 2.997-5.879 1.654-8.903l-8.423-18.964c5.316-9.312 9.423-19.215 12.246-29.534l19.35-7.448c3.088-1.188 5.126-4.156 5.126-7.466v-37.898c.002-3.308-2.036-6.275-5.124-7.464zm-186.646-215.146c0-23.855 19.408-43.264 43.264-43.264s43.263 19.408 43.263 43.264-19.407 43.264-43.263 43.264-43.264-19.409-43.264-43.264zm43.262 59.263c40.428 0 75.189 25.574 88.068 62.159-1.703-.433-3.535-.325-5.214.42l-18.963 8.423c-9.312-5.316-19.215-9.422-29.535-12.245l-7.448-19.351c-1.188-3.088-4.156-5.126-7.466-5.126h-37.897c-3.31 0-6.277 2.038-7.466 5.126l-7.448 19.351c-10.32 2.823-20.224 6.929-29.535 12.245l-18.964-8.423c-2.051-.912-4.331-.882-6.321-.052 12.775-36.779 47.627-62.527 88.189-62.527zm132.51 195.754-18.076 6.958c-2.461.947-4.298 3.048-4.908 5.613-2.746 11.536-7.3 22.521-13.537 32.649-1.383 2.246-1.569 5.03-.499 7.441l7.869 17.718-19.029 19.03-17.711-7.867c-2.409-1.07-5.194-.882-7.442.5-10.125 6.236-21.112 10.792-32.656 13.539-2.566.61-4.667 2.446-5.614 4.908l-6.956 18.071h-26.912l-6.959-18.077c-.947-2.462-3.048-4.298-5.613-4.908-11.536-2.746-22.521-7.3-32.648-13.536-2.248-1.385-5.032-1.57-7.441-.499l-17.719 7.869-19.03-19.03 7.864-17.708c1.07-2.412.884-5.196-.5-7.443-6.235-10.124-10.79-21.111-13.539-32.658-.61-2.566-2.447-4.666-4.908-5.613l-18.071-6.956v-26.912l18.075-6.958c2.462-.947 4.298-3.048 4.908-5.613 2.746-11.539 7.301-22.524 13.536-32.651 1.384-2.246 1.57-5.03.5-7.441l-7.868-17.716 19.03-19.03 17.718 7.869c2.409 1.071 5.195.885 7.441-.499 10.129-6.237 21.113-10.791 32.648-13.536 2.566-.61 4.667-2.446 5.614-4.908l6.959-18.077h26.911l6.958 18.077c.947 2.462 3.048 4.298 5.614 4.908 11.536 2.745 22.521 7.299 32.648 13.535 2.246 1.386 5.032 1.568 7.441.5l17.718-7.869 19.03 19.029-7.863 17.709c-1.07 2.411-.884 5.195.5 7.442 6.236 10.125 10.791 21.112 13.538 32.657.61 2.566 2.446 4.667 4.908 5.614l18.071 6.956zm-132.243-97.102c-45.417 0-82.367 36.95-82.367 82.368 0 45.417 36.95 82.367 82.367 82.367 45.419 0 82.369-36.95 82.369-82.367 0-45.418-36.95-82.368-82.369-82.368zm0 148.735c-36.595 0-66.367-29.772-66.367-66.367 0-36.596 29.772-66.368 66.367-66.368 36.596 0 66.369 29.772 66.369 66.368 0 36.595-29.773 66.367-66.369 66.367zm18.974-103.784-30.311 30.312-7.636-7.637c-8.235-8.235-21.635-8.233-29.868 0-3.979 3.979-6.17 9.283-6.17 14.935s2.191 10.955 6.17 14.933l20.407 20.408c5.312 5.312 11.68 8.005 17.8 8.005 5.295 0 10.406-2.016 14.488-6.098l44.988-44.988c8.234-8.235 8.234-21.634-.001-29.869-8.234-8.234-21.631-8.234-29.867-.001zm18.555 11.315c.956.956 1.483 2.242 1.483 3.619 0 1.378-.527 2.664-1.484 3.62l-44.988 44.988c-3.595 3.601-8.305-.551-9.66-1.906l-20.407-20.408c-.956-.956-1.483-2.242-1.483-3.619 0-1.378.527-2.664 1.484-3.62.98-.981 2.3-1.472 3.62-1.472 1.319 0 2.639.49 3.619 1.472l13.293 13.293c3.126 3.124 8.19 3.122 11.314 0l35.967-35.968c1.965-1.961 5.281-1.961 7.242.001zm-233.956-192.209 21.067 16.933-7.092 26.084c-1.129 4.156.394 8.477 3.878 11.008 1.813 1.316 3.922 1.979 6.035 1.979 1.949-.001 3.903-.563 5.632-1.695l22.614-14.804 22.614 14.804c3.602 2.359 8.183 2.25 11.667-.284 3.484-2.531 5.007-6.853 3.877-11.009l-7.092-26.082 21.067-16.933c3.357-2.698 4.667-7.089 3.335-11.186-1.331-4.097-4.971-6.878-9.271-7.087l-26.997-1.316-9.593-25.269c-.001 0-.001 0-.001-.001-1.527-4.021-5.298-6.619-9.606-6.619-.001 0-.002 0-.003 0-4.309.001-8.079 2.601-9.604 6.62l-9.593 25.269-26.995 1.316c-4.302.209-7.941 2.99-9.273 7.086s-.023 8.486 3.334 11.186zm37.446-3.79c4.087-.194 7.666-2.793 9.116-6.616l5.572-14.678 5.571 14.675c1.451 3.826 5.03 6.425 9.107 6.618l15.681.765-12.236 9.835c-3.188 2.562-4.552 6.765-3.479 10.706l4.119 15.149-13.137-8.599c-1.709-1.119-3.668-1.679-5.627-1.679-1.96 0-3.919.56-5.629 1.679l-13.135 8.598 4.12-15.153c1.069-3.942-.296-8.143-3.479-10.7l-12.237-9.836zm-1.751 168.389 21.067-16.933c3.357-2.698 4.667-7.089 3.335-11.186-1.331-4.097-4.971-6.878-9.271-7.087l-26.996-1.315-9.594-25.27c-.001-.001-.001-.001-.001-.002-1.528-4.02-5.299-6.617-9.606-6.617s-8.078 2.598-9.607 6.619l-9.594 25.27-26.994 1.315c-4.302.209-7.941 2.99-9.273 7.086s-.023 8.486 3.334 11.187l21.067 16.933-7.092 26.084c-1.129 4.156.394 8.477 3.878 11.008 1.813 1.316 3.922 1.979 6.035 1.979 1.949-.001 3.903-.563 5.632-1.695l22.614-14.803 22.614 14.803c3.603 2.358 8.184 2.247 11.668-.285 3.485-2.532 5.006-6.854 3.875-11.008zm-12.943-10.124c-3.188 2.562-4.552 6.765-3.479 10.706l4.118 15.148-13.136-8.598c-3.422-2.239-7.841-2.237-11.255 0l-13.136 8.599 4.12-15.154c1.069-3.942-.296-8.143-3.479-10.7l-12.236-9.835 15.68-.765c4.083-.198 7.658-2.797 9.107-6.616l5.572-14.678 5.571 14.675c1.45 3.822 5.025 6.421 9.107 6.619l15.68.765zm421.395-77.617c-1.331-4.098-4.972-6.88-9.272-7.089l-26.997-1.316-9.595-25.27c-1.526-4.021-5.297-6.619-9.605-6.619-4.311 0-8.081 2.599-9.607 6.619l-9.593 25.27-26.997 1.316c-4.302.209-7.942 2.991-9.273 7.089-1.33 4.098-.021 8.487 3.336 11.183l21.067 16.934-7.091 26.083c-1.13 4.155.393 8.477 3.877 11.008 3.485 2.533 8.065 2.643 11.667.284l22.614-14.804 22.614 14.805c1.729 1.131 3.683 1.693 5.631 1.693 2.115 0 4.226-.662 6.039-1.98 3.483-2.532 5.004-6.854 3.873-11.007l-7.091-26.082 21.065-16.932c3.358-2.698 4.668-7.088 3.338-11.185zm-60.822-27.995.005.014c-.002-.006-.004-.01-.005-.014-.001-.001-.001-.001 0 0zm23.475 45.987c-3.185 2.559-4.55 6.759-3.479 10.705l4.118 15.149-13.135-8.599c-3.418-2.238-7.836-2.238-11.256 0l-13.135 8.599 4.12-15.153c1.069-3.939-.295-8.139-3.479-10.701l-12.236-9.835 15.68-.765c4.082-.198 7.656-2.795 9.107-6.615l5.572-14.678 5.572 14.678c1.451 3.82 5.025 6.417 9.105 6.615l15.681.765zm-127.69-157.286 21.067 16.934-7.091 26.083c-1.13 4.155.393 8.477 3.877 11.008 1.812 1.316 3.922 1.979 6.035 1.979 1.949 0 3.903-.563 5.632-1.695l22.614-14.803 22.614 14.802c3.603 2.361 8.183 2.25 11.667-.282 3.484-2.531 5.007-6.852 3.877-11.01l-7.091-26.081 21.066-16.934c3.357-2.698 4.667-7.089 3.335-11.186-1.331-4.097-4.971-6.878-9.271-7.087l-26.997-1.315-9.593-25.27c-.001 0-.001-.001-.001-.002-1.528-4.02-5.299-6.617-9.606-6.617s-8.078 2.598-9.607 6.619l-9.593 25.27-26.995 1.315c-4.302.209-7.941 2.99-9.273 7.086s-.024 8.486 3.334 11.186zm37.455-3.79c4.082-.198 7.656-2.795 9.107-6.615l5.572-14.679 5.572 14.679c1.451 3.82 5.025 6.417 9.106 6.615l15.681.765-12.236 9.835c-3.188 2.561-4.552 6.765-3.479 10.705l4.119 15.149-13.137-8.599c-1.71-1.119-3.669-1.679-5.628-1.679-1.96 0-3.919.56-5.627 1.679l-13.135 8.599 4.119-15.153c1.069-3.939-.295-8.139-3.479-10.701l-12.236-9.835z" />
+              </svg>
+              <h3 data-aos="fade-up" data-aos-delay="200" class="text-white text-center text-md-start fs-5">Expertise
+                and Experience</h3>
+              <p data-aos="fade-up" data-aos-delay="300" style="font-size: 14px;"
+                class="text-white text-center text-md-start">With years of experience in the cargo industry, we bring
+                a wealth of expertise to handle various types of cargo
+                efficiently. Our team is well-versed in logistics, customs regulations, and international shipping
+                protocols, ensuring
+                smooth operations from start to finish.</p>
+            </div>
+          </div>
+          <div class="col-12 col-md-6 col-xl-3">
+            <div class="wcu-item p-3 d-flex flex-column justify-content-center align-items-center align-items-md-start">
+              <svg width="100" height="100" class="text-white mb-5" fill="white" id="Layer_5"
+                enable-background="new 0 0 64 64" viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg">
+                <g>
+                  <path
+                    d="m54 1h-14c-1.654 0-3 1.346-3 3v2c-2.206 0-4 1.794-4 4s1.794 4 4 4v5h8v-2c0-1.103.897-2 2-2s2 .897 2 2v2h5c1.654 0 3-1.346 3-3v-12c0-1.654-1.346-3-3-3zm1 15c0 .551-.448 1-1 1h-3c0-2.206-1.794-4-4-4s-4 1.794-4 4h-4v-5h-2c-1.103 0-2-.897-2-2s.897-2 2-2h2v-4c0-.551.448-1 1-1h14c.552 0 1 .449 1 1z" />
+                  <path
+                    d="m37 21c-2.206 0-4 1.794-4 4h-4v-5h-2c-1.103 0-2-.897-2-2s.897-2 2-2h2v-9h-2.681c-10.652 0-19.319 8.667-19.319 19.319 0 5.818 2.583 11.268 7.086 14.952l3.914 3.203v2.711c-1.161.414-2 1.514-2 2.816 0 1.383.945 2.539 2.22 2.884-.139.345-.22.72-.22 1.115 0 1.322.865 2.434 2.054 2.833.414 3.468 3.369 6.167 6.946 6.167s6.532-2.699 6.946-6.167c1.189-.399 2.054-1.511 2.054-2.833 0-.395-.081-.77-.22-1.116 1.275-.346 2.22-1.501 2.22-2.884 0-1.302-.839-2.402-2-2.816v-2.711l3.914-3.203c4.503-3.683 7.086-9.133 7.086-14.951v-1.319h-6c0-2.206-1.794-4-4-4zm-10.681-12h.681v5c-2.206 0-4 1.794-4 4s1.794 4 4 4v3h-4c0-2.206-1.794-4-4-4s-4 1.794-4 4h-5.95c.676-8.936 8.163-16 17.269-16zm-10.967 30.723c-3.861-3.159-6.147-7.765-6.338-12.723h7.986v-2c0-1.103.897-2 2-2s2 .897 2 2v2h6v4c-2.206 0-4 1.794-4 4s1.794 4 4 4v8h-7v-3.474zm11.648 21.277c-2.414 0-4.434-1.721-4.899-4h9.798c-.465 2.279-2.485 4-4.899 4zm6-6h-12c-.552 0-1-.449-1-1s.448-1 1-1h12c.552 0 1 .449 1 1s-.448 1-1 1zm2-4h-2-12-2c-.552 0-1-.449-1-1s.448-1 1-1h16c.552 0 1 .449 1 1s-.448 1-1 1zm3.648-11.277-4.648 3.803v3.474h-5v-10h-2c-1.103 0-2-.897-2-2s.897-2 2-2h2v-6h6v-2c0-1.103.897-2 2-2s2 .897 2 2v2h5.986c-.191 4.958-2.477 9.564-6.338 12.723z" />
+                </g>
+              </svg>
+              <h3 data-aos="fade-up" data-aos-delay="200" class="text-white text-center text-md-start fs-5">
+                Tailored Solutions</h3>
+              <p data-aos="fade-up" data-aos-delay="300" style="font-size: 14px;"
+                class="text-white text-center text-md-start">We understand that each cargo requirement is unique.
+                That's why we offer tailored solutions to meet your specific needs.
+                Whether you're shipping delicate items, oversized cargo, or time-sensitive goods, we have the expertise
+                and resources to
+                handle it effectively.</p>
+            </div>
+          </div>
+          <div class="col-12 col-md-6 col-xl-3">
+            <div class="wcu-item p-3 d-flex flex-column justify-content-center align-items-center align-items-md-start">
+              <?xml version="1.0"?>
+              <svg width="100" height="100" class="text-white mb-5" fill="white" xmlns="http://www.w3.org/2000/svg"
+                id="Layer_1" data-name="Layer 1" viewBox="0 0 512 512">
+                <path
+                  d="M392.855,256.3c0-81.686-66.456-148.142-148.142-148.142S96.57,174.616,96.57,256.3s66.456,148.142,148.143,148.142S392.855,337.988,392.855,256.3Zm-23.621,47.121H323.479A260.919,260.919,0,0,0,327.7,256.3a256.962,256.962,0,0,0-5.862-55.317h43.975a133.051,133.051,0,0,1,3.426,102.437ZM176.73,256.3a239.984,239.984,0,0,1,6.258-55.317h54.225V303.423H181.2A244.788,244.788,0,0,1,176.73,256.3ZM252.213,124c14.531,3.25,28.256,15.882,39.266,36.4a156.563,156.563,0,0,1,10.769,25.586H252.213Zm-15,0v61.982H187.178A156.476,156.476,0,0,1,197.947,160.4C208.956,139.886,222.682,127.254,237.213,124Zm0,194.419V388.6c-14.532-3.249-28.257-15.882-39.266-36.4a163.482,163.482,0,0,1-13.216-33.782Zm15,70.177V318.423h52.481a163.425,163.425,0,0,1-13.215,33.782C280.469,372.718,266.744,385.351,252.213,388.6Zm0-85.177V200.986h54.225A240.046,240.046,0,0,1,312.7,256.3a244.789,244.789,0,0,1-4.468,47.12ZM357.722,185.986H317.933A175.011,175.011,0,0,0,304.7,153.307a117.545,117.545,0,0,0-15.38-22.453A133.841,133.841,0,0,1,357.722,185.986ZM200.109,130.854a117.589,117.589,0,0,0-15.379,22.453,175.01,175.01,0,0,0-13.237,32.679H131.7A133.844,133.844,0,0,1,200.109,130.854Zm-76.491,70.132h43.975A256.961,256.961,0,0,0,161.73,256.3a260.918,260.918,0,0,0,4.217,47.12H120.192a133.039,133.039,0,0,1,3.426-102.437Zm3.364,117.437h42.226A181.441,181.441,0,0,0,184.73,359.3a117.611,117.611,0,0,0,15.379,22.452A133.871,133.871,0,0,1,126.982,318.423ZM289.316,381.75A117.566,117.566,0,0,0,304.7,359.3a181.4,181.4,0,0,0,15.523-40.875h42.226A133.869,133.869,0,0,1,289.316,381.75ZM511.5,238.85a44.741,44.741,0,0,0-44.689-44.69c-.163,0-.322.01-.483.012A230.618,230.618,0,0,0,342.075,47.753a38.324,38.324,0,0,0-73.4-20.318,233.517,233.517,0,0,0-23.957-1.241A230.03,230.03,0,0,0,74.426,101.542,52.628,52.628,0,0,0,23.405,193.1a230.536,230.536,0,0,0,34.13,197.073,52.519,52.519,0,0,0,76.788,68.071,230.692,230.692,0,0,0,178.152,18.015,64.318,64.318,0,1,0,107.257-70.569,227.555,227.555,0,0,0,53.539-122.622A44.754,44.754,0,0,0,511.5,238.85Zm-15,0a29.69,29.69,0,1,1-29.689-29.69A29.723,29.723,0,0,1,496.5,238.85ZM304.221,18.407a23.33,23.33,0,1,1-23.329,23.33A23.357,23.357,0,0,1,304.221,18.407ZM15.5,149.686a37.651,37.651,0,1,1,37.65,37.65A37.693,37.693,0,0,1,15.5,149.686ZM65.851,415.778a37.556,37.556,0,1,1,37.555,37.557A37.6,37.6,0,0,1,65.851,415.778ZM244.713,471.41a215.23,215.23,0,0,1-99.209-24.2,52.522,52.522,0,0,0-78.343-69.434A213.148,213.148,0,0,1,29.6,256.3a215.5,215.5,0,0,1,7.49-56.479,52.622,52.622,0,0,0,50.239-90.135,215.022,215.022,0,0,1,157.38-68.495c7.068,0,14.169.347,21.191,1.032A38.312,38.312,0,0,0,336.82,61.869a216.6,216.6,0,0,1,114.669,135A44.689,44.689,0,0,0,458.21,282.7a212.62,212.62,0,0,1-48.877,112.064,64.309,64.309,0,0,0-102.8,67.624A215.061,215.061,0,0,1,244.713,471.41Zm123.544,22.183A49.345,49.345,0,1,1,417.6,444.249,49.4,49.4,0,0,1,368.257,493.593Z" />
+              </svg>
+
+              <h3 data-aos="fade-up" data-aos-delay="200" class="text-white text-center text-md-start fs-5">
+                Global Network</h3>
+              <p data-aos="fade-up" data-aos-delay="300" style="font-size: 14px;"
+                class="text-white text-center text-md-start">Our extensive global network of partners and carriers
+                allows us to provide reliable and cost-effective transportation
+                solutions worldwide. Whether it's air freight, sea freight, or land transportation, we have the
+                capabilities to deliver
+                your cargo to any destination efficiently.</p>
+            </div>
+          </div>
+          <div class="col-12 col-md-6 col-xl-3">
+            <div class="wcu-item p-3 d-flex flex-column justify-content-center align-items-center align-items-md-start">
+              <svg width="100" height="100" class="text-white mb-5" fill="white" viewBox="0 0 28 28"
+                xmlns="http://www.w3.org/2000/svg">
+                <g id="Layer_2" data-name="Layer 2">
+                  <path
+                    d="m18.56 16.94h-3.12l.65-2.16a2.58 2.58 0 0 0 -1.66-3.21 1.41 1.41 0 0 0 -1.81 1l-.1.42a8.61 8.61 0 0 1 -2.26 4l-.57.56a1.56 1.56 0 0 0 -1.21-.59h-.73a1.56 1.56 0 0 0 -1.56 1.54v6.44a1.56 1.56 0 0 0 1.56 1.56h.73a1.55 1.55 0 0 0 1.33-.76l.14.07a6.55 6.55 0 0 0 2.91.69h3.59a3.58 3.58 0 0 0 3-1.6 6.34 6.34 0 0 0 1.07-3.53v-2.49a1.94 1.94 0 0 0 -1.96-1.94zm-9.56 8a.56.56 0 0 1 -.56.56h-.69a.56.56 0 0 1 -.56-.56v-6.44a.56.56 0 0 1 .56-.56h.73a.56.56 0 0 1 .52.56zm10.5-3.57a5.38 5.38 0 0 1 -.9 3 2.59 2.59 0 0 1 -2.15 1.15h-3.59a5.53 5.53 0 0 1 -2.46-.58l-.4-.2v-6.14l.92-.92a9.63 9.63 0 0 0 2.53-4.46l.1-.41a.43.43 0 0 1 .2-.26.4.4 0 0 1 .32 0 1.58 1.58 0 0 1 1 2l-.84 2.81a.5.5 0 0 0 .08.44.48.48 0 0 0 .4.2h3.79a.94.94 0 0 1 .94.94z" />
+                  <path
+                    d="m11 7.3-.32 1.85a1.09 1.09 0 0 0 .44 1.09 1.11 1.11 0 0 0 .65.22 1.18 1.18 0 0 0 .52-.13l1.71-.88 1.67.88a1.1 1.1 0 0 0 1.17-.09 1.09 1.09 0 0 0 .44-1.08l-.28-1.86 1.31-1.3a1.1 1.1 0 0 0 .29-1.14 1.12 1.12 0 0 0 -.9-.76l-1.87-.27-.83-1.71a1.12 1.12 0 0 0 -2 0l-.83 1.69-1.87.27a1.12 1.12 0 0 0 -.9.76 1.1 1.1 0 0 0 .29 1.16zm-.6-2.23 2.13-.31a.49.49 0 0 0 .47-.27l1-1.93a.11.11 0 0 1 .2 0l1 1.93a.49.49 0 0 0 .38.27l2.13.31a.12.12 0 0 1 .09.08.11.11 0 0 1 0 .11l-1.54 1.5a.53.53 0 0 0 -.15.45l.37 2.11a.09.09 0 0 1 -.05.11.1.1 0 0 1 -.12 0l-1.9-1a.47.47 0 0 0 -.46 0l-1.91 1a.09.09 0 0 1 -.11 0 .09.09 0 0 1 -.05-.11l.37-2.11a.53.53 0 0 0 -.15-.45l-1.54-1.5a.11.11 0 0 1 0-.11.12.12 0 0 1 -.12-.08z" />
+                  <path
+                    d="m7.34 13.25a1 1 0 0 0 1-1.19l-.27-1.52 1.12-1.09a1 1 0 0 0 -.56-1.73l-1.53-.22-.69-1.39a1.05 1.05 0 0 0 -1.82 0l-.69 1.39-1.53.22a1 1 0 0 0 -.56 1.73l1.11 1.09-.27 1.52a1 1 0 0 0 .41 1 1 1 0 0 0 1.07.07l1.37-.72 1.37.72a1 1 0 0 0 .47.12zm-1.84-1.9a.46.46 0 0 0 -.23.06l-1.63.82.36-1.78a.53.53 0 0 0 -.2-.45l-1.29-1.29 1.8-.26a.47.47 0 0 0 .37-.27l.83-1.63.81 1.63a.47.47 0 0 0 .37.27l1.8.29-1.29 1.26a.53.53 0 0 0 -.15.45l.29 1.8-1.61-.84a.46.46 0 0 0 -.23-.06z" />
+                  <path
+                    d="m26.45 8.41a1 1 0 0 0 -.82-.69l-1.53-.22-.69-1.39a1.05 1.05 0 0 0 -1.82 0l-.69 1.39-1.53.22a1 1 0 0 0 -.56 1.73l1.11 1.09-.27 1.52a1 1 0 0 0 .41 1 1 1 0 0 0 1.07.07l1.37-.72 1.37.72a1 1 0 0 0 .47.12 1 1 0 0 0 1-1.19l-.27-1.52 1.11-1.09a1 1 0 0 0 .27-1.04zm-2.25 1.59a.53.53 0 0 0 -.15.45l.29 1.8-1.61-.84a.47.47 0 0 0 -.46 0l-1.63.82.36-1.78a.53.53 0 0 0 -.2-.45l-1.29-1.29 1.8-.26a.47.47 0 0 0 .37-.27l.83-1.63.81 1.63a.47.47 0 0 0 .37.27l1.8.29z" />
+                </g>
+              </svg>
+              <h3 data-aos="fade-up" data-aos-delay="200" class="text-white text-center text-md-start fs-5">
+                Customer Satisfaction</h3>
+              <p data-aos="fade-up" data-aos-delay="300" style="font-size: 14px;"
+                class="text-white text-center text-md-start">At the core of our service is customer satisfaction. We
+                strive to exceed your expectations by providing exceptional
+                service, prompt responses to queries, and dedicated support at every step of the journey.</p>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+    <!-- ======= Why choose us ? End ======= -->
+    <!-- ======= Call To Action ======= -->
+    <section id="call-to-action" class="container-fluid ">
+
+      <div class="container rounded-3 shadow pb-5 pb-lg-auto py-auto py-lg-0 clr-secondary g-5">
+        <div class="row py-3 align-items-center">
+          <div class="col-6 col-md-3 mt-3">
+            <input type="text" pattern="[A-Za-z]+" required class="form-control" name="city-from" id="city-from"
+              placeholder="Name">
+          </div>
+          <div class="col-6 col-md-3 mt-3">
+            <input pattern="[A-Za-z]+" required type="text" class="form-control" name="city-to" id="city-to"
+              placeholder="phone">
+          </div>
+          <div class="col-6 col-md-3 mt-3">
+            <select class="form-control" name="services" id="select-service">
+              <option value="">Select Your Service</option>
+              <option value="Air Freight">Air Freight</option>
+              <option value="Ocean Freight">Ocean Freight</option>
+              <option value="Road Freight">Road Freight</option>
+              <option value="Rail Freight">Rail Freight</option>
+              <option value="Courier Services">Courier Services</option>
+              <option value="Warehousing">Warehousing
+              </option>
+            </select>
+          </div>
+          <div class="col-6 col-md-3 mt-3">
+            <button class="btn btn-custom py-2 w-100">Check out</button>
+          </div>
+          <div class="col-12 mt-3">
+            <div class="form-group">
+              <textarea name="message" class="form-control" id="message" cols="20" rows="4"
+                placeholder="Message (Optional)"></textarea>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- ======= Call To Action End ======= -->
+    <!-- ======= Review Section ======= -->
+    <section id="review" class="container-xxl px-auto px-md-5">
+      <div class="row py-5">
+        <div class="col-12 col-lg-3 mb-5 mb-lg-auto p-auto p-lg-0 review-head">
+          <div class="container shadow p-4">
+            <div class="row d-flex justify-content-center align-items-center">
+              <h5 data-aos="fade-up" data-aos-delay="0" class="clr-primary">Testimonial</h5>
+              <p data-aos="fade-up" data-aos-delay="100" class="fs-2 fw-bold">What They’re Saying?</p>
+              <p data-aos="fade-up" data-aos-delay="200">Don't just take our word for it. Here's what some of our
+                clients have to say about their experience working with CARGO</p>
+              <div class="swiper-button-next position-relative p-5 clr-primary shadow clr-secondary-bg"></div>
+              <div class="swiper-button-prev position-relative p-5 clr-primary shadow mt-5 clr-secondary-bg"></div>
+            </div>
+          </div>
+        </div>
+        <div class="col-12 col-lg-9 p-auto p-lg-0">
+          <div class="swiper review py-5">
+            <div class="swiper-wrapper ps-auto ps-md-4">
+              <div style="border-radius: 70px 15px 15px 15px;" class="swiper-slide pt-3 pb-0 shadow">
+                <div style="padding-top: 100px;"
+                  class="position-relative h-100 w-100 d-flex flex-column justify-content-start">
+                  <div class="position-absolute translate-middle" style="left: 30%; top: 10px">
+                    <img class="rounded-circle" width="70%" src="img/review/1.jpg" alt="">
+                  </div>
+                  <h6 class="px-3 fs-4 text-start mb-1">Karthi R</h6>
+                  <p style="font-size: 14px; letter-spacing: 3px;" class="px-3 text-start">01/01/2024</p>
+                  <p class="px-3 text-start fs-6">Fast, reliable, and secure cargo services, highly recommended for
+                    businesses.</p>
+                  <p style="border-radius: 10px 10px 0px 0px;" class="clr-secondary-bg py-3  text-center mb-0">
+                    <svg class="text-warning" xmlns="http://www.w3.org/2000/svg" width="35" height="35"
+                      viewBox="0 0 24 24">
+                      <path fill="currentColor"
+                        d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2L9.19 8.63L2 9.24l5.46 4.73L5.82 21L12 17.27z" />
+                    </svg>
+                    <svg class="text-warning" xmlns="http://www.w3.org/2000/svg" width="35" height="35"
+                      viewBox="0 0 24 24">
+                      <path fill="currentColor"
+                        d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2L9.19 8.63L2 9.24l5.46 4.73L5.82 21L12 17.27z" />
+                    </svg>
+                    <svg class="text-warning" xmlns="http://www.w3.org/2000/svg" width="35" height="35"
+                      viewBox="0 0 24 24">
+                      <path fill="currentColor"
+                        d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2L9.19 8.63L2 9.24l5.46 4.73L5.82 21L12 17.27z" />
+                    </svg>
+                    <svg class="text-warning" xmlns="http://www.w3.org/2000/svg" width="35" height="35"
+                      viewBox="0 0 24 24">
+                      <path fill="currentColor"
+                        d="m22 9.24l-7.19-.62L12 2L9.19 8.63L2 9.24l5.46 4.73L5.82 21L12 17.27L18.18 21l-1.63-7.03L22 9.24zM12 15.4V6.1l1.71 4.04l4.38.38l-3.32 2.88l1 4.28L12 15.4z" />
+                    </svg>
+                    <svg class="text-warning" xmlns="http://www.w3.org/2000/svg" width="35" height="35"
+                      viewBox="0 0 24 24">
+                      <path fill="currentColor"
+                        d="m22 9.24l-7.19-.62L12 2L9.19 8.63L2 9.24l5.46 4.73L5.82 21L12 17.27L18.18 21l-1.63-7.03L22 9.24zM12 15.4l-3.76 2.27l1-4.28l-3.32-2.88l4.38-.38L12 6.1l1.71 4.04l4.38.38l-3.32 2.88l1 4.28L12 15.4z" />
+                    </svg>
+                  </p>
+                </div>
+              </div>
+              <div style="border-radius: 70px 15px 15px 15px;" class="swiper-slide pt-3 pb-0 shadow">
+                <div style="padding-top: 100px;"
+                  class="position-relative h-100 w-100 d-flex flex-column justify-content-start">
+                  <div class="position-absolute translate-middle" style="left: 30%; top: 10px">
+                    <img class="rounded-circle" width="70%" src="img/review/2.jpg" alt="">
+                  </div>
+                  <h6 class="px-3 fs-4 text-start mb-1">Kumar R</h6>
+                  <p style="font-size: 14px; letter-spacing: 3px;" class="px-3 text-start">01/01/2024</p>
+                  <p class="px-3 text-start fs-6">Efficient handling, timely deliveries, top-notch customer service,
+                    unbeatable cargo solutions.</p>
+                  <p style="border-radius: 10px 10px 0px 0px;" class="clr-secondary-bg py-3  text-center mb-0">
+                    <svg class="text-warning" xmlns="http://www.w3.org/2000/svg" width="35" height="35"
+                      viewBox="0 0 24 24">
+                      <path fill="currentColor"
+                        d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2L9.19 8.63L2 9.24l5.46 4.73L5.82 21L12 17.27z" />
+                    </svg>
+                    <svg class="text-warning" xmlns="http://www.w3.org/2000/svg" width="35" height="35"
+                      viewBox="0 0 24 24">
+                      <path fill="currentColor"
+                        d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2L9.19 8.63L2 9.24l5.46 4.73L5.82 21L12 17.27z" />
+                    </svg>
+                    <svg class="text-warning" xmlns="http://www.w3.org/2000/svg" width="35" height="35"
+                      viewBox="0 0 24 24">
+                      <path fill="currentColor"
+                        d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2L9.19 8.63L2 9.24l5.46 4.73L5.82 21L12 17.27z" />
+                    </svg>
+                    <svg class="text-warning" xmlns="http://www.w3.org/2000/svg" width="35" height="35"
+                      viewBox="0 0 24 24">
+                      <path fill="currentColor"
+                        d="m22 9.24l-7.19-.62L12 2L9.19 8.63L2 9.24l5.46 4.73L5.82 21L12 17.27L18.18 21l-1.63-7.03L22 9.24zM12 15.4V6.1l1.71 4.04l4.38.38l-3.32 2.88l1 4.28L12 15.4z" />
+                    </svg>
+                    <svg class="text-warning" xmlns="http://www.w3.org/2000/svg" width="35" height="35"
+                      viewBox="0 0 24 24">
+                      <path fill="currentColor"
+                        d="m22 9.24l-7.19-.62L12 2L9.19 8.63L2 9.24l5.46 4.73L5.82 21L12 17.27L18.18 21l-1.63-7.03L22 9.24zM12 15.4l-3.76 2.27l1-4.28l-3.32-2.88l4.38-.38L12 6.1l1.71 4.04l4.38.38l-3.32 2.88l1 4.28L12 15.4z" />
+                    </svg>
+                  </p>
+                </div>
+              </div>
+              <div style="border-radius: 70px 15px 15px 15px;" class="swiper-slide pt-3 pb-0 shadow">
+                <div style="padding-top: 100px;"
+                  class="position-relative h-100 w-100 d-flex flex-column justify-content-start">
+                  <div class="position-absolute translate-middle" style="left: 30%; top: 10px">
+                    <img class="rounded-circle" width="70%" src="img/review/3.jpg" alt="">
+                  </div>
+                  <h6 class="px-3 fs-4 text-start mb-1">Amira R</h6>
+                  <p style="font-size: 14px; letter-spacing: 3px;" class="px-3 text-start">01/01/2024</p>
+                  <p class="px-3 text-start fs-6">Smooth logistics, competitive rates, hassle-free shipping, excellent
+                    experience overall.</p>
+                  <p style="border-radius: 10px 10px 0px 0px;" class="clr-secondary-bg py-3  text-center mb-0">
+                    <svg class="text-warning" xmlns="http://www.w3.org/2000/svg" width="35" height="35"
+                      viewBox="0 0 24 24">
+                      <path fill="currentColor"
+                        d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2L9.19 8.63L2 9.24l5.46 4.73L5.82 21L12 17.27z" />
+                    </svg>
+                    <svg class="text-warning" xmlns="http://www.w3.org/2000/svg" width="35" height="35"
+                      viewBox="0 0 24 24">
+                      <path fill="currentColor"
+                        d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2L9.19 8.63L2 9.24l5.46 4.73L5.82 21L12 17.27z" />
+                    </svg>
+                    <svg class="text-warning" xmlns="http://www.w3.org/2000/svg" width="35" height="35"
+                      viewBox="0 0 24 24">
+                      <path fill="currentColor"
+                        d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2L9.19 8.63L2 9.24l5.46 4.73L5.82 21L12 17.27z" />
+                    </svg>
+                    <svg class="text-warning" xmlns="http://www.w3.org/2000/svg" width="35" height="35"
+                      viewBox="0 0 24 24">
+                      <path fill="currentColor"
+                        d="m22 9.24l-7.19-.62L12 2L9.19 8.63L2 9.24l5.46 4.73L5.82 21L12 17.27L18.18 21l-1.63-7.03L22 9.24zM12 15.4V6.1l1.71 4.04l4.38.38l-3.32 2.88l1 4.28L12 15.4z" />
+                    </svg>
+                    <svg class="text-warning" xmlns="http://www.w3.org/2000/svg" width="35" height="35"
+                      viewBox="0 0 24 24">
+                      <path fill="currentColor"
+                        d="m22 9.24l-7.19-.62L12 2L9.19 8.63L2 9.24l5.46 4.73L5.82 21L12 17.27L18.18 21l-1.63-7.03L22 9.24zM12 15.4l-3.76 2.27l1-4.28l-3.32-2.88l4.38-.38L12 6.1l1.71 4.04l4.38.38l-3.32 2.88l1 4.28L12 15.4z" />
+                    </svg>
+                  </p>
+                </div>
+              </div>
+              <div style="border-radius: 70px 15px 15px 15px;" class="swiper-slide pt-3 pb-0 shadow">
+                <div style="padding-top: 100px;"
+                  class="position-relative h-100 w-100 d-flex flex-column justify-content-start">
+                  <div class="position-absolute translate-middle" style="left: 30%; top: 10px">
+                    <img class="rounded-circle" width="70%" src="img/review/4.jpg" alt="">
+                  </div>
+                  <h6 class="px-3 fs-4 text-start mb-1">Saran Kumar R</h6>
+                  <p style="font-size: 14px; letter-spacing: 3px;" class="px-3 text-start">01/01/2024</p>
+                  <p class="px-3 text-start fs-6">Dependable freight services, meticulous handling, trusted partner for
+                    shipping needs.</p>
+                  <p style="border-radius: 10px 10px 0px 0px;" class="clr-secondary-bg py-3  text-center mb-0">
+                    <svg class="text-warning" xmlns="http://www.w3.org/2000/svg" width="35" height="35"
+                      viewBox="0 0 24 24">
+                      <path fill="currentColor"
+                        d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2L9.19 8.63L2 9.24l5.46 4.73L5.82 21L12 17.27z" />
+                    </svg>
+                    <svg class="text-warning" xmlns="http://www.w3.org/2000/svg" width="35" height="35"
+                      viewBox="0 0 24 24">
+                      <path fill="currentColor"
+                        d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2L9.19 8.63L2 9.24l5.46 4.73L5.82 21L12 17.27z" />
+                    </svg>
+                    <svg class="text-warning" xmlns="http://www.w3.org/2000/svg" width="35" height="35"
+                      viewBox="0 0 24 24">
+                      <path fill="currentColor"
+                        d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2L9.19 8.63L2 9.24l5.46 4.73L5.82 21L12 17.27z" />
+                    </svg>
+                    <svg class="text-warning" xmlns="http://www.w3.org/2000/svg" width="35" height="35"
+                      viewBox="0 0 24 24">
+                      <path fill="currentColor"
+                        d="m22 9.24l-7.19-.62L12 2L9.19 8.63L2 9.24l5.46 4.73L5.82 21L12 17.27L18.18 21l-1.63-7.03L22 9.24zM12 15.4V6.1l1.71 4.04l4.38.38l-3.32 2.88l1 4.28L12 15.4z" />
+                    </svg>
+                    <svg class="text-warning" xmlns="http://www.w3.org/2000/svg" width="35" height="35"
+                      viewBox="0 0 24 24">
+                      <path fill="currentColor"
+                        d="m22 9.24l-7.19-.62L12 2L9.19 8.63L2 9.24l5.46 4.73L5.82 21L12 17.27L18.18 21l-1.63-7.03L22 9.24zM12 15.4l-3.76 2.27l1-4.28l-3.32-2.88l4.38-.38L12 6.1l1.71 4.04l4.38.38l-3.32 2.88l1 4.28L12 15.4z" />
+                    </svg>
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- ======= Review Section end ======= -->
+  </main>
+  <!-- ======= Footer ======= -->
+  <footer class="container-fluid clr-secondary-bg p-0 overflow-hidden">
+    <div class="container pt-3 clr-secondary-bg">
+      <div class="row">
+        <div
+          class="col-12 logo-img col-md-3 mb-3 mb-md-0 d-flex justify-content-center justify-content-md-start align-items-center">
+          <img src="img/logo-light.png" width="100%" alt="">
+          <img src="img/logo-dark.png" width="100%" alt="">
+        </div>
+        <div class="col-12 col-md-9 d-flex justify-content-center justify-content-md-end align-items-center">
+          <div class="share-icon d-flex justify-content-center align-items-center gap-3 text-center">
+            <a href="#" class="text-clr-dark"><svg xmlns="http://www.w3.org/2000/svg" width="28" height="28"
+                viewBox="0 0 24 24">
+                <path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1"
+                  d="M17 2h-3a5 5 0 0 0-5 5v3H6v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3V2Z" />
+              </svg></a>
+            <a href="#" class="text-clr-dark"><svg xmlns="http://www.w3.org/2000/svg" width="28" height="28"
+                viewBox="0 0 256 256">
+                <path fill="currentColor"
+                  d="M128 82a46 46 0 1 0 46 46a46.06 46.06 0 0 0-46-46Zm0 80a34 34 0 1 1 34-34a34 34 0 0 1-34 34Zm48-136H80a54.06 54.06 0 0 0-54 54v96a54.06 54.06 0 0 0 54 54h96a54.06 54.06 0 0 0 54-54V80a54.06 54.06 0 0 0-54-54Zm42 150a42 42 0 0 1-42 42H80a42 42 0 0 1-42-42V80a42 42 0 0 1 42-42h96a42 42 0 0 1 42 42ZM190 76a10 10 0 1 1-10-10a10 10 0 0 1 10 10Z" />
+              </svg></a>
+            <a href="#" class="text-clr-dark"><svg xmlns="http://www.w3.org/2000/svg" width="28" height="28"
+                viewBox="0 0 24 24">
+                <path fill="currentColor" fill-rule="evenodd"
+                  d="M15.021 3.343c.509-.087 1.078-.116 1.614-.025a4.85 4.85 0 0 1 2.54 1.273c.456.01.905-.08 1.302-.208a5.36 5.36 0 0 0 1.098-.501l.009-.006a.75.75 0 0 1 1.042 1.037c-.207.315-.496.877-.819 1.507l-.155.301c-.185.36-.375.724-.552 1.036c-.111.196-.23.395-.35.567v.274A12.34 12.34 0 0 1 8.287 21.03a12.32 12.32 0 0 1-6.694-1.97a.75.75 0 0 1 .5-1.374a7.471 7.471 0 0 0 4.033-.642a4.858 4.858 0 0 1-2.61-2.922a.75.75 0 0 1 .147-.722l.01-.01A4.848 4.848 0 0 1 2.05 9.793v-.052a.75.75 0 0 1 .553-.724A4.84 4.84 0 0 1 2.09 6.84a4.9 4.9 0 0 1 .65-2.442a.75.75 0 0 1 1.232-.1a10.89 10.89 0 0 0 7.006 3.93a4.85 4.85 0 0 1 2.562-4.406c.402-.214.934-.385 1.482-.479ZM3.743 10.891a3.35 3.35 0 0 0 2.503 2.164a.75.75 0 0 1 .072 1.453c-.272.083-.551.14-.834.173a3.358 3.358 0 0 0 2.59 1.3a.75.75 0 0 1 .45 1.339a8.97 8.97 0 0 1-3.548 1.695a10.82 10.82 0 0 0 3.313.515h.009A10.838 10.838 0 0 0 19.25 8.607v-.535a.75.75 0 0 1 .186-.495c.07-.079.19-.261.36-.56c.16-.282.338-.622.523-.981l.033-.066a4.992 4.992 0 0 1-1.593.097a.75.75 0 0 1-.47-.237a3.35 3.35 0 0 0-1.904-1.032a3.42 3.42 0 0 0-1.11.025a3.605 3.605 0 0 0-1.028.323a3.35 3.35 0 0 0-1.678 3.74a.75.75 0 0 1-.767.925a12.39 12.39 0 0 1-8.149-3.627a3.41 3.41 0 0 0-.063.657v.002a3.34 3.34 0 0 0 1.486 2.785A.75.75 0 0 1 4.64 11a4.798 4.798 0 0 1-.897-.11Z"
+                  clip-rule="evenodd" />
+              </svg></a>
+            <a href="#" class="text-clr-dark"><svg xmlns="http://www.w3.org/2000/svg" width="28" height="28"
+                viewBox="0 0 24 24">
+                <g fill="none" stroke="currentColor" stroke-width="1.5">
+                  <path fill="currentColor" stroke-linecap="round" stroke-linejoin="round"
+                    d="m14 12l-3.5 2v-4l3.5 2Z" />
+                  <path
+                    d="M2 12.707v-1.415c0-2.895 0-4.343.905-5.274c.906-.932 2.332-.972 5.183-1.053C9.438 4.927 10.818 4.9 12 4.9c1.181 0 2.561.027 3.912.065c2.851.081 4.277.121 5.182 1.053c.906.931.906 2.38.906 5.274v1.415c0 2.896 0 4.343-.905 5.275c-.906.931-2.331.972-5.183 1.052c-1.35.039-2.73.066-3.912.066a141.1 141.1 0 0 1-3.912-.066c-2.851-.08-4.277-.12-5.183-1.052C2 17.05 2 15.602 2 12.708Z" />
+                </g>
+              </svg></a>
+          </div>
+        </div>
+      </div>
+    </div>
+    <hr class="mb-5">
+    <div class="container">
+      <div class="row d-flex justify-content-center align-items-start g-5">
+        <div class="col-12 col-lg-4 p-lg-0 p-auto">
+          <address class="d-flex flex-column justify-content-center align-items-start gap-3">
+            <h5 class="fw-bold mb-3">Contact Info :</h5>
+            <div class="d-flex justify-content-center align-items-center gap-3">
+              <svg class="clr-primary" xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24">
+                <path fill="currentColor"
+                  d="M12 12q.825 0 1.413-.588T14 10q0-.825-.588-1.413T12 8q-.825 0-1.413.588T10 10q0 .825.588 1.413T12 12Zm0 7.35q3.05-2.8 4.525-5.088T18 10.2q0-2.725-1.738-4.462T12 4Q9.475 4 7.737 5.738T6 10.2q0 1.775 1.475 4.063T12 19.35ZM12 22q-4.025-3.425-6.012-6.362T4 10.2q0-3.75 2.413-5.975T12 2q3.175 0 5.588 2.225T20 10.2q0 2.5-1.988 5.438T12 22Zm0-12Z" />
+              </svg>
+              <a href="#">2nd Floor, Sample Building, (Sample)</a>
+            </div>
+            <div class="d-flex justify-content-center align-items-center gap-3">
+              <svg class="clr-primary" xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24">
+                <path fill="currentColor"
+                  d="M19.95 21q-3.225 0-6.287-1.438t-5.425-3.8q-2.363-2.362-3.8-5.425T3 4.05q0-.45.3-.75t.75-.3H8.1q.35 0 .625.225t.325.575l.65 3.5q.05.35-.013.638T9.4 8.45L6.975 10.9q1.05 1.8 2.638 3.375T13.1 17l2.35-2.35q.225-.225.588-.338t.712-.062l3.45.7q.35.075.575.338T21 15.9v4.05q0 .45-.3.75t-.75.3ZM6.025 9l1.65-1.65L7.25 5H5.025q.125 1.025.35 2.025T6.025 9Zm8.95 8.95q.975.425 1.988.675T19 18.95v-2.2l-2.35-.475l-1.675 1.675ZM6.025 9Zm8.95 8.95Z" />
+              </svg>
+              <a href="tel:+001234567890">+00 12345 67890</a>
+            </div>
+            <div class="d-flex justify-content-center align-items-center gap-3">
+              <svg class="clr-primary" xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 256 256">
+                <path fill="currentColor"
+                  d="M224 48H32a8 8 0 0 0-8 8v136a16 16 0 0 0 16 16h176a16 16 0 0 0 16-16V56a8 8 0 0 0-8-8Zm-96 85.15L52.57 64h150.86ZM98.71 128L40 181.81V74.19Zm11.84 10.85l12 11.05a8 8 0 0 0 10.82 0l12-11.05l58 53.15H52.57ZM157.29 128L216 74.18v107.64Z" />
+              </svg>
+              <a href="mailto:info@sample.com">info@sample.com</a>
+            </div>
+            <a onclick='popup("#popupform")' href="#get-contacted"
+              class="px-5 py-2 clr-primary custom-link-2  clr-primary-bg mt-3 position-relative overflow-hidden d-flex align-items-center justify-content-center rounded-5"
+              href="#">
+              <span class="clr-secondary fw-bold"></span>
+            </a>
+        </div>
+        </address>
+        <div class="col-12 col-lg-2 flex-column d-flex gap-3">
+          <h5 class="fw-bold mb-3">Explore</h5>
+          <a href="index.html">HOME</a>
+
+          <a href="about.html">ABOUT</a>
+          <a href="services.html">SERVICES</a>
+          <a href="contact.html">CONTACT</a>
+        </div>
+        <div class="col-12 col-lg-2 flex-column d-flex gap-3">
+          <h5 class="fw-bold mb-3">SERVICES</h5>
+          <a href="air-freight.html">AIR FREIGHT</a>
+          <a href="ocean-freight.html">OCEAN FREIGHT</a>
+          <a href="road-freight.html">ROAD FREIGHT</a>
+          <a href="rail-freight.html">RAIL FREIGHT</a>
+          <a href="courier-services.html">COURIER SERVICES</a>
+          <a href="warehousing.html">WAREHOUSING</a>
+        </div>
+        <div class="col-12 col-lg-4">
+          <h5 class="fw-bold mb-3">Newsletter</h5>
+          <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Veniam rerum deserunt modi.</p>
+          <div class="input-group mb-3 shadow rounded-3 p-2 d-flex">
+            <input type="text" class="border-0 w-75 ps-3" placeholder="Enter your mail" aria-label="Enter your mail"
+              aria-describedby="basic-addon2">
+            <div class="input-group-append w-25">
+              <button class="btn clr-primary-btn px-0 py-2 w-100 btn-outline-light rounded-0" type="button">GO</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div style="clip-path: ellipse(100% 100% at 50% 100%);"
+      class="container-fluid text-black mt-5 fw-bold text-center bg-dark py-5">
+      <div class="row d-flex justify-content-center align-items-center">
+        <div class="col-12 col-lg-10">
+          <div class="d-flex justify-content-between align-items-center flex-md-row flex-column">
+            <div class="contact-info mb-4 mb-md-auto order-1 order-md-1">
+              <h6 class="clr-primary mb-2">Have Any Question?</h6>
+              <p class="m-0 fs-5 text-white">+12 345678900</p>
+            </div>
+            <div class="d-flex justify-content-center align-items-center order-3 order-md-2 mt-4 mt-md-auto">
+              <p class="text-white">Copyright © 2024 <span class="clr-primary"> Cargo</span>. All rights reserved.
+                Designed By : <a href="https://www.biz15.com/"><img src="https://biz15.com/images/logo-white.png"
+                    width="80px" alt=""></a></p>
+            </div>
+            <div class="contact-info order-2 order-md-3 ">
+              <h6 class="clr-primary mb-2">Send Email</h6>
+              <p class="m-0 fs-5 text-white">Info@sample.com</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+
+  <!-- dark mode button -->
+  <div class="position-relative  w-100 h-100 justify-content-end align-items-center ">
+    <div class="checkbox-wrapper-54" style="right: 10px; bottom: 10px; position: fixed; z-index: 5;">
+      <label class="switch">
+        <input id="darkModeToggle" type="checkbox">
+        <span class="slider shadow"></span>
+      </label>
+    </div>
+  </div>
+
+  <!-- bottom menu icons -->
+  <div id="call" onclick="callthis()" class="icons" data-val="CALL">
+    <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 24 24">
+      <g fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2">
+        <path stroke-dasharray="64" stroke-dashoffset="64"
+          d="M8 3C8.5 3 10.5 7.5 10.5 8C10.5 9 9 10 8.5 11C8 12 9 13 10 14C10.3943 14.3943 12 16 13 15.5C14 15 15 13.5 16 13.5C16.5 13.5 21 15.5 21 16C21 18 19.5 19.5 18 20C16.5 20.5 15.5 20.5 13.5 20C11.5 19.5 10 19 7.5 16.5C5 14 4.5 12.5 4 10.5C3.5 8.5 3.5 7.5 4 6C4.5 4.5 6 3 8 3Z">
+          <animate fill="freeze" attributeName="stroke-dashoffset" dur="0.6s" values="64;0" />
+          <animateTransform attributeName="transform" begin="0.6s;lineMdPhoneCallLoop0.begin+2.6s" dur="0.5s"
+            type="rotate" values="0 12 12;15 12 12;0 12 12;-12 12 12;0 12 12;12 12 12;0 12 12;-15 12 12;0 12 12" />
+        </path>
+        <path stroke-dasharray="4" stroke-dashoffset="4"
+          d="M14 7.04404C14.6608 7.34734 15.2571 7.76718 15.7624 8.27723M16.956 10C16.6606 9.35636 16.2546 8.77401 15.7624 8.27723"
+          opacity="0">
+          <set id="lineMdPhoneCallLoop0" attributeName="opacity" begin="0.7s;lineMdPhoneCallLoop0.begin+2.7s" to="1" />
+          <animate fill="freeze" attributeName="stroke-dashoffset" begin="0.7s;lineMdPhoneCallLoop0.begin+2.7s"
+            dur="0.2s" values="4;8" />
+          <animate fill="freeze" attributeName="stroke-dashoffset" begin="1.3s;lineMdPhoneCallLoop0.begin+3.3s"
+            dur="0.3s" values="0;4" />
+          <set attributeName="opacity" begin="1.6s;lineMdPhoneCallLoop0.begin+3.6s" to="0" />
+        </path>
+        <path stroke-dasharray="10" stroke-dashoffset="10"
+          d="M20.748 9C20.3874 7.59926 19.6571 6.347 18.6672 5.3535M15 3.25203C16.4105 3.61507 17.6704 4.3531 18.6672 5.3535"
+          opacity="0">
+          <set attributeName="opacity" begin="1s;lineMdPhoneCallLoop0.begin+3s" to="1" />
+          <animate fill="freeze" attributeName="stroke-dashoffset" begin="1s;lineMdPhoneCallLoop0.begin+3s" dur="0.2s"
+            values="10;20" />
+          <animate fill="freeze" attributeName="stroke-dashoffset" begin="1.5s;lineMdPhoneCallLoop0.begin+3.5s"
+            dur="0.3s" values="0;10" />
+          <set attributeName="opacity" begin="1.8s;lineMdPhoneCallLoop0.begin+3.8s" to="0" />
+        </path>
+      </g>
+    </svg>
+  </div>
+  <div id="whatsapp" onclick="msgBox()" class="icons" data-val="WHATSAPP">
+    <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 512 512">
+      <path fill="currentColor" fill-rule="evenodd"
+        d="M414.73 97.1A222.14 222.14 0 0 0 256.94 32C134 32 33.92 131.58 33.87 254a220.61 220.61 0 0 0 29.78 111L32 480l118.25-30.87a223.63 223.63 0 0 0 106.6 27h.09c122.93 0 223-99.59 223.06-222A220.18 220.18 0 0 0 414.73 97.1M256.94 438.66h-.08a185.75 185.75 0 0 1-94.36-25.72l-6.77-4l-70.17 18.32l18.73-68.09l-4.41-7A183.46 183.46 0 0 1 71.53 254c0-101.73 83.21-184.5 185.48-184.5a185 185 0 0 1 185.33 184.64c-.04 101.74-83.21 184.52-185.4 184.52m101.69-138.19c-5.57-2.78-33-16.2-38.08-18.05s-8.83-2.78-12.54 2.78s-14.4 18-17.65 21.75s-6.5 4.16-12.07 1.38s-23.54-8.63-44.83-27.53c-16.57-14.71-27.75-32.87-31-38.42s-.35-8.56 2.44-11.32c2.51-2.49 5.57-6.48 8.36-9.72s3.72-5.56 5.57-9.26s.93-6.94-.46-9.71s-12.54-30.08-17.18-41.19c-4.53-10.82-9.12-9.35-12.54-9.52c-3.25-.16-7-.2-10.69-.2a20.53 20.53 0 0 0-14.86 6.94c-5.11 5.56-19.51 19-19.51 46.28s20 53.68 22.76 57.38s39.3 59.73 95.21 83.76a323.11 323.11 0 0 0 31.78 11.68c13.35 4.22 25.5 3.63 35.1 2.2c10.71-1.59 33-13.42 37.63-26.38s4.64-24.06 3.25-26.37s-5.11-3.71-10.69-6.48" />
+    </svg>
+  </div>
+  <div id="form" onclick='formto()' class="icons" data-val="MESSAGE">
+    <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 24 24">
+      <path fill="currentColor"
+        d="M2 24v-4h20v4zm8.6-16l5.4 5.425l-4 4q-.6.6-1.412.6t-1.413-.6L8.5 18h-5l3.15-3.125q-.6-.6-.625-1.437T6.6 12zM12 6.575L16 2.6q.6-.6 1.413-.6t1.412.6l2.6 2.575q.6.6.6 1.413T21.425 8l-4 4z" />
+    </svg>
+  </div>
+  <div onclick="openicon()" class="logo-container btn-pulse">
+    <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 24 24">
+      <path fill="currentColor"
+        d="M2 11C2 5.477 6.477 1 12 1s10 4.477 10 10v5.154C22 17.8 20.58 19 19 19h-3v-8h4a8 8 0 1 0-16 0h4v8H6.063A2 2 0 0 0 8 20.5h1.564c.316-.453.841-.75 1.436-.75h2a1.75 1.75 0 1 1 0 3.5h-2c-.595 0-1.12-.297-1.436-.75H8a4 4 0 0 1-3.986-3.66C2.874 18.463 2 17.446 2 16.155zm4 6v-4H4v3.154c0 .393.37.846 1 .846zm14-4h-2v4h1c.63 0 1-.453 1-.846z" />
+    </svg>
+  </div>
+  <div style="display:none; transform:scale(.1);" class="callto">https://biz15.co/nsi-call</div>
+  <div style="display:none; transform:scale(.1);" class="whatsto">https://biz15.co/nsi-whatsapp</div>
+  <span class="form-fixed">
+    <div onclick="closeimg()" id="big-img">
+      <div>
+        <iframe id="form-iframe" src="" width="100%" height="100%" frameborder="0" scrolling="no"
+          allowfullscreen="allowfullscreen"></iframe>
+
+      </div>
+    </div>
+  </span>
+
+  <script src="https://biz15.com/plugin/cw-desk-bottom-menu-v6/logofunction.js"></script>
+
+  <div id="biz_msg_box" data-thankyou-page="thankyou">
+    <div class="biz_msg_header">
+      <div class="brandLogo logo-img">
+        <img src="img/logo-light.png" alt="LOGO">
+        <img src="img/logo-dark.png" alt="LOGO">
+      </div>
+      <div onclick="msgBox()" id="close_msg_box">
+        <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 24 24">
+          <path fill="currentColor"
+            d="m6.4 18.308l-.708-.708l5.6-5.6l-5.6-5.6l.708-.708l5.6 5.6l5.6-5.6l.708.708l-5.6 5.6l5.6 5.6l-.708.708l-5.6-5.6z" />
+        </svg>
+      </div>
+    </div>
+    <div class="biz_msg_inputs">
+      <h1>Welcome! Thanks for your interest!</h1>
+      <p class="message">Please enter your name and phone number to start the conversation.</p>
+      <textarea placeholder="Your Message (Optional)" name="messages" id="message-box" cols="30" rows="3"></textarea>
+    </div>
+    <div class="biz_msg_send">
+      <label class="biz_msg_name" for="biz_msg_name">
+        <p class="alert-name">Enter Your Name</p>
+        <input type="name" placeholder="Your name" title="Please enter your name" required id="biz_msg_name">
+      </label>
+      <label class="biz_msg_phone" for="biz_msg_phone">
+        <p class="alert-number">Enter Your 10 digit Number</p>
+        <span>+91</span><input type="tel" pattern="\d{10}" placeholder="Your number"
+          title="Please enter a 10-digit phone number" required id="biz_msg_phone">
+      </label>
+    </div>
+    <button id="submit_msg" onclick="singleWhatsapp()" role="button">
+      <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24">
+        <path fill="currentColor"
+          d="M16.6 14c-.2-.1-1.5-.7-1.7-.8c-.2-.1-.4-.1-.6.1c-.2.2-.6.8-.8 1c-.1.2-.3.2-.5.1c-.7-.3-1.4-.7-2-1.2c-.5-.5-1-1.1-1.4-1.7c-.1-.2 0-.4.1-.5c.1-.1.2-.3.4-.4c.1-.1.2-.3.2-.4c.1-.1.1-.3 0-.4c-.1-.1-.6-1.3-.8-1.8c-.1-.7-.3-.7-.5-.7h-.5c-.2 0-.5.2-.6.3c-.6.6-.9 1.3-.9 2.1c.1.9.4 1.8 1 2.6c1.1 1.6 2.5 2.9 4.2 3.7c.5.2.9.4 1.4.5c.5.2 1 .2 1.6.1c.7-.1 1.3-.6 1.7-1.2c.2-.4.2-.8.1-1.2zm2.5-9.1C15.2 1 8.9 1 5 4.9c-3.2 3.2-3.8 8.1-1.6 12L2 22l5.3-1.4c1.5.8 3.1 1.2 4.7 1.2c5.5 0 9.9-4.4 9.9-9.9c.1-2.6-1-5.1-2.8-7m-2.7 14c-1.3.8-2.8 1.3-4.4 1.3c-1.5 0-2.9-.4-4.2-1.1l-.3-.2l-3.1.8l.8-3l-.2-.3c-2.4-4-1.2-9 2.7-11.5S16.6 3.7 19 7.5c2.4 3.9 1.3 9-2.6 11.4" />
+      </svg>
+    </button>
+    <h6 class="send-message">Once you provide your details, Click on the WhatsApp icon to start a
+      conversation with our team.</h6>
+  </div>
+  <script src="biz-msg-box/script.js"></script>
+
+  <!-- ======= Footer ======= -->
+  <!-- JS Files -->
+  <script src="assets/aos/aos.js"></script>
+  <script src="assets/purecounter/purecounter_vanilla.js"></script>
+  <script src="assets/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <script src="assets/isotope-layout/isotope.pkgd.min.js"></script>
+  <script src="assets/glightbox/js/glightbox.min.js"></script>
+  <script src="assets/swiper/swiper-bundle.min.js"></script>
+  <!-- Core -->
+  <script src="assets/jarallax-master/dist/jarallax.js"></script>
+  <!-- Video Support -->
+  <script src="assets/jarallax-master/dist/jarallax-video.js"></script>
+  <!-- Custom Element Support -->
+  <script src="assets/jarallax-master/dist/jarallax-element.js"></script>
+  <script src="js/script.js"></script>
+  <script src="assets/plyr/plyr.js"></script>
+  <script>
+    const player = new Plyr('#video');
+  </script>
+</body>
+
+</html>

@@ -1,0 +1,92 @@
+input{
+    display: none;
+}
+html{
+    scroll-behavior: smooth;
+    scroll-padding-top: 50px;
+}
+*{
+    line-height: 2;
+}
+/* width */
+.scrollbar-1::-webkit-scrollbar {
+    width: 5px;
+    height: 5px;
+  }
+  
+  /* Track */
+  .scrollbar-1::-webkit-scrollbar-track {
+    border-radius: 10px;
+  }
+   
+  /* Handle */
+  .scrollbar-1::-webkit-scrollbar-thumb {
+    background: var(--primary-color); 
+    border-radius: 10px;
+  }
+  
+  /* Handle on hover */
+  .scrollbar-1::-webkit-scrollbar-thumb:hover {
+    background: var(--primary-color-2); 
+  }
+.cursor-pointer{
+    cursor: pointer;
+}
+.options ~ label:before{
+    content: "\2b";
+    font-family: FontAwesome;
+    position: absolute;
+    right: 30px;
+    font-size: 30px;
+    transition: .5s;
+    -webkit-transition: .5s;
+    -moz-transition: .5s;
+    -ms-transition: .5s;
+    -o-transition: .5s;
+    rotate: 0deg;
+}
+.options:not(:checked) + label::before{
+    content: "\2b";
+    font-family: FontAwesome;
+    rotate: 0deg;
+    font-size: 14px;
+}
+.options:checked + label::before{
+    content: "-";
+    font-family: FontAwesome;
+    rotate: 180deg;
+    font-size: 20px;
+}
+.options:not(:checked) + label + .dropdown div{
+    grid-template-rows: 0fr;
+}
+
+.options:checked + label + .dropdown div{
+    grid-template-rows: 1fr;
+}
+.dropdown div{
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 0fr;
+    overflow: hidden;
+    transition: .5s;
+    -webkit-transition: .5s;
+    -moz-transition: .5s;
+    -ms-transition: .5s;
+    -o-transition: .5s;
+    background-color: rgba(0, 0, 0, 0.05);
+    border-radius: 10px 0px 0px 10px;
+    -webkit-border-radius: 0px 0px 0px 0px;
+    -moz-border-radius: 10px 0px 0px 10px;
+    -ms-border-radius: 10px 0px 0px 10px;
+    -o-border-radius: 10px 0px 0px 10px;
+}
+[data-href].active{
+    background-color: hsl(210, 17%, 98%);
+    color: black;
+    border-radius: 10px 0px 0px 10px;
+    -webkit-border-radius: 10px 0px 0px 10px;
+    -moz-border-radius: 10px 0px 0px 10px;
+    -ms-border-radius: 10px 0px 0px 10px;
+    -o-border-radius: 10px 0px 0px 10px;
+}

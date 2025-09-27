@@ -1,0 +1,65 @@
+<?php
+
+// Get the origin from the request headers
+$origin = $_SERVER['HTTP_ORIGIN'];
+
+// List of allowed domains (comma-separated)
+$allowedDomains = "http://localhost, https://pscorporation.in, https://www.pscorporation.in";
+
+// Check if the requesting domain is in the list of allowed domains
+if (in_array($origin, explode(", ", $allowedDomains))) {
+    header("Access-Control-Allow-Origin: $origin");
+    header("Access-Control-Allow-Methods: GET, OPTIONS");
+
+    if ($_SERVER["REQUEST_METHOD"] == "POST") {
+
+        $webRoot = $_SERVER['DOCUMENT_ROOT'];
+        // Go two steps back from the web root
+        $projectRoot = dirname($webRoot);
+        $filePath = $projectRoot . '/plugins/wa-sms-msg/in/chn/clients/cargo/get.php';
+
+        include_once($filePath);
+
+        $ALL_DATA = json_decode($DATA, true);
+        $apiKey = $ALL_DATA["API_KEY"];
+        $accountId = $ALL_DATA["ACCOUNT_ID"];
+        $custom_whatsapp = $ALL_DATA["CUSTOMER_WHATSAPP"];
+
+        // Get the text from the POST data
+        $name = $_POST["name"];
+
+        $inputs = $_POST["inputs"];
+        $inputsArray = explode(',', urldecode($inputs));
+        // Enclose array elements in single quotes, concatenate with '\n', and add '*' to each line
+        $resultInputs = "> " . implode("\n> ", $inputsArray);
+
+        $num = "+91" . $_POST["num"];
+
+        // Replacement values
+        $replacements = array(
+            '{name}' => $name,
+            '{products}' => $resultInputs,
+        );
+
+        // Perform the replacements
+        $message = str_replace(array_keys($replacements), array_values($replacements), $customer_whatsapp);
+
+        $chat = [
+            "secret" => $apiKey,
+            "account" => $accountId,
+            "recipient" => htmlspecialchars($num),
+            "type" => "media",
+            "media_url" => "https://sribalajiengineers.co.in/wp-content/uploads/2024/01/whatsapp-banner.jpg",
+            "media_type" => "image",
+            "message" => $message
+        ];
+
+        $cURL = curl_init("https://biz15.com/msg/api/send/whatsapp");
+        curl_setopt($cURL, CURLOPT_RETURNTRANSFER, true);
+        curl_setopt($cURL, CURLOPT_POSTFIELDS, $chat);
+        $response = curl_exec($cURL);
+        curl_close($cURL);
+
+        $result = json_decode($response, true);
+    }
+}
